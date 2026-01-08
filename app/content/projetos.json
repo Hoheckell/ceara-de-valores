@@ -1,0 +1,80 @@
+{
+  "id": 99,
+  "titulo": "Orientações para Projetos",
+  "descricao": "Tudo o que você precisa saber para submeter sua ideia e transformar sua comunidade.",
+  "icon": "🚀",
+  "questions": [
+    {
+      "text": "Baseado no documento de orientações, qual o principal objetivo da submissão de projetos no Ceará de Valores?",
+      "options": [
+        { "text": "Praticar as aprendizagens das trilhas para fortalecer as comunidades locais.", "isCorrect": true, "rationale": "O foco é transformar teoria em impacto social real e protagonismo." },
+        { "text": "Apenas garantir a presença nas aulas para receber o certificado.", "isCorrect": false, "rationale": "O projeto é uma etapa de aplicação prática, não apenas burocrática." },
+        { "text": "Competir individualmente para ver quem tem a melhor nota.", "isCorrect": false, "rationale": "O foco é o impacto comunitário e pode ser feito em grupo." },
+        { "text": "Criar empresas multinacionais focadas apenas no lucro.", "isCorrect": false, "rationale": "O foco é o desenvolvimento social e territorial do Ceará." }
+      ]
+    },
+    {
+      "text": "Quem está habilitado a submeter propostas de projetos na plataforma?",
+      "options": [
+        { "text": "Alunos inscritos e ativos que participaram das trilhas de formação.", "isCorrect": true, "rationale": "A submissão é exclusiva para quem percorreu a jornada de aprendizagem." },
+        { "text": "Qualquer cidadão cearense, mesmo que não tenha feito o curso.", "isCorrect": false, "rationale": "É necessário estar vinculado ao programa Ceará de Valores." },
+        { "text": "Apenas os professores e mentores do Instituto Centec.", "isCorrect": false, "rationale": "Os jovens alunos são os verdadeiros protagonistas e autores." },
+        { "text": "Apenas alunos que já possuem curso superior completo.", "isCorrect": false, "rationale": "O programa é voltado para a juventude (15 a 29 anos) em geral." }
+      ]
+    },
+    {
+      "text": "Segundo as regras, qual o limite de integrantes permitido para cada grupo de projeto?",
+      "options": [
+        { "text": "Até 5 integrantes por grupo.", "isCorrect": true, "rationale": "Permite uma divisão clara de tarefas e participação de todos." },
+        { "text": "No mínimo 10 pessoas para garantir a força da equipe.", "isCorrect": false, "rationale": "Grupos muito grandes dificultam a gestão; o limite é cinco." },
+        { "text": "Os projetos devem ser obrigatoriamente individuais.", "isCorrect": false, "rationale": "O trabalho colaborativo é incentivado e permitido." },
+        { "text": "Não existe limite de pessoas, toda a turma pode ser um grupo.", "isCorrect": false, "rationale": "A regra limita o registro oficial a no máximo 5 membros." }
+      ]
+    },
+    {
+      "text": "Quais são os três pilares principais de avaliação da Comissão Técnica?",
+      "options": [
+        { "text": "Inovação, Impacto Comunitário e Viabilidade.", "isCorrect": true, "rationale": "Garante que a ideia seja nova, ajude as pessoas e consiga ser executada." },
+        { "text": "Beleza do logotipo, número de páginas e custo alto.", "isCorrect": false, "rationale": "Critérios técnicos focam na qualidade da solução social." },
+        { "text": "Sorteio aleatório, idade dos membros e cidade de origem.", "isCorrect": false, "rationale": "A avaliação é baseada no mérito e consistência da proposta." },
+        { "text": "Uso obrigatório de inteligência artificial em todos os passos.", "isCorrect": false, "rationale": "Inovação pode ser uma nova forma de organizar a comunidade, sem tecnologia cara." }
+      ]
+    },
+    {
+      "text": "Sobre a autoria do projeto, o que o edital diz sobre plágio ou cópias?",
+      "options": [
+        { "text": "As propostas devem ser autorais e originais; o plágio causa desclassificação.", "isCorrect": true, "rationale": "Valoriza-se a autenticidade e a criação própria do jovem." },
+        { "text": "É permitido copiar projetos de outros estados se eles funcionarem.", "isCorrect": false, "rationale": "O projeto deve ser adaptado e criado para a realidade local cearense." },
+        { "text": "Pode-se usar o projeto de um colega se ele autorizar por escrito.", "isCorrect": false, "rationale": "Cada grupo deve desenvolver sua própria solução original." },
+        { "text": "Não há fiscalização sobre a origem das ideias.", "isCorrect": false, "rationale": "A comissão avalia rigorosamente a originalidade e ética." }
+      ]
+    },
+    {
+      "text": "Onde deve ser feita a submissão oficial do formulário do projeto?",
+      "options": [
+        { "text": "Exclusivamente na plataforma oficial indicada (Centec Academy).", "isCorrect": true, "rationale": "Garante a centralização e transparência do processo de seleção." },
+        { "text": "Através de mensagens diretas no Instagram do programa.", "isCorrect": false, "rationale": "Redes sociais servem para divulgação, não para submissão oficial." },
+        { "text": "Por e-mail enviado diretamente para o governador do estado.", "isCorrect": false, "rationale": "Existe um canal técnico específico para os projetos." },
+        { "text": "Entregando o papel impresso na sede de cada município.", "isCorrect": false, "rationale": "O processo é digital para facilitar o acesso de todos os territórios." }
+      ]
+    },
+    {
+      "text": "Qual o valor do fomento financeiro que os melhores projetos podem receber na final estadual?",
+      "options": [
+        { "text": "Até 15 mil reais para apoiar a execução da ideia.", "isCorrect": true, "rationale": "O recurso serve para tirar o projeto do papel e gerar impacto." },
+        { "text": "Apenas um troféu simbólico e um aperto de mão.", "isCorrect": false, "rationale": "Há investimento financeiro real para os vencedores." },
+        { "text": "Um milhão de reais para cada integrante do grupo.", "isCorrect": false, "rationale": "O valor é focado na viabilidade do projeto social." },
+        { "text": "O valor depende apenas da nota do CPF do aluno.", "isCorrect": false, "rationale": "O valor é definido por categorias no edital oficial." }
+      ]
+    },
+    {
+      "text": "Além do prêmio em dinheiro, o que os projetos selecionados recebem do Instituto Centec?",
+      "options": [
+        { "text": "Mentoria técnica e acompanhamento para a implementação do projeto.", "isCorrect": true, "rationale": "O suporte técnico garante que o projeto tenha sucesso a longo prazo." },
+        { "text": "A obrigação de entregar a ideia para o governo administrar.", "isCorrect": false, "rationale": "Os jovens continuam sendo os donos e executores da ideia." },
+        { "text": "Passagens aéreas para viagens de lazer fora do Brasil.", "isCorrect": false, "rationale": "O foco é o desenvolvimento no território cearense." },
+        { "text": "Isenção vitalícia de todos os impostos estaduais.", "isCorrect": false, "rationale": "O benefício é focado no apoio ao projeto e formação." }
+      ]
+    }
+  ]
+}

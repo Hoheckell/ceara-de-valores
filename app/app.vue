@@ -2,6 +2,7 @@
 <script setup>
 import trilhaDois from './content/trilha2.json';
 import trilhaUm from './content/trilha1.json';
+import projetoData from './content/projetos.json';
 import { ref, computed, watch } from 'vue';
 import municipiosCeara from './content/municipios.json';
 const mostrarSugestoes = ref(false);
@@ -16,6 +17,11 @@ const sugestoesFiltradas = computed(() => {
     )
   ).slice(0, 5); // Mostra apenas as 5 primeiras para não tapar o ecrã
 });
+
+const abrirQuizProjetos = () => {
+  selectedTrilha.value = null;
+  prepararEIniciarQuiz(projetoData);
+};
 
 const selecionarMunicipio = (nome) => {
   userData.value.municipio = nome;
@@ -65,29 +71,30 @@ const shuffleArray = (array) => {
   return array;
 };
 
-const selectAula = (aula) => {
-  // 1. Criamos uma cópia profunda para não alterar o JSON original permanentemente
-  const quizClone = JSON.parse(JSON.stringify(aula));
+// 2. FUNÇÃO CORE: Prepara qualquer quiz (Trilha ou Projetos)
+const prepararEIniciarQuiz = (quizData) => {
+  // Deep clone para não sujar o JSON original
+  const quizClone = JSON.parse(JSON.stringify(quizData));
 
-  // 2. Embaralhar as opções de CADA pergunta
+  // Shuffle das opções de cada pergunta
   quizClone.questions.forEach(pergunta => {
     pergunta.options = shuffleArray(pergunta.options);
   });
 
-  // 3. Opcional: Embaralhar a ordem das próprias perguntas também? 
-  // Se quiser, descomente a linha abaixo:
-  // quizClone.questions = shuffleArray(quizClone.questions);
-
-  // 4. Atribuir ao estado do App
+  // Reset de estados globais do quiz
   currentQuiz.value = quizClone;
-
-  // Reiniciar estados do quiz
   currentIndex.value = 0;
   score.value = 0;
   isAnswered.value = false;
   selectedOption.value = null;
+  jaRespondeu.value = false; // Reset da trava de duplicidade para nova checagem
 
+  // Encaminha para o registro/identificação
   step.value = 'register';
+};
+
+const selectAula = (aula) => {
+  repararEIniciarQuiz(aula);
 };
 
 // 3. Valida o registro e inicia o quiz
@@ -222,32 +229,51 @@ watch(() => userData.value.cpf, (newValue) => {
     cpfError.value = validarCPF(v) ? '' : 'CPF Inválido';
   }
 });
+const linkPDFProjetos = "/arquivos/orientacoes-projetos.pdf"; // Substitua pelo link real
+
 const resultadoFinal = computed(() => {
   const percentual = (score.value / currentQuiz.value.questions.length) * 100;
+  const isProjeto = currentQuiz.value.id === 99;
 
+  // Lógica Especial para Projetos (ID 99)
+  if (isProjeto && percentual < 75) {
+    return {
+      titulo: "Atenção aos Detalhes! 🧐",
+      mensagem: `Oi, ${userData.value.nome}! Para submeter seu projeto com segurança, é vital conhecer todas as regras. Sua pontuação foi de ${percentual.toFixed(0)}%, o que é um pouco baixo. Recomendo baixar o PDF abaixo, dar uma lida e tentar o quiz de novo!`,
+      cor: "text-red-600",
+      icon: "📑",
+      badge: "Revisão Necessária",
+      showPDF: true
+    };
+  }
+
+  // Lógica padrão para Trilhas (ou Projetos com sucesso)
   if (percentual === 100) {
     return {
-      titulo: "Maluco, tu é arretado!",
-      mensagem: "Acertou tudo! Você provou que conhece nossos valores como ninguém. O Ceará tem orgulho de ter um protagonista como você!",
+      titulo: "Maluco, tu é brabo!",
+      mensagem: "Acertou tudo! Você provou que conhece nossos valores como ninguém.",
       cor: "text-orange-600",
       icon: "🏆",
-      badge: "Protagonista Diamante"
+      badge: "Protagonista Diamante",
+      showPDF: isProjeto // Mostra o PDF mesmo se acertar tudo em projetos
     };
   } else if (percentual >= 70) {
     return {
       titulo: "Mandou bem demais!",
-      mensagem: "Sua caminhada na trilha está sendo brilhante. Você já compreende a força da nossa gente e dos nossos direitos.",
+      mensagem: "Sua caminhada na trilha está sendo brilhante. Continue assim!",
       cor: "text-blue-600",
       icon: "🌟",
-      badge: "Cidadão Consciente"
+      badge: "Cidadão Consciente",
+      showPDF: isProjeto
     };
   } else {
     return {
       titulo: "Valeu o aprendizado!",
-      mensagem: "O caminho se faz caminhando. O importante é que você não parou e buscou o conhecimento. Vamos para a próxima?",
+      mensagem: "O caminho se faz caminhando. Que tal revisar o conteúdo e tentar outra vez?",
       cor: "text-slate-600",
       icon: "🌱",
-      badge: "Aprendiz de Valores"
+      badge: "Aprendiz de Valores",
+      showPDF: isProjeto
     };
   }
 });
@@ -258,22 +284,29 @@ const compartilharResultado = () => {
 };
 const verificarRespostaExistente = async () => {
   if (userData.value.cpf.length < 14) return;
+  if (!currentQuiz.value) return;
 
   carregandoVerificacao.value = true;
-  const { data, error } = await supabase
-    .from('respostas_quizzes')
-    .select('pontuacao, total_questoes')
-    .eq('cpf', userData.value.cpf)
-    .eq('trilha_id', selectedTrilha.value.id)
-    .eq('aula_id', currentQuiz.value.id)
-    .maybeSingle(); // Retorna um objeto ou nulo
 
-  carregandoVerificacao.value = false;
+  try {
+    // Lógica resiliente: se não houver trilha (caso de Projetos), ID é 99
+    const trilhaId = selectedTrilha.value ? selectedTrilha.value.id : 99;
 
-  if (data) {
-    jaRespondeu.value = true;
-  } else {
-    jaRespondeu.value = false;
+    const { data, error } = await supabase
+      .from('respostas_quizzes')
+      .select('pontuacao')
+      .eq('cpf', userData.value.cpf)
+      .eq('trilha_id', trilhaId)
+      .eq('aula_id', currentQuiz.value.id)
+      .maybeSingle();
+
+    if (error) throw error;
+    jaRespondeu.value = !!data;
+
+  } catch (err) {
+    console.error("Erro na verificação:", err.message);
+  } finally {
+    carregandoVerificacao.value = false;
   }
 };
 
@@ -301,7 +334,7 @@ src="https://cearadevalores.com.br/wp-content/uploads/2025/09/cropped-estrela-e1
 
     <main class="max-w-2xl mx-auto p-4">
 
-      <div v-if="step === 'trilha-selection'" class="space-y-6">
+      <div v-if="step === 'trilha-selection'" class="space-y-8">
         <div class="text-center py-4">
           <h2 class="text-2xl font-black text-blue-900">Revisão de Trilhas</h2>
           <p class="text-slate-500">Selecione uma trilha para começar</p>
@@ -319,6 +352,37 @@ v-for="trilha in todasAsTrilhas" :key="trilha.id"
             </div>
           </button>
         </div>
+        <section class="space-y-4">
+          <h2 class="text-sm font-black text-slate-400 uppercase tracking-widest ml-1">Trilhas de Formação</h2>
+          <div class="grid gap-4" />
+        </section>
+
+        <section class="space-y-4">
+          <h2 class="text-sm font-black text-slate-400 uppercase tracking-widest ml-1">Módulo Especial</h2>
+          <button
+            class="w-full relative overflow-hidden bg-gradient-to-r from-blue-900 to-indigo-900 p-6 rounded-2xl shadow-xl border-b-4 border-blue-950 flex items-center gap-5 group transition-all active:scale-[0.98]"
+            @click="abrirQuizProjetos">
+            <div class="bg-white/10 p-4 rounded-xl text-4xl group-hover:rotate-12 transition-transform">
+              🚀
+            </div>
+            <div class="text-left">
+              <h3 class="font-black text-white text-xl">Guia de Projetos</h3>
+              <p class="text-blue-200 text-xs leading-tight mt-1">
+                Aprenda a submeter sua ideia e concorrer a fomentos de até R$ 15 mil.
+              </p>
+            </div>
+            <div
+              class="absolute right-0 top-0 bg-yellow-400 text-blue-900 text-[10px] font-black px-3 py-1 rounded-bl-xl shadow-md">
+              DICAS DE OURO
+            </div>
+          </button>
+          <a
+href="/arquivos/orientacoes-projetos.pdf" target="_blank"
+            class="flex items-center justify-center gap-2 w-full py-3 bg-white border-2 border-dashed border-slate-200 rounded-xl text-blue-700 text-xs font-bold hover:bg-blue-50 hover:border-blue-200 transition-all">
+            <span>📖</span>
+            <span>Ler PDF de Orientações sobre projetos antes de começar</span>
+          </a>
+        </section>
       </div>
 
       <div v-else-if="step === 'home'" class="space-y-4">
@@ -408,7 +472,7 @@ v-model="userData.cpf" type="text" maxlength="14"
               <span v-if="userData.cpf?.length === 14 && !cpfError" class="absolute right-4 top-4 text-green-500">
                 ✅
               </span>
-              <div v-if="carregandoVerificacao" class="absolute right-4 top-4 animate-spin text-blue-500">
+              <div v-if="carregandoVerificacao" class="absolute right-10 top-4 animate-spin text-blue-500">
                 ⌛
               </div>
             </div>
@@ -520,6 +584,19 @@ v-if="isAnswered"
             <p class="text-slate-600 leading-relaxed mb-8">
               {{ userData.nome }}, {{ resultadoFinal.mensagem }}
             </p>
+
+            <div v-if="resultadoFinal.showPDF" class="mb-8">
+              <a
+:href="linkPDFProjetos" target="_blank"
+                class="inline-flex items-center gap-3 bg-red-50 text-red-700 border-2 border-red-100 px-6 py-4 rounded-2xl font-black hover:bg-red-100 transition-all w-full justify-center">
+                <span class="text-2xl">📕</span>
+                <div class="text-left">
+                  <p class="text-xs uppercase opacity-70">Material de Estudo</p>
+                  <p>BAIXAR ORIENTAÇÕES (PDF)</p>
+                </div>
+              </a>
+              <p class="text-[10px] text-slate-400 mt-2 italic">Estude o PDF para garantir sua aprovação no edital!</p>
+            </div>
 
             <div class="space-y-3">
               <button
