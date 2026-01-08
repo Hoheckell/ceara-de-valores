@@ -123,14 +123,20 @@ const startQuiz = () => {
 
 // Lógica do botão Voltar refinada
 const goBack = () => {
-  if (step.value === 'home') step.value = 'trilha-selection';
-  else if (step.value === 'register') step.value = 'home';
-  else if (step.value === 'quiz') {
-    if (confirm("Deseja mesmo sair? Seu progresso atual será perdido.")) {
+  if (step.value === 'home') {
+    step.value = 'trilha-selection';
+  } else if (step.value === 'register') {
+    // Se for projeto, volta para a seleção de trilhas. Se for aula, volta para a lista de aulas.
+    if (currentQuiz.value?.id === 99) {
+      step.value = 'trilha-selection';
+    } else {
       step.value = 'home';
     }
+  } else if (step.value === 'quiz') {
+    if (confirm("Deseja mesmo sair?")) step.value = 'home';
+  } else if (step.value === 'results') {
+    step.value = 'trilha-selection';
   }
-  else if (step.value === 'results') step.value = 'home';
 };
 // --- FUNÇÕES DE LÓGICA DO QUIZ ---
 
@@ -387,7 +393,9 @@ href="/arquivos/orientacoes-projetos.pdf" target="_blank"
 
       <div v-else-if="step === 'home'" class="space-y-4">
         <h2 class="font-black text-xl text-slate-800 flex items-center gap-2">
-          <span>{{ selectedTrilha.icon }}</span> {{ selectedTrilha.nome }}
+          <span v-if="step === 'quiz'" class="text-xs bg-blue-600 px-2 py-1 rounded">
+            {{ selectedTrilha?.icon || '🚀' }} | {{ userData.nome }}
+          </span>
         </h2>
         <div class="grid gap-3">
           <button
