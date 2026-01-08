@@ -1,0 +1,553 @@
+{
+  "trilha": 1,
+  "titulo": "Competências Socioemocionais",
+  "aulas": [
+    {
+      "id": 1,
+      "titulo": "Autoconhecimento",
+      "questions": [
+        {
+          "text": "Baseado no conteúdo da aula 1, o que significa o processo de autoconhecimento?",
+          "options": [
+            { "text": "Identificar nossas potências, limites, emoções e valores para guiar nossas escolhas.", "isCorrect": true, "rationale": "O autoconhecimento é a base para o desenvolvimento pessoal e protagonismo." },
+            { "text": "Apenas saber do que gostamos de comer ou vestir.", "isCorrect": false, "rationale": "É um processo profundo de compreensão da própria identidade e emoções." },
+            { "text": "Comparar nossas vidas com as de outras pessoas nas redes sociais.", "isCorrect": false, "rationale": "Autoconhecimento é um olhar para dentro, não para a grama do vizinho." },
+            { "text": "Ignorar nossos defeitos para focar apenas no que é bom.", "isCorrect": false, "rationale": "Envolve reconhecer vulnerabilidades para transformá-las." }
+          ],
+          "hint": "Olhar para o espelho interno."
+        },
+        {
+          "text": "Como a aula 1 define a relação entre 'quem eu sou' e o meu papel na sociedade?",
+          "options": [
+            { "text": "Conhecer a si mesmo é o primeiro passo para contribuir de forma única para o coletivo.", "isCorrect": true, "rationale": "Sua identidade autêntica é sua maior ferramenta de transformação social." },
+            { "text": "Não há relação, pois o indivíduo deve se anular pelo grupo.", "isCorrect": false, "rationale": "O grupo se fortalece através da diversidade de identidades fortes." },
+            { "text": "O papel social é definido apenas pelo governo ou pela família.", "isCorrect": false, "rationale": "Você é o autor do seu papel social a partir do que descobre sobre si." },
+            { "text": "A sociedade não se importa com quem somos, apenas com o que produzimos.", "isCorrect": false, "rationale": "A aula reforça que valores e essência são fundamentais para a cidadania." }
+          ]
+        },
+        {
+          "text": "O que é a 'Janela de Johari' mencionada na aula de autoconhecimento?",
+          "options": [
+            { "text": "Uma ferramenta que ajuda a entender o que conhecemos sobre nós e o que os outros percebem.", "isCorrect": true, "rationale": "Divide o eu em áreas: aberta, cega, oculta e desconhecida." },
+            { "text": "Um tipo de teste de personalidade para definir profissões.", "isCorrect": false, "rationale": "É um modelo de comunicação e percepção interpessoal." },
+            { "text": "Uma técnica de meditação para iniciantes.", "isCorrect": false, "rationale": "É um exercício analítico sobre percepção e feedback." },
+            { "text": "Um aplicativo de organização de tarefas.", "isCorrect": false, "rationale": "Foca na interação humana e autopercepção." }
+          ]
+        },
+        {
+          "text": "Baseado na aula 1, por que identificar nossas 'vulnerabilidades' é importante?",
+          "options": [
+            { "text": "Porque ao aceitá-las, podemos buscar apoio e transformá-las em pontos de aprendizado.", "isCorrect": true, "rationale": "A vulnerabilidade não é fraqueza, mas coragem de ser real." },
+            { "text": "Para provar que não somos capazes de realizar grandes projetos.", "isCorrect": false, "rationale": "Pelo contrário, reconhecer limites ajuda a planejar melhor o sucesso." },
+            { "text": "Para nos sentirmos inferiores aos outros colegas.", "isCorrect": false, "rationale": "O objetivo é o crescimento, nunca a diminuição da autoestima." },
+            { "text": "Não é importante; devemos esconder as falhas de todos.", "isCorrect": false, "rationale": "Ocultar falhas gera estresse e impede o desenvolvimento real." }
+          ]
+        },
+        {
+          "text": "Qual o impacto do autoconhecimento na tomada de decisões de um jovem?",
+          "options": [
+            { "text": "Permite escolhas mais alinhadas com seus valores pessoais e propósitos de vida.", "isCorrect": true, "rationale": "Decidir com base em quem você é evita arrependimentos futuros." },
+            { "text": "Torna as decisões mais difíceis e demoradas.", "isCorrect": false, "rationale": "Embora exija reflexão, traz clareza e segurança no longo prazo." },
+            { "text": "Faz com que o jovem pare de ouvir a opinião de mentores e professores.", "isCorrect": false, "rationale": "Aumenta a capacidade de filtrar conselhos que realmente fazem sentido." },
+            { "text": "Garante que o jovem nunca cometerá erros em sua trajetória.", "isCorrect": false, "rationale": "Erros continuarão existindo, mas serão vistos como aprendizados." }
+          ]
+        },
+        {
+          "text": "O que a aula 1 sugere como exercício diário de autoconhecimento?",
+          "options": [
+            { "text": "Refletir sobre as emoções sentidas durante o dia e o que as causou.", "isCorrect": true, "rationale": "A auto-observação constante gera consciência emocional." },
+            { "text": "Assistir a vídeos de influenciadores para copiar suas rotinas.", "isCorrect": false, "rationale": "Autoconhecimento foca na sua própria rotina e sentimentos." },
+            { "text": "Tirar fotos em frente ao espelho todos os dias.", "isCorrect": false, "rationale": "É uma reflexão sobre o conteúdo interno, não apenas a imagem física." },
+            { "text": "Focar apenas nos erros que os outros cometeram conosco.", "isCorrect": false, "rationale": "Foca na nossa reação e responsabilidade sobre nossas emoções." }
+          ]
+        },
+        {
+          "text": "Como o autoconhecimento ajuda a lidar com a pressão social?",
+          "options": [
+            { "text": "Ao saber quem você é, fica mais fácil dizer 'não' ao que não combina com seus valores.", "isCorrect": true, "rationale": "Cria uma barreira protetora contra comportamentos de manada nocivos." },
+            { "text": "Faz com que você se isole e pare de conviver com as pessoas.", "isCorrect": false, "rationale": "Melhora a qualidade das convivências, pois são baseadas na verdade." },
+            { "text": "Dando ao jovem o direito de ser grosseiro com quem discorda dele.", "isCorrect": false, "rationale": "Gera assertividade, que é firmeza com respeito." },
+            { "text": "Eliminando qualquer desejo de ser aceito pelos outros.", "isCorrect": false, "rationale": "O desejo de aceitação é humano, mas deixa de ser a única bússola." }
+          ]
+        },
+        {
+          "text": "Qual a relação entre autoconhecimento e o 'Ceará de Valores'?",
+          "options": [
+            { "text": "Valorizar quem somos é o primeiro passo para valorizar nossa terra e nossa cultura.", "isCorrect": true, "rationale": "A identidade individual e a territorial caminham juntas no projeto." },
+            { "text": "Nenhuma, o curso foca apenas em habilidades profissionais.", "isCorrect": false, "rationale": "As competências socioemocionais são o pilar de toda a trilha." },
+            { "text": "O curso serve para mudar quem você é para algo 'melhor'.", "isCorrect": false, "rationale": "O curso serve para você descobrir a potência que já existe em você." },
+            { "text": "Serve apenas para preencher o formulário de perfil do aluno.", "isCorrect": false, "rationale": "É uma jornada de transformação que atravessa todas as aulas." }
+          ]
+        }
+      ]
+    },
+    {
+      "id": 2,
+      "titulo": "Inteligência Emocional",
+      "questions": [
+        {
+          "text": "Baseado no conteúdo da aula 2, o que é Inteligência Emocional?",
+          "options": [
+            { "text": "Capacidade de reconhecer, entender e gerenciar nossas próprias emoções e as dos outros.", "isCorrect": true, "rationale": "Envolve autopercepção e regulação emocional nas relações." },
+            { "text": "Habilidade de nunca sentir raiva ou tristeza em situações difíceis.", "isCorrect": false, "rationale": "Sentir é humano; a inteligência está em como reagimos ao que sentimos." },
+            { "text": "Técnica para manipular as pessoas e conseguir o que queremos.", "isCorrect": false, "rationale": "A inteligência emocional foca na ética, empatia e saúde das relações." },
+            { "text": "Ter um QI (Quociente de Inteligência) muito elevado em matemática.", "isCorrect": false, "rationale": "Inteligência emocional (QE) é diferente de habilidades cognitivas lógicas (QI)." }
+          ]
+        },
+        {
+          "text": "O que significa 'autorregulação' emocional conforme a aula 2?",
+          "options": [
+            { "text": "Pausar antes de reagir impulsivamente, escolhendo a melhor resposta para a situação.", "isCorrect": true, "rationale": "É o controle sobre os impulsos emocionais imediatos." },
+            { "text": "Engolir o choro e fingir que nada está acontecendo.", "isCorrect": false, "rationale": "Reprimir não é regular; autorregulação envolve processar o sentimento." },
+            { "text": "Falar tudo o que vem à cabeça no momento da raiva para desabafar.", "isCorrect": false, "rationale": "Isso é falta de controle, o oposto da autorregulação." },
+            { "text": "Depender de outras pessoas para se acalmar sempre.", "isCorrect": false, "rationale": "Envolve desenvolver ferramentas internas de equilíbrio." }
+          ]
+        },
+        {
+          "text": "Segundo a aula 2, qual a importância da empatia na Inteligência Emocional?",
+          "options": [
+            { "text": "Permite compreender a perspectiva do outro, fortalecendo a colaboração e os vínculos.", "isCorrect": true, "rationale": "Empatia é um pilar social da inteligência emocional." },
+            { "text": "Serve para concordar com tudo o que as pessoas dizem para evitar conflitos.", "isCorrect": false, "rationale": "Você pode ser empático e ainda assim ter uma opinião diferente." },
+            { "text": "É uma forma de sentir pena das pessoas em situações de vulnerabilidade.", "isCorrect": false, "rationale": "Empatia é sobre conexão e entendimento, não sobre piedade ou superioridade." },
+            { "text": "Não é necessária, pois cada um deve cuidar apenas das suas emoções.", "isCorrect": false, "rationale": "Ninguém cresce sozinho; as relações saudáveis exigem empatia." }
+          ]
+        },
+        {
+          "text": "O que é o 'sequestro da amígdala' mencionado na aula de emoções?",
+          "options": [
+            { "text": "Uma reação instintiva e intensa onde a emoção domina a razão completamente.", "isCorrect": true, "rationale": "Ocorre em momentos de estresse agudo, 'perdemos a cabeça'." },
+            { "text": "Um termo médico para uma cirurgia na garganta.", "isCorrect": false, "rationale": "A amígdala aqui refere-se ao sistema límbico no cérebro." },
+            { "text": "Quando alguém nos obriga a mudar de opinião à força.", "isCorrect": false, "rationale": "É um processo biológico interno de reação ao medo ou raiva." },
+            { "text": "Uma técnica de persuasão usada em vendas.", "isCorrect": false, "rationale": "É uma resposta de sobrevivência descontrolada." }
+          ]
+        },
+        {
+          "text": "Como a Inteligência Emocional ajuda no ambiente de trabalho ou escola?",
+          "options": [
+            { "text": "Melhora a gestão de conflitos, a comunicação e o trabalho em equipe.", "isCorrect": true, "rationale": "Ambientes emocionalmente inteligentes são mais produtivos e saudáveis." },
+            { "text": "Garante que você nunca será criticado por professores ou chefes.", "isCorrect": false, "rationale": "Ajuda a receber críticas de forma construtiva, sem levar para o lado pessoal." },
+            { "text": "Faz com que as tarefas técnicas se tornem fáceis instantaneamente.", "isCorrect": false, "rationale": "Facilita o foco e a persistência, mas não substitui o estudo técnico." },
+            { "text": "Permite que você trabalhe menos, pois todos serão seus amigos.", "isCorrect": false, "rationale": "Foca no respeito e profissionalismo, não em privilégios." }
+          ]
+        },
+        {
+          "text": "Na aula 2, o que é recomendado fazer ao sentir uma emoção negativa forte?",
+          "options": [
+            { "text": "Nomear a emoção ('estou com raiva') e respirar fundo para recuperar a lógica.", "isCorrect": true, "rationale": "Dar nome à emoção ajuda o cérebro racional a retomar o controle." },
+            { "text": "Procurar imediatamente alguém para culpar pelo que você sente.", "isCorrect": false, "rationale": "Nossas emoções são nossa responsabilidade, mesmo que gatilhadas por outros." },
+            { "text": "Postar uma indireta nas redes sociais para aliviar a tensão.", "isCorrect": false, "rationale": "Isso geralmente amplia o problema e gera mais conflito." },
+            { "text": "Tentar esquecer o que sentiu fazendo outra coisa bem rápido.", "isCorrect": false, "rationale": "Ignorar a emoção faz com que ela retorne com mais força depois." }
+          ]
+        },
+        {
+          "text": "Qual o papel da 'motivação' dentro da inteligência emocional?",
+          "options": [
+            { "text": "Manter o foco em metas de longo prazo, mesmo diante de frustrações temporárias.", "isCorrect": true, "rationale": "A automotivação é essencial para a resiliência e o sucesso." },
+            { "text": "Esperar que alguém venha nos dar ânimo todos os dias.", "isCorrect": false, "rationale": "Envolve encontrar razões internas para continuar agindo." },
+            { "text": "Estar sempre feliz e sorrindo, independentemente do que aconteça.", "isCorrect": false, "rationale": "Motivação é persistência, não felicidade constante." },
+            { "text": "Fazer apenas o que gera prazer imediato.", "isCorrect": false, "rationale": "Inteligência emocional envolve adiar a gratificação pelo bem maior." }
+          ]
+        },
+        {
+          "text": "Como a cultura cearense pode ser um exemplo de inteligência emocional?",
+          "options": [
+            { "text": "No nosso bom humor e resiliência, que nos ajudam a enfrentar as secas e dificuldades da vida.", "isCorrect": true, "rationale": "O riso e a união são estratégias emocionais de sobrevivência do nosso povo." },
+            { "text": "Apenas na culinária, que é muito saborosa.", "isCorrect": false, "rationale": "Refere-se ao comportamento e à força psicológica coletiva." },
+            { "text": "No fato de sermos um povo que não aceita regras.", "isCorrect": false, "rationale": "Refere-se à capacidade de adaptação e superação criativa." },
+            { "text": "Não há ligação entre cultura e inteligência emocional.", "isCorrect": false, "rationale": "A cultura molda como expressamos e regulamos nossos sentimentos." }
+          ]
+        }
+      ]
+    },
+    {
+      "id": 3,
+      "titulo": "Comunicação Assertiva",
+      "questions": [
+        {
+          "text": "Baseado na aula 3, o que define a comunicação assertiva?",
+          "options": [
+            { "text": "Expressar seus pensamentos e necessidades de forma clara, direta e respeitosa.", "isCorrect": true, "rationale": "É o equilíbrio entre a passividade e a agressividade." },
+            { "text": "Dizer tudo o que se pensa, sem se importar se vai ferir os sentimentos alheios.", "isCorrect": false, "rationale": "Isso é comunicação agressiva, não assertiva." },
+            { "text": "Concordar com os outros para evitar discussões e ser aceito no grupo.", "isCorrect": false, "rationale": "Isso é comunicação passiva, onde você anula suas necessidades." },
+            { "text": "Falar baixo e usar palavras complicadas para parecer inteligente.", "isCorrect": false, "rationale": "Assertividade foca na clareza e eficiência da mensagem, não no vocabulário difícil." }
+          ]
+        },
+        {
+          "text": "Qual a principal diferença entre agressividade e assertividade?",
+          "options": [
+            { "text": "A assertividade foca no problema e no respeito; a agressividade ataca a pessoa.", "isCorrect": true, "rationale": "Assertividade busca soluções; agressividade busca culpados ou domínio." },
+            { "text": "Não há diferença, ambas servem para impor nossa vontade.", "isCorrect": false, "rationale": "A assertividade busca o ganha-ganha, a agressividade busca vencer o outro." },
+            { "text": "A agressividade é mais rápida para conseguir resultados imediatos.", "isCorrect": false, "rationale": "Agressividade gera medo e ressentimento, destruindo relações no longo prazo." },
+            { "text": "Pessoas assertivas nunca ficam bravas.", "isCorrect": false, "rationale": "Elas sentem raiva, mas escolhem expressá-la de forma construtiva." }
+          ]
+        },
+        {
+          "text": "O que é a 'Comunicação Não-Violenta' (CNV) abordada na aula 3?",
+          "options": [
+            { "text": "Uma técnica baseada em Observação, Sentimento, Necessidade e Pedido.", "isCorrect": true, "rationale": "Estrutura a fala para reduzir defesas no outro e gerar conexão." },
+            { "text": "Uma regra que proíbe o uso de gírias nas aulas do Ceará de Valores.", "isCorrect": false, "rationale": "CNV foca na estrutura da intenção, não na formalidade da língua." },
+            { "text": "Falar apenas coisas positivas, ignorando os problemas reais.", "isCorrect": false, "rationale": "CNV serve justamente para falar de problemas difíceis com segurança." },
+            { "text": "Um tipo de linguagem de sinais para inclusão.", "isCorrect": false, "rationale": "É uma abordagem de comunicação empática para todos os contextos." }
+          ]
+        },
+        {
+          "text": "Por que a 'escuta ativa' é parte da comunicação assertiva?",
+          "options": [
+            { "text": "Porque para comunicar bem, é preciso entender verdadeiramente o que o outro está dizendo.", "isCorrect": true, "rationale": "Comunicação é uma via de mão dupla de entendimento mútuo." },
+            { "text": "Para descobrir os pontos fracos do outro e usar na argumentação.", "isCorrect": false, "rationale": "A escuta ativa busca conexão, não vantagem estratégica." },
+            { "text": "Serve para mostrar que você é educado, mesmo que não se importe com o assunto.", "isCorrect": false, "rationale": "Exige presença real e interesse genuíno na mensagem alheia." },
+            { "text": "Para poder interromper a pessoa no momento exato em que ela errar.", "isCorrect": false, "rationale": "Escuta ativa envolve não interromper e validar o que foi dito." }
+          ]
+        },
+        {
+          "text": "Como dar um feedback assertivo segundo o conteúdo da aula 3?",
+          "options": [
+            { "text": "Descrevendo o comportamento observado e o impacto dele, em vez de rotular a pessoa.", "isCorrect": true, "rationale": "Falar do 'fato' evita que a pessoa se sinta atacada pessoalmente." },
+            { "text": "Dando o feedback na frente de todos para servir de exemplo.", "isCorrect": false, "rationale": "Feedbacks corretivos devem ser feitos em particular para respeitar a pessoa." },
+            { "text": "Esperando meses até que você tenha muitos erros para listar de uma vez.", "isCorrect": false, "rationale": "O feedback deve ser oportuno e próximo ao evento para ser eficaz." },
+            { "text": "Usando ironia para que a pessoa perceba o erro de forma leve.", "isCorrect": false, "rationale": "Ironia é uma forma de agressão passiva e gera confusão." }
+          ]
+        },
+        {
+          "text": "Qual o papel do 'não' na comunicação assertiva?",
+          "options": [
+            { "text": "É um direito de estabelecer limites saudáveis para proteger seu tempo e valores.", "isCorrect": true, "rationale": "Dizer 'não' de forma respeitosa é fundamental para a saúde mental." },
+            { "text": "Dizer 'não' é falta de educação com quem quer nos ajudar.", "isCorrect": false, "rationale": "Você pode ajudar os outros, mas não às custas do seu próprio bem-estar." },
+            { "text": "Deve ser usado o tempo todo para mostrar poder sobre os outros.", "isCorrect": false, "rationale": "Assertividade busca o equilíbrio, não o domínio." },
+            { "text": "O 'não' só deve ser usado se você tiver uma desculpa mentirosa convincente.", "isCorrect": false, "rationale": "A assertividade baseia-se na honestidade e transparência." }
+          ]
+        },
+        {
+          "text": "Como a linguagem corporal influencia a assertividade?",
+          "options": [
+            { "text": "Postura aberta, contato visual e tom de voz calmo reforçam a segurança da mensagem.", "isCorrect": true, "rationale": "O corpo comunica tanto ou mais do que as palavras." },
+            { "text": "Não influencia, pois o que importa é apenas o que está escrito no papel.", "isCorrect": false, "rationale": "Incoerência entre fala e corpo gera desconfiança no ouvinte." },
+            { "text": "Devemos gesticular muito e falar alto para intimidar o interlocutor.", "isCorrect": false, "rationale": "Isso é agressividade física, que fecha os canais de diálogo." },
+            { "text": "O ideal é ficar de braços cruzados para mostrar autoridade.", "isCorrect": false, "rationale": "Braços cruzados costumam sinalizar fechamento ou defesa." }
+          ]
+        },
+        {
+          "text": "Como a comunicação assertiva ajuda nos projetos comunitários do Ceará de Valores?",
+          "options": [
+            { "text": "Facilita a negociação com parceiros e a união da equipe em torno de um objetivo comum.", "isCorrect": true, "rationale": "Liderança e execução dependem de diálogos claros e sem ruídos." },
+            { "text": "Garante que sua ideia seja sempre a escolhida pelo grupo.", "isCorrect": false, "rationale": "Ajuda a expor sua ideia, mas também a ouvir e integrar as ideias dos outros." },
+            { "text": "Evita que você tenha que ouvir reclamações da comunidade.", "isCorrect": false, "rationale": "Ajuda a ouvir as reclamações de forma construtiva para criar soluções." },
+            { "text": "Torna o projeto imune a críticas externas.", "isCorrect": false, "rationale": "Ajuda a responder críticas com elegância e profissionalismo." }
+          ]
+        }
+      ]
+    },
+    {
+      "id": 4,
+      "titulo": "Resiliência",
+      "questions": [
+        {
+          "text": "Baseado na aula 4, o que é resiliência?",
+          "options": [
+            { "text": "A capacidade de passar por dificuldades e retornar ao seu equilíbrio, aprendendo com o processo.", "isCorrect": true, "rationale": "É a 'elasticidade' emocional diante da pressão." },
+            { "text": "Ser uma pessoa fria que não se abala com absolutamente nada.", "isCorrect": false, "rationale": "Resiliência envolve sentir a dor, mas saber atravessá-la." },
+            { "text": "Ignorar os problemas e fingir que eles não existem até que passem.", "isCorrect": false, "rationale": "Fuga não é resiliência; resiliência exige enfrentamento consciente." },
+            { "text": "Aceitar injustiças sem nunca reclamar ou lutar contra elas.", "isCorrect": false, "rationale": "Resiliência não é passividade; é força para continuar lutando." }
+          ]
+        },
+        {
+          "text": "Qual a metáfora usada para resiliência na aula 4?",
+          "options": [
+            { "text": "O bambu, que se curva com o vento forte, mas não quebra e volta a ficar em pé.", "isCorrect": true, "rationale": "Simboliza flexibilidade aliada à força." },
+            { "text": "O vidro, que é duro e resistente até que se quebra em mil pedaços.", "isCorrect": false, "rationale": "O vidro é frágil porque é rígido demais." },
+            { "text": "A pedra, que permanece imóvel independentemente do tempo.", "isCorrect": false, "rationale": "Imobilidade não é resiliência, adaptação sim." },
+            { "text": "O fogo, que consome tudo o que vê pela frente.", "isCorrect": false, "rationale": "Resiliência é sobre restauração e preservação do ser." }
+          ]
+        },
+        {
+          "text": "Como desenvolver resiliência no dia a dia acadêmico ou profissional?",
+          "options": [
+            { "text": "Enxergando os erros como oportunidades de aprendizado e não como fracassos definitivos.", "isCorrect": true, "rationale": "Mudar o 'mindset' sobre o erro é a chave da resiliência." },
+            { "text": "Dormindo pouco e trabalhando o dobro para não ter tempo de pensar nos problemas.", "isCorrect": false, "rationale": "Cuidar da saúde física e mental é base para ser resiliente." },
+            { "text": "Evitando qualquer desafio que pareça difícil demais para não se frustrar.", "isCorrect": false, "rationale": "Enfrentar desafios moderados é o que 'treina' nossa resiliência." },
+            { "text": "Fazendo tudo sozinho para não se decepcionar com os outros.", "isCorrect": false, "rationale": "Ter uma rede de apoio é um dos maiores pilares da resiliência." }
+          ]
+        },
+        {
+          "text": "Qual o papel do 'otimismo realista' na resiliência?",
+          "options": [
+            { "text": "Acreditar que as coisas podem melhorar, mas reconhecer os obstáculos reais no caminho.", "isCorrect": true, "rationale": "Diferencia-se da positividade tóxica que nega a realidade." },
+            { "text": "Acreditar que tudo vai dar certo sem precisar fazer nenhum esforço.", "isCorrect": false, "rationale": "Isso é ilusão, não otimismo realista." },
+            { "text": "Focar apenas no que pode dar errado para estar preparado para o pior.", "isCorrect": false, "rationale": "Isso é pessimismo, que drena a energia necessária para agir." },
+            { "text": "Esperar que a sorte resolva os problemas por nós.", "isCorrect": false, "rationale": "O otimismo resiliente é focado na nossa capacidade de ação." }
+          ]
+        },
+        {
+          "text": "Por que a 'rede de apoio' é importante para uma pessoa resiliente?",
+          "options": [
+            { "text": "Porque compartilhar o peso das dificuldades torna a superação mais rápida e humana.", "isCorrect": true, "rationale": "Resiliência não significa ser um herói solitário." },
+            { "text": "Para ter alguém para culpar quando as coisas não saírem como o esperado.", "isCorrect": false, "rationale": "Apoio serve para fortalecimento, não para transferência de responsabilidade." },
+            { "text": "Para que os outros façam as tarefas difíceis no nosso lugar.", "isCorrect": false, "rationale": "Rede de apoio oferece suporte emocional e troca de saberes." },
+            { "text": "Para provar que somos populares e queridos nas redes sociais.", "isCorrect": false, "rationale": "Rede de apoio real envolve vínculos profundos e presença." }
+          ]
+        },
+        {
+          "text": "O que a aula 4 ensina sobre 'flexibilidade cognitiva'?",
+          "options": [
+            { "text": "Habilidade de mudar a estratégia ou o pensamento quando os fatos mudam.", "isCorrect": true, "rationale": "Rígidos quebram; flexíveis se adaptam e prosperam." },
+            { "text": "Capacidade de decorar muitos assuntos diferentes ao mesmo tempo.", "isCorrect": false, "rationale": "Refere-se à adaptação mental, não à memorização." },
+            { "text": "Ficar mudando de opinião apenas para agradar quem está por perto.", "isCorrect": false, "rationale": "Flexibilidade é inteligência, não falta de caráter ou valores." },
+            { "text": "Esquecer os compromissos marcados para não se estressar.", "isCorrect": false, "rationale": "Flexibilidade exige responsabilidade com o novo cenário." }
+          ]
+        },
+        {
+          "text": "Qual a relação entre resiliência e saúde mental?",
+          "options": [
+            { "text": "Pessoas resilientes gerenciam melhor o estresse, prevenindo o esgotamento (burnout).", "isCorrect": true, "rationale": "A resiliência protege a mente contra danos severos de longo prazo." },
+            { "text": "Quem é resiliente nunca precisa de terapia ou ajuda psicológica.", "isCorrect": false, "rationale": "Pedir ajuda profissional é, muitas vezes, um ato de resiliência e autoconhecimento." },
+            { "text": "Saúde mental é algo genético e a resiliência não pode mudá-la.", "isCorrect": false, "rationale": "Resiliência é uma habilidade que pode ser treinada e fortalecida." },
+            { "text": "A resiliência causa estresse, pois obriga a pessoa a ser forte sempre.", "isCorrect": false, "rationale": "A verdadeira resiliência inclui o direito ao descanso e à vulnerabilidade." }
+          ]
+        },
+        {
+          "text": "Como o povo cearense demonstra resiliência histórica na aula 4?",
+          "options": [
+            { "text": "Na capacidade de se reinventar, migrar se necessário e florescer onde há escassez.", "isCorrect": true, "rationale": "O sertanejo é, antes de tudo, um forte (como disse Euclides da Cunha)." },
+            { "text": "Apenas por morar em um lugar com muito sol.", "isCorrect": false, "rationale": "Resiliência é a resposta cultural e psicológica às condições do meio." },
+            { "text": "Pelo fato de nunca sair do estado para trabalhar fora.", "isCorrect": false, "rationale": "A migração e o retorno também são marcas da nossa resiliência e laços." },
+            { "text": "Não há exemplos de resiliência na nossa história regional.", "isCorrect": false, "rationale": "Nossa história é um dos maiores exemplos de superação do país." }
+          ]
+        }
+      ]
+    },
+    {
+      "id": 5,
+      "titulo": "Empatia e Colaboração",
+      "questions": [
+        {
+          "text": "Baseado na aula 5, qual a definição mais completa de empatia?",
+          "options": [
+            { "text": "Tentar compreender o mundo através dos olhos, valores e dores do outro.", "isCorrect": true, "rationale": "É uma tentativa de conexão profunda, sem julgamentos imediatos." },
+            { "text": "Sentir a mesma dor que o outro, ficando tão triste quanto ele.", "isCorrect": false, "rationale": "Isso pode levar ao esgotamento; empatia é compreensão, não contágio paralisante." },
+            { "text": "Dar conselhos rápidos baseados no que VOCÊ faria na situação.", "isCorrect": false, "rationale": "Empatia envolve ouvir antes de sugerir, respeitando a realidade alheia." },
+            { "text": "Ser uma pessoa boazinha que nunca diz não para ninguém.", "isCorrect": false, "rationale": "Você pode ser empático e manter seus limites firmes." }
+          ]
+        },
+        {
+          "text": "Qual a diferença entre simpatia e empatia abordada na aula 5?",
+          "options": [
+            { "text": "Simpatia é ser cordial; empatia é buscar conexão e entendimento profundo.", "isCorrect": true, "rationale": "Empatia exige vulnerabilidade e presença real." },
+            { "text": "Simpatia é para amigos e empatia é apenas para desconhecidos.", "isCorrect": false, "rationale": "Ambas podem ser aplicadas em qualquer relação, com profundidades diferentes." },
+            { "text": "Não há diferença, são sinônimos perfeitos.", "isCorrect": false, "rationale": "A simpatia muitas vezes tenta 'animar' o outro sem validar a dor dele." },
+            { "text": "Empatia é mais fácil de praticar do que a simpatia.", "isCorrect": false, "rationale": "Empatia exige esforço mental e suspensão de julgamentos." }
+          ]
+        },
+        {
+          "text": "Por que a empatia é o motor da colaboração?",
+          "options": [
+            { "text": "Ao entender as necessidades do colega, criamos soluções que beneficiam a todos.", "isCorrect": true, "rationale": "A cooperação real nasce da confiança e do entendimento mútuo." },
+            { "text": "Porque obriga as pessoas a fazerem o que nós queremos por educação.", "isCorrect": false, "rationale": "Colaboração não é imposição; é construção conjunta." },
+            { "text": "Serve para evitar que tenhamos que trabalhar muito em grupo.", "isCorrect": false, "rationale": "Empatia torna o trabalho em grupo mais rico e intenso." },
+            { "text": "A empatia faz com que todos pensem exatamente da mesma forma.", "isCorrect": false, "rationale": "Empatia valoriza a diversidade de pensamentos." }
+          ]
+        },
+        {
+          "text": "O que é o 'vieses inconscientes' que dificultam a empatia?",
+          "options": [
+            { "text": "Pré-julgamentos automáticos que nosso cérebro faz sobre pessoas diferentes de nós.", "isCorrect": true, "rationale": "Reconhecer vieses é o primeiro passo para praticar a empatia real." },
+            { "text": "Problemas de visão que impedem de ver as pessoas corretamente.", "isCorrect": false, "rationale": "São 'vieses' mentais e sociais, não físicos." },
+            { "text": "Um tipo de óculos especial para o curso Ceará de Valores.", "isCorrect": false, "rationale": "É uma metáfora para nossos preconceitos ocultos." },
+            { "text": "A vontade de ajudar apenas quem é da nossa família.", "isCorrect": false, "rationale": "Vieses podem nos afastar de pessoas por cor, origem ou classe." }
+          ]
+        },
+        {
+          "text": "Na aula 5, como a colaboração se diferencia da competição?",
+          "options": [
+            { "text": "Na colaboração, o sucesso de um contribui para o sucesso do grupo todo.", "isCorrect": true, "rationale": "É a lógica do ganha-ganha e da inteligência coletiva." },
+            { "text": "Na colaboração, ninguém precisa se esforçar muito.", "isCorrect": false, "rationale": "Exige esforço coordenado e responsabilidade individual." },
+            { "text": "A competição é sempre melhor para o crescimento do Ceará.", "isCorrect": false, "rationale": "A colaboração tem maior impacto social e sustentável." },
+            { "text": "Não há diferença, pois o objetivo final é sempre o mesmo.", "isCorrect": false, "rationale": "O processo colaborativo foca no vínculo e no bem comum." }
+          ]
+        },
+        {
+          "text": "Qual a importância da diversidade para a colaboração?",
+          "options": [
+            { "text": "Diferentes perspectivas geram soluções mais inovadoras e completas.", "isCorrect": true, "rationale": "Grupos diversos resolvem problemas complexos de forma mais eficaz." },
+            { "text": "A diversidade dificulta o trabalho e deve ser evitada.", "isCorrect": false, "rationale": "Embora exija mais diálogo, os resultados são superiores." },
+            { "text": "Serve apenas para cumprir cotas sociais do governo.", "isCorrect": false, "rationale": "É um valor estratégico para a criatividade e justiça social." },
+            { "text": "Faz com que os projetos demorem mais tempo para serem concluídos.", "isCorrect": false, "rationale": "O tempo investido em ouvir vozes diferentes traz segurança ao resultado." }
+          ]
+        },
+        {
+          "text": "Como praticar a empatia em um conflito de opiniões?",
+          "options": [
+            { "text": "Fazendo perguntas para entender o porquê daquela opinião, antes de discordar.", "isCorrect": true, "rationale": "A curiosidade genuína abre portas que o julgamento fecha." },
+            { "text": "Provando que você está certo usando dados lógicos o tempo todo.", "isCorrect": false, "rationale": "Ter razão é diferente de ter conexão e entendimento." },
+            { "text": "Ignorando a pessoa até que ela mude de ideia sozinha.", "isCorrect": false, "rationale": "O silêncio punitivo é o oposto da prática empática." },
+            { "text": "Pedindo para uma terceira pessoa decidir quem tem razão.", "isCorrect": false, "rationale": "Envolve a disposição direta de escutar o ponto de vista alheio." }
+          ]
+        },
+        {
+          "text": "O que o Ceará de Valores entende por 'trabalho em rede'?",
+          "options": [
+            { "text": "Conectar jovens de diferentes cidades para fortalecer causas comuns no estado.", "isCorrect": true, "rationale": "A rede é uma estrutura de apoio e amplificação de impacto." },
+            { "text": "Trabalhar apenas pela internet, sem encontros presenciais.", "isCorrect": false, "rationale": "Rede refere-se à estrutura de conexão, não apenas à tecnologia." },
+            { "text": "Um sistema para distribuir prêmios apenas para os melhores alunos.", "isCorrect": false, "rationale": "O foco é a colaboração mútua e crescimento coletivo." },
+            { "text": "Ficar postando fotos do curso o dia todo nas redes sociais.", "isCorrect": false, "rationale": "Engajamento digital é consequência, não o objetivo da rede." }
+          ]
+        }
+      ]
+    },
+    {
+      "id": 6,
+      "titulo": "Projeto de Vida",
+      "questions": [
+        {
+          "text": "Baseado na aula 6, o que é um Projeto de Vida?",
+          "options": [
+            { "text": "Um plano dinâmico que une sonhos, valores e ações concretas para o futuro.", "isCorrect": true, "rationale": "É a ponte entre quem você é hoje e quem deseja ser." },
+            { "text": "Uma lista de compras de coisas que quero ter quando ficar rico.", "isCorrect": false, "rationale": "Projeto de vida envolve ser e contribuir, não apenas ter." },
+            { "text": "Um destino fixo que não pode mudar nunca mais.", "isCorrect": false, "rationale": "Deve ser revisto e adaptado conforme você cresce e o mundo muda." },
+            { "text": "Seguir a profissão que os pais escolheram para garantir estabilidade.", "isCorrect": false, "rationale": "Exige protagonismo e autoria nas próprias escolhas." }
+          ]
+        },
+        {
+          "text": "Qual a primeira etapa para construir um projeto de vida sólido?",
+          "options": [
+            { "text": "O autoconhecimento: entender o que te move e quais são seus talentos.", "isCorrect": true, "rationale": "Não se planeja o futuro sem saber quem é o autor do plano." },
+            { "text": "Pedir um empréstimo no banco para começar um negócio.", "isCorrect": false, "rationale": "O planejamento financeiro vem depois da clareza de propósito." },
+            { "text": "Pesquisar quais são as profissões que pagam melhor no momento.", "isCorrect": false, "rationale": "O mercado é importante, mas o sentido pessoal é o que sustenta a jornada." },
+            { "text": "Comprar uma agenda nova e canetas coloridas.", "isCorrect": false, "rationale": "Ferramentas são úteis, mas a clareza mental é o fundamental." }
+          ]
+        },
+        {
+          "text": "O que são metas 'SMART' mencionadas na aula 6?",
+          "options": [
+            { "text": "Metas que são Específicas, Mensuráveis, Atingíveis, Relevantes e com Prazo.", "isCorrect": true, "rationale": "Tornam o sonho algo prático e monitorável." },
+            { "text": "Metas que dependem apenas da sorte ou de outras pessoas.", "isCorrect": false, "rationale": "Focam na autonomia e no controle do próprio esforço." },
+            { "text": "Metas muito grandes que levam décadas para serem realizadas.", "isCorrect": false, "rationale": "Podem ser de curto, médio ou longo prazo." },
+            { "text": "Um tipo de inteligência artificial para planejar o futuro.", "isCorrect": false, "rationale": "É uma sigla em inglês para critérios de planejamento humano." }
+          ]
+        },
+        {
+          "text": "Por que é importante equilibrar as dimensões pessoal, social e profissional no projeto?",
+          "options": [
+            { "text": "Para garantir uma vida íntegra, onde o sucesso não custe a sua saúde ou valores.", "isCorrect": true, "rationale": "O bem-estar depende do equilíbrio entre essas áreas." },
+            { "text": "Porque o governo exige que todos os jovens tenham um plano triplo.", "isCorrect": false, "rationale": "É uma necessidade humana de realização plena." },
+            { "text": "Para poder impressionar diferentes tipos de pessoas em entrevistas.", "isCorrect": false, "rationale": "O foco é a satisfação interna e impacto real, não a imagem externa." },
+            { "text": "Não é importante; deve-se focar apenas na dimensão profissional.", "isCorrect": false, "rationale": "O sucesso profissional isolado costuma gerar vazio existencial." }
+          ]
+        },
+        {
+          "text": "Qual o papel do 'protagonismo' no Projeto de Vida?",
+          "options": [
+            { "text": "Assumir a liderança da própria história, sendo autor das escolhas e responsável pelos resultados.", "isCorrect": true, "rationale": "Ser protagonista é sair do banco do passageiro e assumir o volante." },
+            { "text": "Achar que você é melhor que os outros e não precisa de ajuda.", "isCorrect": false, "rationale": "Protagonismo envolve colaboração e reconhecimento de rede." },
+            { "text": "Culpar a sorte ou o governo quando as metas não são atingidas.", "isCorrect": false, "rationale": "Protagonismo foca no que EU posso fazer diante das circunstâncias." },
+            { "text": "Ser o centro das atenções em todos os eventos sociais.", "isCorrect": false, "rationale": "Protagonismo é sobre ação e responsabilidade, não sobre fama." }
+          ]
+        },
+        {
+          "text": "Como lidar com a frustração quando um plano não dá certo?",
+          "options": [
+            { "text": "Analisar o que falhou, aprender a lição e ajustar a rota do projeto.", "isCorrect": true, "rationale": "O erro faz parte do processo de refinamento do projeto de vida." },
+            { "text": "Desistir de tudo e aceitar que você não nasceu para o sucesso.", "isCorrect": false, "rationale": "Resiliência é necessária para manter o projeto vivo." },
+            { "text": "Fingir que o plano nunca existiu para não passar vergonha.", "isCorrect": false, "rationale": "Assumir a trajetória com honestidade fortalece o caráter." },
+            { "text": "Ficar insistindo no mesmo erro repetidamente por teimosia.", "isCorrect": false, "rationale": "Projeto de vida exige flexibilidade para mudar a estratégia." }
+          ]
+        },
+        {
+          "text": "O que é o 'Ikigai' abordado na aula de propósito?",
+          "options": [
+            { "text": "A intersecção entre o que você ama, o que você faz bem, o que o mundo precisa e o que você pode ser pago para fazer.", "isCorrect": true, "rationale": "Conceito japonês para encontrar sua 'razão de ser'." },
+            { "text": "Uma técnica de artes marciais para defesa pessoal.", "isCorrect": false, "rationale": "É uma ferramenta de reflexão sobre carreira e sentido de vida." },
+            { "text": "Um tipo de comida típica para comemorar metas atingidas.", "isCorrect": false, "rationale": "Não é gastronomia, é filosofia de planejamento pessoal." },
+            { "text": "O nome de um município famoso do interior do Ceará.", "isCorrect": false, "rationale": "É um termo de origem japonesa usado globalmente no coaching." }
+          ]
+        },
+        {
+          "text": "Como o projeto de vida se conecta à cidadania no Ceará de Valores?",
+          "options": [
+            { "text": "Seu crescimento pessoal deve caminhar junto com o desejo de ver sua comunidade crescer também.", "isCorrect": true, "rationale": "Projetos de vida potentes geram impactos sociais positivos ao redor." },
+            { "text": "Ao ficar rico, você deve se mudar do Ceará imediatamente.", "isCorrect": false, "rationale": "O curso incentiva o desenvolvimento do nosso território." },
+            { "text": "A cidadania é algo que você faz apenas no tempo livre, fora do projeto de vida.", "isCorrect": false, "rationale": "A cidadania deve estar no centro dos valores do seu projeto." },
+            { "text": "Não há conexão, pois o projeto de vida é algo puramente egoísta.", "isCorrect": false, "rationale": "O sentido de vida muitas vezes vem de servir e contribuir com o outro." }
+          ]
+        }
+      ]
+    },
+    {
+      "id": 7,
+      "titulo": "Ética e Valores",
+      "questions": [
+        {
+          "text": "Baseado na aula 7, qual a diferença entre ética e moral?",
+          "options": [
+            { "text": "Moral são as regras de conduta de um grupo; ética é a reflexão crítica sobre essas regras.", "isCorrect": true, "rationale": "Ética é o 'porquê' fazemos o que fazemos, buscando o bem comum." },
+            { "text": "Não há diferença, são palavras que significam exatamente a mesma coisa.", "isCorrect": false, "rationale": "Embora ligadas, a ética é o campo da filosofia e a moral é a prática social." },
+            { "text": "Ética é para políticos e moral é para pessoas religiosas.", "isCorrect": false, "rationale": "Ambas atravessam a vida de qualquer cidadão em sociedade." },
+            { "text": "Moral é o que é certo e ética é o que é legal perante a lei.", "isCorrect": false, "rationale": "Nem tudo que é moral é legal, e vice-versa; a ética reflete sobre a justiça." }
+          ]
+        },
+        {
+          "text": "O que significa agir com 'integridade' conforme a aula 7?",
+          "options": [
+            { "text": "Manter a coerência entre seus valores, sua fala e sua ação, mesmo quando ninguém está olhando.", "isCorrect": true, "rationale": "Integridade é ser 'inteiro', sem divisões entre o público e o privado." },
+            { "text": "Ser uma pessoa que nunca comete erros técnicos no trabalho.", "isCorrect": false, "rationale": "Refere-se ao caráter e à honestidade, não à perfeição técnica." },
+            { "text": "Fazer apenas o que é melhor para si mesmo em todas as situações.", "isCorrect": false, "rationale": "A integridade considera o impacto das ações no coletivo." },
+            { "text": "Seguir as regras apenas quando houver fiscalização por perto.", "isCorrect": false, "rationale": "Isso é medo da punição, não integridade ou ética real." }
+          ]
+        },
+        {
+          "text": "Qual o principal critério para uma 'decisão ética'?",
+          "options": [
+            { "text": "Ela deve ser boa para mim, boa para o outro e boa para o todo (sociedade/natureza).", "isCorrect": true, "rationale": "É a lógica da sustentabilidade e do respeito universal." },
+            { "text": "Ela deve gerar o maior lucro financeiro possível no menor tempo.", "isCorrect": false, "rationale": "O lucro nunca deve estar acima da dignidade humana ou da ética." },
+            { "text": "Ela deve ser aprovada pela maioria das pessoas nas redes sociais.", "isCorrect": false, "rationale": "A ética pode exigir ir contra a maioria se a maioria estiver sendo injusta." },
+            { "text": "Ela deve ser a mais fácil de ser executada, evitando conflitos.", "isCorrect": false, "rationale": "Decisões éticas podem ser difíceis e exigir coragem." }
+          ]
+        },
+        {
+          "text": "O que é 'alteridade' e por que ela é central na ética?",
+          "options": [
+            { "text": "O reconhecimento do outro como alguém diferente de mim, mas com a mesma dignidade.", "isCorrect": true, "rationale": "Sem reconhecer o outro, não há base para a convivência ética." },
+            { "text": "A vontade de mudar o outro para que ele pense igual a você.", "isCorrect": false, "rationale": "Alteridade é respeito à diferença, não busca pela igualdade forçada." },
+            { "text": "Um tipo de ginástica para fortalecer o corpo.", "isCorrect": false, "rationale": "É um conceito filosófico sobre a relação com o próximo." },
+            { "text": "A capacidade de ignorar as opiniões alheias.", "isCorrect": false, "rationale": "Envolve levar em conta a existência e os direitos do outro." }
+          ]
+        },
+        {
+          "text": "Como a ética se manifesta no uso das redes sociais?",
+          "options": [
+            { "text": "Não espalhando fake news e respeitando a privacidade e a imagem alheia.", "isCorrect": true, "rationale": "O ambiente digital exige a mesma ética do mundo físico." },
+            { "text": "Comentando em todos os posts para ganhar seguidores.", "isCorrect": false, "rationale": "Quantidade de interação não mede ética." },
+            { "text": "Criando perfis falsos para criticar políticos sem ser identificado.", "isCorrect": false, "rationale": "O anonimato para ataques é uma prática antiética." },
+            { "text": "Compartilhando apenas fotos bonitas e ignorando a realidade.", "isCorrect": false, "rationale": "Ética envolve honestidade e transparência na comunicação." }
+          ]
+        },
+        {
+          "text": "Qual a relação entre ética e cidadania?",
+          "options": [
+            { "text": "A ética fornece os valores que orientam a prática da cidadania consciente.", "isCorrect": true, "rationale": "Um cidadão ético busca o bem comum e a justiça social." },
+            { "text": "Não há relação; cidadania é apenas cumprir leis e pagar impostos.", "isCorrect": false, "rationale": "Cidadania sem ética torna-se apenas burocracia sem alma." },
+            { "text": "Ética é algo individual e cidadania é algo do governo.", "isCorrect": false, "rationale": "Ambas são dimensões da convivência humana em sociedade." },
+            { "text": "A cidadania dispensa a ética se houver leis muito rígidas.", "isCorrect": false, "rationale": "As leis dependem da ética da população para serem respeitadas e justas." }
+          ]
+        },
+        {
+          "text": "O que significa 'ética do cuidado' abordada no Ceará de Valores?",
+          "options": [
+            { "text": "Zelar pelo bem-estar das pessoas, do ambiente e do patrimônio público.", "isCorrect": true, "rationale": "Cuidar é um ato político e ético de preservação da vida." },
+            { "text": "Cuidar apenas de quem pode nos dar algum benefício em troca.", "isCorrect": false, "rationale": "Ética do cuidado é desinteressada e universal." },
+            { "text": "Ser um fiscal que aponta o erro de todo mundo o tempo todo.", "isCorrect": false, "rationale": "Cuidar envolve acolher, orientar e proteger." },
+            { "text": "Não se envolver em problemas alheios para não se estressar.", "isCorrect": false, "rationale": "Cuidar exige engajamento e responsabilidade com o entorno." }
+          ]
+        },
+        {
+          "text": "Por que a ética é fundamental para um líder jovem em sua comunidade?",
+          "options": [
+            { "text": "Para gerar confiança, credibilidade e garantir que o projeto sirva a todos e não a poucos.", "isCorrect": true, "rationale": "A liderança ética inspira pelo exemplo e pela justiça." },
+            { "text": "Para que ele seja sempre elogiado e nunca questionado.", "isCorrect": false, "rationale": "Líderes éticos estão abertos ao diálogo e à crítica construtiva." },
+            { "text": "Para conseguir verbas do governo mais facilmente através de contatos.", "isCorrect": false, "rationale": "O foco é a transparência e o uso correto dos recursos." },
+            { "text": "Para mostrar que é superior aos outros membros da equipe.", "isCorrect": false, "rationale": "A ética do líder jovem é baseada no serviço e na horizontalidade." }
+          ]
+        }
+      ]
+    }
+  ]
+}
