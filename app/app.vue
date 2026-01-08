@@ -46,7 +46,8 @@ const score = ref(0);
 const selectedOption = ref(null);
 const isAnswered = ref(false);
 
-
+const jaRespondeu = ref(false);
+const carregandoVerificacao = ref(false);
 
 // 1. Escolhe a Trilha e vai para a lista de aulas
 const escolherTrilha = (trilha) => {
@@ -127,7 +128,7 @@ const goBack = () => {
 // --- FUNÇÕES DE LÓGICA DO QUIZ ---
 
 const handleAnswer = (option) => {
-  if (isAnswered.value) return; 
+  if (isAnswered.value) return;
   selectedOption.value = option; // Armazena a referência exata do objeto clicado
   isAnswered.value = true;
   if (option.isCorrect) score.value++;
@@ -255,7 +256,31 @@ const compartilharResultado = () => {
   const url = `https://api.whatsapp.com/send?text=${encodeURIComponent(texto)}`;
   window.open(url, '_blank');
 };
+const verificarRespostaExistente = async () => {
+  if (userData.value.cpf.length < 14) return;
 
+  carregandoVerificacao.value = true;
+  const { data, error } = await supabase
+    .from('respostas_quizzes')
+    .select('pontuacao, total_questoes')
+    .eq('cpf', userData.value.cpf)
+    .eq('trilha_id', selectedTrilha.value.id)
+    .eq('aula_id', currentQuiz.value.id)
+    .maybeSingle(); // Retorna um objeto ou nulo
+
+  carregandoVerificacao.value = false;
+
+  if (data) {
+    jaRespondeu.value = true;
+  } else {
+    jaRespondeu.value = false;
+  }
+};
+
+// Dispara a verificação quando o CPF termina de ser digitado
+watch(() => userData.value.cpf, (val) => {
+  if (val.length === 14) verificarRespostaExistente();
+});
 </script>
 
 <template>
@@ -357,7 +382,21 @@ v-if="userData.municipio && !municipiosCeara.includes(userData.municipio) && use
               * Certifique-se de selecionar uma cidade da lista para validação oficial.
             </p>
           </div>
-          <div class="space-y-1">
+          <transition name="fade">
+            <div
+v-if="jaRespondeu"
+              class="mb-6 p-4 bg-orange-50 border-l-4 border-orange-400 rounded-r-xl flex items-start gap-3">
+              <span class="text-xl">⚠️</span>
+              <div>
+                <p class="text-sm font-black text-orange-800">Você já respondeu este quiz!</p>
+                <p class="text-xs text-orange-700 leading-tight">
+                  Identificamos uma resposta sua para esta aula. Se você continuar, sua **nova pontuação** substituirá
+                  a anterior no sistema.
+                </p>
+              </div>
+            </div>
+          </transition>
+          <div class="space-y-1 relative">
             <label class="text-xs font-black text-slate-400 uppercase ml-1">Seu CPF</label>
             <div class="relative">
               <input
@@ -369,6 +408,9 @@ v-model="userData.cpf" type="text" maxlength="14"
               <span v-if="userData.cpf?.length === 14 && !cpfError" class="absolute right-4 top-4 text-green-500">
                 ✅
               </span>
+              <div v-if="carregandoVerificacao" class="absolute right-4 top-4 animate-spin text-blue-500">
+                ⌛
+              </div>
             </div>
             <p v-if="cpfError" class="text-red-500 text-xs font-bold ml-1 animate-pulse">
               {{ cpfError }}
@@ -393,7 +435,7 @@ v-model="userData.cpf" type="text" maxlength="14"
           <div class="w-full bg-slate-100 h-2 rounded-full overflow-hidden">
             <div
 class="bg-blue-600 h-full transition-all duration-500 ease-out"
-              :style="{ width: ((currentIndex + 1) / currentQuiz.questions.length) * 100 + '%' }"/>
+              :style="{ width: ((currentIndex + 1) / currentQuiz.questions.length) * 100 + '%' }" />
           </div>
         </div>
 
@@ -404,8 +446,8 @@ class="bg-blue-600 h-full transition-all duration-500 ease-out"
 
           <div class="space-y-3">
             <button
-v-for="(opt, idx) in currentQuiz.questions[currentIndex].options" :key="idx"
-              :disabled="isAnswered" class="w-full p-4 rounded-2xl text-left border-2 transition-all duration-200 flex justify-between items-center group"
+v-for="(opt, idx) in currentQuiz.questions[currentIndex].options" :key="idx" :disabled="isAnswered"
+              class="w-full p-4 rounded-2xl text-left border-2 transition-all duration-200 flex justify-between items-center group"
               :class="{
                 // Estado normal (antes de responder)
                 'border-slate-100 bg-slate-50 hover:border-blue-200 hover:bg-white': !isAnswered,
@@ -418,8 +460,7 @@ v-for="(opt, idx) in currentQuiz.questions[currentIndex].options" :key="idx"
 
                 // Opções incorretas que não foram clicadas (ficam foscas)
                 'border-slate-50 opacity-50': isAnswered && !opt.isCorrect && selectedOption !== opt
-              }"
-              @click="handleAnswer(opt)">
+              }" @click="handleAnswer(opt)">
               <div class="flex items-center">
                 <span
                   class="w-6 h-6 flex items-center justify-center rounded-full bg-white/50 text-[10px] font-black mr-3 border border-slate-200">
@@ -446,7 +487,7 @@ v-if="isAnswered"
             </p>
 
             <button
-class="w-full bg-blue-600 text-white font-black py-4 rounded-2xl shadow-lg hover:bg-blue-700 active:scale-95 transition-all"
+              class="w-full bg-blue-600 text-white font-black py-4 rounded-2xl shadow-lg hover:bg-blue-700 active:scale-95 transition-all"
               @click="nextQuestion">
               {{ currentIndex + 1 < currentQuiz.questions.length ? 'PRÓXIMA QUESTÃO' : 'FINALIZAR E SALVAR' }} </button>
           </div>
