@@ -5,6 +5,8 @@ import trilhaUm from './content/trilha1.json';
 import projetoData from './content/projetos.json';
 import { ref, computed, watch } from 'vue';
 import municipiosCeara from './content/municipios.json';
+import ScoreboardSection from './components/ScoreboardSection.vue';
+import ScoreBoard from './components/ScoreBoard.vue';
 const mostrarSugestoes = ref(false);
 
 // Filtra a lista baseada no que o utilizador escreve
@@ -94,7 +96,7 @@ const prepararEIniciarQuiz = (quizData) => {
 };
 
 const selectAula = (aula) => {
-console.log(aula);
+  console.log(aula);
   prepararEIniciarQuiz(aula);
 };
 
@@ -343,8 +345,10 @@ src="https://cearadevalores.com.br/wp-content/uploads/2025/09/cropped-estrela-e1
 
       <div v-if="step === 'trilha-selection'" class="space-y-6">
         <div class="relative w-full h-48 md:h-64 rounded-3xl overflow-hidden shadow-lg mb-8">
-          <img src="/imagens/banner_home.png" class="w-full h-full object-cover object-[center_8%]" alt="Ceará de Valores">
-          <div class="absolute inset-0 bg-gradient-to-t from-blue-900/40 to-transparent"/>
+          <img
+src="/imagens/banner_home.png" class="w-full h-full object-cover object-[center_8%]"
+            alt="Ceará de Valores">
+          <div class="absolute inset-0 bg-gradient-to-t from-blue-900/40 to-transparent" />
         </div>
         <div class="text-center py-4">
           <h2 class="text-2xl font-black text-blue-900">Revisão de Trilhas</h2>
@@ -393,13 +397,21 @@ href="/arquivos/orientacoes-projetos.pdf" target="_blank"
             <span>📖</span>
             <span>Ler PDF de Orientações sobre projetos antes de começar</span>
           </a>
+          <div class="mt-12 mb-8">
+            <h2 class="text-sm font-black text-slate-400 uppercase tracking-widest ml-1 mb-4">
+              🏆 Ranking de Municípios
+            </h2>
+            <ScoreboardSection />
+            <br>
+            <ScoreBoard />
+          </div>
         </section>
       </div>
 
       <div v-else-if="step === 'home'" class="space-y-4">
         <div class="w-full h-48 md:h-64 rounded-2xl overflow-hidden mb-4 relative">
-    <img :src="`/imagens/banner_trilha_${selectedTrilha.id}.png`" class="w-full h-full">
-  </div>
+          <img :src="`/imagens/banner_trilha_${selectedTrilha.id}.png`" class="w-full h-full">
+        </div>
         <h2 class="font-black text-xl text-slate-800 flex items-center gap-2">
           <span v-if="step === 'quiz'" class="text-xs bg-blue-600 px-2 py-1 rounded">
             {{ selectedTrilha?.icon || '🚀' }} | {{ userData.nome }}
