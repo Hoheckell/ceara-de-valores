@@ -94,7 +94,8 @@ const prepararEIniciarQuiz = (quizData) => {
 };
 
 const selectAula = (aula) => {
-  repararEIniciarQuiz(aula);
+console.log(aula);
+  prepararEIniciarQuiz(aula);
 };
 
 // 3. Valida o registro e inicia o quiz
@@ -340,7 +341,11 @@ src="https://cearadevalores.com.br/wp-content/uploads/2025/09/cropped-estrela-e1
 
     <main class="max-w-2xl mx-auto p-4">
 
-      <div v-if="step === 'trilha-selection'" class="space-y-8">
+      <div v-if="step === 'trilha-selection'" class="space-y-6">
+        <div class="relative w-full h-48 md:h-64 rounded-3xl overflow-hidden shadow-lg mb-8">
+          <img src="/imagens/banner_home.png" class="w-full h-full object-cover object-[center_8%]" alt="Ceará de Valores">
+          <div class="absolute inset-0 bg-gradient-to-t from-blue-900/40 to-transparent"/>
+        </div>
         <div class="text-center py-4">
           <h2 class="text-2xl font-black text-blue-900">Revisão de Trilhas</h2>
           <p class="text-slate-500">Selecione uma trilha para começar</p>
@@ -392,6 +397,9 @@ href="/arquivos/orientacoes-projetos.pdf" target="_blank"
       </div>
 
       <div v-else-if="step === 'home'" class="space-y-4">
+        <div class="w-full h-48 md:h-64 rounded-2xl overflow-hidden mb-4 relative">
+    <img :src="`/imagens/banner_trilha_${selectedTrilha.id}.png`" class="w-full h-full">
+  </div>
         <h2 class="font-black text-xl text-slate-800 flex items-center gap-2">
           <span v-if="step === 'quiz'" class="text-xs bg-blue-600 px-2 py-1 rounded">
             {{ selectedTrilha?.icon || '🚀' }} | {{ userData.nome }}

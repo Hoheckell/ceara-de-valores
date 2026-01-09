@@ -6,98 +6,1443 @@
       "id": 1,
       "titulo": "Cidadania e Participação",
       "questions": [
-        { "text": "Baseado no conteúdo da aula 1, como a cidadania é definida além dos documentos?", "options": [{ "text": "Como o ato de pertencer a uma comunidade e participar da vida coletiva.", "isCorrect": true, "rationale": "Cidadania envolve ter voz e assumir responsabilidades no coletivo." }, { "text": "Como o cumprimento de leis sem questionamento.", "isCorrect": false, "rationale": "A cidadania ativa envolve diálogo e crítica." }, { "text": "Como um privilégio de quem tem dinheiro.", "isCorrect": false, "rationale": "Cidadania é um direito e uma prática social." }, { "text": "Como o direito de ignorar os problemas do bairro.", "isCorrect": false, "rationale": "Envolve agir pelo bem comum." }], "hint": "Pense no termo 'participação'." },
-        { "text": "Baseado no conteúdo da aula 1, qual a contradição da Grécia Antiga?", "options": [{ "text": "Excluía mulheres, escravizados e estrangeiros.", "isCorrect": true, "rationale": "Era restrita a homens livres proprietários." }, { "text": "Todos podiam votar igualmente.", "isCorrect": false, "rationale": "O problema era justamente a exclusão." }, { "text": "Não existia política na Grécia.", "isCorrect": false, "rationale": "Foi lá que nasceu a 'Polis'." }, { "text": "Cidadania era dada por sorteio.", "isCorrect": false, "rationale": "Era baseada em status social restrito." }] },
-        { "text": "Baseado no conteúdo da aula 1, o que significa 'Democracia'?", "options": [{ "text": "Poder que emana do povo.", "isCorrect": true, "rationale": "Demos (povo) + Kratos (poder)." }, { "text": "Poder absoluto dos reis.", "isCorrect": false, "rationale": "Isso seria monarquia ou tirania." }, { "text": "Ordem vinda apenas de juízes.", "isCorrect": false, "rationale": "O povo é o soberano." }, { "text": "Decisão feita por empresas.", "isCorrect": false, "rationale": "Democracia é o governo dos cidadãos." }] },
-        { "text": "Na aula 1, como devemos entender o Estado?", "options": [{ "text": "Organização onde as pessoas se comunicam e compartilham diretrizes.", "isCorrect": true, "rationale": "É o espaço organizado das relações políticas." }, { "text": "Apenas um limite de mapa.", "isCorrect": false, "rationale": "Estado é feito de relações humanas organizadas." }, { "text": "Entidade soberana que não ouve o povo.", "isCorrect": false, "rationale": "A aula incentiva a participação no Estado." }, { "text": "Conjunto de prédios isolados.", "isCorrect": false, "rationale": "O Estado somos nós organizados politicamente." }] },
-        { "text": "Segundo a aula 1, qual a relação entre participação e políticas públicas?", "options": [{ "text": "Quanto mais participamos, melhor elas refletem nossas necessidades.", "isCorrect": true, "rationale": "A participação garante que o Estado atenda à realidade." }, { "text": "Especialistas decidem tudo sozinhos.", "isCorrect": false, "rationale": "A participação popular é essencial." }, { "text": "Participação serve só para fiscalizar gastos.", "isCorrect": false, "rationale": "Serve também para influenciar a criação das leis." }, { "text": "Políticas devem ignorar os sonhos dos jovens.", "isCorrect": false, "rationale": "Devem refletir as necessidades e projetos locais." }] },
-        { "text": "O que significa 'a cidadania só tem sentido ser exercida'?", "options": [{ "text": "Não é um título passivo, mas algo que ganha vida na ação.", "isCorrect": true, "rationale": "A prática torna a cidadania transformadora." }, { "text": "Deve-se esperar o fim dos estudos para agir.", "isCorrect": false, "rationale": "Pode e deve ser exercida no presente." }, { "text": "Basta reclamar sem agir.", "isCorrect": false, "rationale": "Exige engajamento real e proposta." }, { "text": "Basta saber a teoria das leis.", "isCorrect": false, "rationale": "O sentido vem do encontro e da prática coletiva." }] },
-        { "text": "Por que o 'Encontro com o Outro' é fundamental na aula 1?", "options": [{ "text": "Porque a cidadania é coletiva e acontece fora da bolha individual.", "isCorrect": true, "rationale": "A mudança ocorre no diálogo e união de vozes." }, { "text": "Porque o outro deve resolver tudo.", "isCorrect": false, "rationale": "Exige participação de cada indivíduo." }, { "text": "Para competirmos por recursos.", "isCorrect": false, "rationale": "O objetivo é o fortalecimento do grupo todo." }, { "text": "Para garantir privilégios individuais.", "isCorrect": false, "rationale": "Foca no equilíbrio do bem comum." }] },
-        { "text": "Quais exemplos práticos de construção de um estado justo?", "options": [{ "text": "Assembleias escolares, defesa do meio ambiente e coletivos.", "isCorrect": true, "rationale": "Ações citadas na aula como exercício real." }, { "text": "Apenas ter o título de eleitor.", "isCorrect": false, "rationale": "Incentiva processos contínuos, não só o voto." }, { "text": "Estudar focado só em si mesmo.", "isCorrect": false, "rationale": "Cidadania envolve enxergar o entorno." }, { "text": "Seguir leis sem questionar.", "isCorrect": false, "rationale": "O cidadão deve ser autor da melhoria da lei." }] }
+        {
+          "text": "Baseado no conteúdo da aula 1, como a cidadania é definida além dos documentos?",
+          "options": [
+            {
+              "text": "Como o ato de pertencer a uma comunidade e participar da vida coletiva.",
+              "isCorrect": true,
+              "rationale": "Cidadania envolve ter voz e assumir responsabilidades no coletivo."
+            },
+            {
+              "text": "Como o cumprimento de leis sem questionamento.",
+              "isCorrect": false,
+              "rationale": "A cidadania ativa envolve diálogo e crítica."
+            },
+            {
+              "text": "Como um privilégio de quem tem dinheiro.",
+              "isCorrect": false,
+              "rationale": "Cidadania é um direito e uma prática social."
+            },
+            {
+              "text": "Como o direito de ignorar os problemas do bairro.",
+              "isCorrect": false,
+              "rationale": "Envolve agir pelo bem comum."
+            }
+          ],
+          "hint": "Pense no termo 'participação'."
+        },
+        {
+          "text": "Baseado no conteúdo da aula 1, qual a contradição da Grécia Antiga?",
+          "options": [
+            {
+              "text": "Excluía mulheres, escravizados e estrangeiros.",
+              "isCorrect": true,
+              "rationale": "Era restrita a homens livres proprietários."
+            },
+            {
+              "text": "Todos podiam votar igualmente.",
+              "isCorrect": false,
+              "rationale": "O problema era justamente a exclusão."
+            },
+            {
+              "text": "Não existia política na Grécia.",
+              "isCorrect": false,
+              "rationale": "Foi lá que nasceu a 'Polis'."
+            },
+            {
+              "text": "Cidadania era dada por sorteio.",
+              "isCorrect": false,
+              "rationale": "Era baseada em status social restrito."
+            }
+          ]
+        },
+        {
+          "text": "Baseado no conteúdo da aula 1, o que significa 'Democracia'?",
+          "options": [
+            {
+              "text": "Poder que emana do povo.",
+              "isCorrect": true,
+              "rationale": "Demos (povo) + Kratos (poder)."
+            },
+            {
+              "text": "Poder absoluto dos reis.",
+              "isCorrect": false,
+              "rationale": "Isso seria monarquia ou tirania."
+            },
+            {
+              "text": "Ordem vinda apenas de juízes.",
+              "isCorrect": false,
+              "rationale": "O povo é o soberano."
+            },
+            {
+              "text": "Decisão feita por empresas.",
+              "isCorrect": false,
+              "rationale": "Democracia é o governo dos cidadãos."
+            }
+          ]
+        },
+        {
+          "text": "Na aula 1, como devemos entender o Estado?",
+          "options": [
+            {
+              "text": "Organização onde as pessoas se comunicam e compartilham diretrizes.",
+              "isCorrect": true,
+              "rationale": "É o espaço organizado das relações políticas."
+            },
+            {
+              "text": "Apenas um limite de mapa.",
+              "isCorrect": false,
+              "rationale": "Estado é feito de relações humanas organizadas."
+            },
+            {
+              "text": "Entidade soberana que não ouve o povo.",
+              "isCorrect": false,
+              "rationale": "A aula incentiva a participação no Estado."
+            },
+            {
+              "text": "Conjunto de prédios isolados.",
+              "isCorrect": false,
+              "rationale": "O Estado somos nós organizados politicamente."
+            }
+          ]
+        },
+        {
+          "text": "Segundo a aula 1, qual a relação entre participação e políticas públicas?",
+          "options": [
+            {
+              "text": "Quanto mais participamos, melhor elas refletem nossas necessidades.",
+              "isCorrect": true,
+              "rationale": "A participação garante que o Estado atenda à realidade."
+            },
+            {
+              "text": "Especialistas decidem tudo sozinhos.",
+              "isCorrect": false,
+              "rationale": "A participação popular é essencial."
+            },
+            {
+              "text": "Participação serve só para fiscalizar gastos.",
+              "isCorrect": false,
+              "rationale": "Serve também para influenciar a criação das leis."
+            },
+            {
+              "text": "Políticas devem ignorar os sonhos dos jovens.",
+              "isCorrect": false,
+              "rationale": "Devem refletir as necessidades e projetos locais."
+            }
+          ]
+        },
+        {
+          "text": "O que significa 'a cidadania só tem sentido ser exercida'?",
+          "options": [
+            {
+              "text": "Não é um título passivo, mas algo que ganha vida na ação.",
+              "isCorrect": true,
+              "rationale": "A prática torna a cidadania transformadora."
+            },
+            {
+              "text": "Deve-se esperar o fim dos estudos para agir.",
+              "isCorrect": false,
+              "rationale": "Pode e deve ser exercida no presente."
+            },
+            {
+              "text": "Basta reclamar sem agir.",
+              "isCorrect": false,
+              "rationale": "Exige engajamento real e proposta."
+            },
+            {
+              "text": "Basta saber a teoria das leis.",
+              "isCorrect": false,
+              "rationale": "O sentido vem do encontro e da prática coletiva."
+            }
+          ]
+        },
+        {
+          "text": "Por que o 'Encontro com o Outro' é fundamental na aula 1?",
+          "options": [
+            {
+              "text": "Porque a cidadania é coletiva e acontece fora da bolha individual.",
+              "isCorrect": true,
+              "rationale": "A mudança ocorre no diálogo e união de vozes."
+            },
+            {
+              "text": "Porque o outro deve resolver tudo.",
+              "isCorrect": false,
+              "rationale": "Exige participação de cada indivíduo."
+            },
+            {
+              "text": "Para competirmos por recursos.",
+              "isCorrect": false,
+              "rationale": "O objetivo é o fortalecimento do grupo todo."
+            },
+            {
+              "text": "Para garantir privilégios individuais.",
+              "isCorrect": false,
+              "rationale": "Foca no equilíbrio do bem comum."
+            }
+          ]
+        },
+        {
+          "text": "Quais exemplos práticos de construção de um estado justo?",
+          "options": [
+            {
+              "text": "Assembleias escolares, defesa do meio ambiente e coletivos.",
+              "isCorrect": true,
+              "rationale": "Ações citadas na aula como exercício real."
+            },
+            {
+              "text": "Apenas ter o título de eleitor.",
+              "isCorrect": false,
+              "rationale": "Incentiva processos contínuos, não só o voto."
+            },
+            {
+              "text": "Estudar focado só em si mesmo.",
+              "isCorrect": false,
+              "rationale": "Cidadania envolve enxergar o entorno."
+            },
+            {
+              "text": "Seguir leis sem questionar.",
+              "isCorrect": false,
+              "rationale": "O cidadão deve ser autor da melhoria da lei."
+            }
+          ]
+        }
       ]
     },
     {
       "id": 2,
       "titulo": "Democracia Viva",
       "questions": [
-        { "text": "Baseado na aula 2, por que a democracia é 'frágil, mas viva'?", "options": [{ "text": "Depende da persistência e do sonho das pessoas comuns.", "isCorrect": true, "rationale": "Democracia é feita de gente e se levanta enquanto houver luta." }, { "text": "Nunca funcionou no Ceará.", "isCorrect": false, "rationale": "Está sendo construída por nós neste momento." }, { "text": "Depende apenas de leis de papel.", "isCorrect": false, "rationale": "Pessoas são o que a mantém pulsando." }, { "text": "Se auto-corrige sozinha.", "isCorrect": false, "rationale": "O futuro dela depende das nossas vozes." }] },
-        { "text": "Para que serve a utopia segundo Galeano (aula 2)?", "options": [{ "text": "Para que o ser humano não pare de caminhar.", "isCorrect": true, "rationale": "Motiva o progresso e a busca constante por melhoria." }, { "text": "Como um plano matemático perfeito.", "isCorrect": false, "rationale": "O valor está no movimento rumo ao sonho." }, { "text": "Para mostrar que mudar o mundo é impossível.", "isCorrect": false, "rationale": "Incentiva a acreditar e agir pelo amanhã." }, { "text": "Para distrair a população.", "isCorrect": false, "rationale": "Impulsiona o engajamento e a exigência por direitos." }] },
-        { "text": "Como a democracia se manifesta individualmente?", "options": [{ "text": "Na escuta ativa e na coragem de mudar de ideia.", "isCorrect": true, "rationale": "Envolve diálogo e respeito básico às diferenças." }, { "text": "No compartilhamento sem verificar fontes.", "isCorrect": false, "rationale": "Exige consciência e responsabilidade na fala." }, { "text": "Na defesa cega da própria opinião.", "isCorrect": false, "rationale": "A democracia floresce no encontro de visões." }, { "text": "Apenas em grandes protestos nas ruas.", "isCorrect": false, "rationale": "Está nos gestos diários de acolhimento." }] },
-        { "text": "O que é o 'Brasil que queremos' citado na música da aula 2?", "options": [{ "text": "Um país onde a participação e a arte escrevem a história.", "isCorrect": true, "rationale": "Arte e política se unem no desejo coletivo." }, { "text": "Apenas um teste de rima escolar.", "isCorrect": false, "rationale": "É uma forma de exercício de cidadania criativa." }, { "text": "Distração dos temas difíceis.", "isCorrect": false, "rationale": "É a própria expressão do sonho democrático." }, { "text": "Um governo sem participação de jovens.", "isCorrect": false, "rationale": "O foco é o protagonismo da nova geração." }] },
-        { "text": "Em quais mãos está o futuro da democracia?", "options": [{ "text": "Nas mãos, vozes e escolhas de cada um de nós hoje.", "isCorrect": true, "rationale": "É uma construção diária pela ação cidadã." }, { "text": "Exclusivamente nos políticos de Brasília.", "isCorrect": false, "rationale": "O cidadão tem papel central no controle social." }, { "text": "Nas mãos de um destino inevitável.", "isCorrect": false, "rationale": "Cada passo nosso escreve o caminho." }, { "text": "Em entidades estrangeiras.", "isCorrect": false, "rationale": "Foco na soberania e protagonismo local." }] },
-        { "text": "O que são 'abraços que curam diferenças' na aula 2?", "options": [{ "text": "A dimensão humana da democracia onde o respeito constrói união.", "isCorrect": true, "rationale": "A base da política é a convivência e a empatia." }, { "text": "Apenas protocolos de governo.", "isCorrect": false, "rationale": "Refere-se à base humana e socioemocional." }, { "text": "Teoria de conflito social.", "isCorrect": false, "rationale": "Foca na prática da paz e do diálogo." }, { "text": "Estratégia para ganhar votos.", "isCorrect": false, "rationale": "É um valor ético de reconhecimento mútuo." }] },
-        { "text": "Qual a principal tarefa do cidadão jovem na democracia?", "options": [{ "text": "Falar, escutar e participar ativamente das decisões locais.", "isCorrect": true, "rationale": "Protagonismo exige presença e voz ativa." }, { "text": "Esperar ser adulto para opinar.", "isCorrect": false, "rationale": "A democracia precisa da energia jovem agora." }, { "text": "Ignorar quem pensa diferente.", "isCorrect": false, "rationale": "O diálogo é o motor da democracia." }, { "text": "Votar apenas por obrigação legal.", "isCorrect": false, "rationale": "Voto é escolha e participação contínua." }] },
-        { "text": "O que sustenta a democracia quando as instituições falham?", "options": [{ "text": "A união e a resistência afetiva das pessoas.", "isCorrect": true, "rationale": "A força popular é a base final de sustentação." }, { "text": "Apenas o exército e as armas.", "isCorrect": false, "rationale": "Democracia é poder civil e diálogo." }, { "text": "O silêncio da população.", "isCorrect": false, "rationale": "A omissão enfraquece a democracia." }, { "text": "O dinheiro das grandes empresas.", "isCorrect": false, "rationale": "A democracia é feita de cidadãos, não de capital." }] }
+        {
+          "text": "Baseado na aula 2, por que a democracia é 'frágil, mas viva'?",
+          "options": [
+            {
+              "text": "Depende da persistência e do sonho das pessoas comuns.",
+              "isCorrect": true,
+              "rationale": "Democracia é feita de gente e se levanta enquanto houver luta."
+            },
+            {
+              "text": "Nunca funcionou no Ceará.",
+              "isCorrect": false,
+              "rationale": "Está sendo construída por nós neste momento."
+            },
+            {
+              "text": "Depende apenas de leis de papel.",
+              "isCorrect": false,
+              "rationale": "Pessoas são o que a mantém pulsando."
+            },
+            {
+              "text": "Se auto-corrige sozinha.",
+              "isCorrect": false,
+              "rationale": "O futuro dela depende das nossas vozes."
+            }
+          ]
+        },
+        {
+          "text": "Para que serve a utopia segundo Galeano (aula 2)?",
+          "options": [
+            {
+              "text": "Para que o ser humano não pare de caminhar.",
+              "isCorrect": true,
+              "rationale": "Motiva o progresso e a busca constante por melhoria."
+            },
+            {
+              "text": "Como um plano matemático perfeito.",
+              "isCorrect": false,
+              "rationale": "O valor está no movimento rumo ao sonho."
+            },
+            {
+              "text": "Para mostrar que mudar o mundo é impossível.",
+              "isCorrect": false,
+              "rationale": "Incentiva a acreditar e agir pelo amanhã."
+            },
+            {
+              "text": "Para distrair a população.",
+              "isCorrect": false,
+              "rationale": "Impulsiona o engajamento e a exigência por direitos."
+            }
+          ]
+        },
+        {
+          "text": "Como a democracia se manifesta individualmente?",
+          "options": [
+            {
+              "text": "Na escuta ativa e na coragem de mudar de ideia.",
+              "isCorrect": true,
+              "rationale": "Envolve diálogo e respeito básico às diferenças."
+            },
+            {
+              "text": "No compartilhamento sem verificar fontes.",
+              "isCorrect": false,
+              "rationale": "Exige consciência e responsabilidade na fala."
+            },
+            {
+              "text": "Na defesa cega da própria opinião.",
+              "isCorrect": false,
+              "rationale": "A democracia floresce no encontro de visões."
+            },
+            {
+              "text": "Apenas em grandes protestos nas ruas.",
+              "isCorrect": false,
+              "rationale": "Está nos gestos diários de acolhimento."
+            }
+          ]
+        },
+        {
+          "text": "O que é o 'Brasil que queremos' citado na música da aula 2?",
+          "options": [
+            {
+              "text": "Um país onde a participação e a arte escrevem a história.",
+              "isCorrect": true,
+              "rationale": "Arte e política se unem no desejo coletivo."
+            },
+            {
+              "text": "Apenas um teste de rima escolar.",
+              "isCorrect": false,
+              "rationale": "É uma forma de exercício de cidadania criativa."
+            },
+            {
+              "text": "Distração dos temas difíceis.",
+              "isCorrect": false,
+              "rationale": "É a própria expressão do sonho democrático."
+            },
+            {
+              "text": "Um governo sem participação de jovens.",
+              "isCorrect": false,
+              "rationale": "O foco é o protagonismo da nova geração."
+            }
+          ]
+        },
+        {
+          "text": "Em quais mãos está o futuro da democracia?",
+          "options": [
+            {
+              "text": "Nas mãos, vozes e escolhas de cada um de nós hoje.",
+              "isCorrect": true,
+              "rationale": "É uma construção diária pela ação cidadã."
+            },
+            {
+              "text": "Exclusivamente nos políticos de Brasília.",
+              "isCorrect": false,
+              "rationale": "O cidadão tem papel central no controle social."
+            },
+            {
+              "text": "Nas mãos de um destino inevitável.",
+              "isCorrect": false,
+              "rationale": "Cada passo nosso escreve o caminho."
+            },
+            {
+              "text": "Em entidades estrangeiras.",
+              "isCorrect": false,
+              "rationale": "Foco na soberania e protagonismo local."
+            }
+          ]
+        },
+        {
+          "text": "O que são 'abraços que curam diferenças' na aula 2?",
+          "options": [
+            {
+              "text": "A dimensão humana da democracia onde o respeito constrói união.",
+              "isCorrect": true,
+              "rationale": "A base da política é a convivência e a empatia."
+            },
+            {
+              "text": "Apenas protocolos de governo.",
+              "isCorrect": false,
+              "rationale": "Refere-se à base humana e socioemocional."
+            },
+            {
+              "text": "Teoria de conflito social.",
+              "isCorrect": false,
+              "rationale": "Foca na prática da paz e do diálogo."
+            },
+            {
+              "text": "Estratégia para ganhar votos.",
+              "isCorrect": false,
+              "rationale": "É um valor ético de reconhecimento mútuo."
+            }
+          ]
+        },
+        {
+          "text": "Qual a principal tarefa do cidadão jovem na democracia?",
+          "options": [
+            {
+              "text": "Falar, escutar e participar ativamente das decisões locais.",
+              "isCorrect": true,
+              "rationale": "Protagonismo exige presença e voz ativa."
+            },
+            {
+              "text": "Esperar ser adulto para opinar.",
+              "isCorrect": false,
+              "rationale": "A democracia precisa da energia jovem agora."
+            },
+            {
+              "text": "Ignorar quem pensa diferente.",
+              "isCorrect": false,
+              "rationale": "O diálogo é o motor da democracia."
+            },
+            {
+              "text": "Votar apenas por obrigação legal.",
+              "isCorrect": false,
+              "rationale": "Voto é escolha e participação contínua."
+            }
+          ]
+        },
+        {
+          "text": "O que sustenta a democracia quando as instituições falham?",
+          "options": [
+            {
+              "text": "A união e a resistência afetiva das pessoas.",
+              "isCorrect": true,
+              "rationale": "A força popular é a base final de sustentação."
+            },
+            {
+              "text": "Apenas o exército e as armas.",
+              "isCorrect": false,
+              "rationale": "Democracia é poder civil e diálogo."
+            },
+            {
+              "text": "O silêncio da população.",
+              "isCorrect": false,
+              "rationale": "A omissão enfraquece a democracia."
+            },
+            {
+              "text": "O dinheiro das grandes empresas.",
+              "isCorrect": false,
+              "rationale": "A democracia é feita de cidadãos, não de capital."
+            }
+          ]
+        }
       ]
     },
     {
       "id": 3,
       "titulo": "Direitos Humanos",
       "questions": [
-        { "text": "Baseado na aula 3, o que são os Direitos Humanos na prática?", "options": [{ "text": "Formas de enxergar o outro com dignidade e empatia.", "isCorrect": true, "rationale": "Postura ética de reconhecimento do valor humano." }, { "text": "Regras comerciais para trocas de mercadoria.", "isCorrect": false, "rationale": "Foco na vida e na humanidade." }, { "text": "Privilégio de quem conhece as leis.", "isCorrect": false, "rationale": "São universais e inalienáveis." }, { "text": "Discurso para defesa de criminosos.", "isCorrect": false, "rationale": "Protegem a dignidade de toda pessoa humana." }] },
-        { "text": "Qual a lição dos gregos e romanos citada na aula 3?", "options": [{ "text": "A razão e o direito natural distinguem o humano.", "isCorrect": true, "rationale": "Lançaram bases para a igualdade baseada na razão." }, { "text": "Apenas escravos tinham direitos.", "isCorrect": false, "rationale": "Lutavam pela participação dos homens livres." }, { "text": "Não havia leis sobre dignidade.", "isCorrect": false, "rationale": "Evoluíram para o conceito de jusnaturalismo." }, { "text": "Somente imperadores eram racionais.", "isCorrect": false, "rationale": "A razão era vista como universal aos homens." }] },
-        { "text": "Por que direitos 'florescem da esperança'?", "options": [{ "text": "Porque o sonho de um mundo justo motiva a luta contra a dor.", "isCorrect": true, "rationale": "A esperança é motor da resistência afetiva." }, { "text": "Porque esperar é melhor do que agir.", "isCorrect": false, "rationale": "Esperança na aula é ativa e combatente." }, { "text": "Porque leis surgem do nada.", "isCorrect": false, "rationale": "Surgem da mobilização por dignidade." }, { "text": "Porque a tragédia é ignorada.", "isCorrect": false, "rationale": "Surgem justamente para que a tragédia não se repita." }] },
-        { "text": "O que é esperança para Gonzaguinha e para a aula 3?", "options": [{ "text": "Resistência e acreditar mesmo quando tudo parece ruir.", "isCorrect": true, "rationale": "É uma postura corajosa de luta social." }, { "text": "Otimismo passivo de quem espera o governo.", "isCorrect": false, "rationale": "Diferencia-se da passividade ou inércia." }, { "text": "Certeza de que nada precisa ser feito.", "isCorrect": false, "rationale": "Esperança exige presença e comovência." }, { "text": "Conceito técnico de economia.", "isCorrect": false, "rationale": "É um valor humano e político profundo." }] },
-        { "text": "Qual a verdadeira medida do progresso na aula 3?", "options": [{ "text": "Como a sociedade trata crianças, vulneráveis e florestas.", "isCorrect": true, "rationale": "Sucesso medido pelo cuidado e ética." }, { "text": "O valor do PIB e das exportações.", "isCorrect": false, "rationale": "Progresso econômico sem humanidade é vazio." }, { "text": "O avanço de armas militares.", "isCorrect": false, "rationale": "Progresso real é a paz e a dignidade." }, { "text": "A quantidade de asfalto nas ruas.", "isCorrect": false, "rationale": "Infraestrutura deve servir à vida e aos sonhos." }] },
-        { "text": "O que significa ser 'guardião dos direitos humanos'?", "options": [{ "text": "Transformar indignação em ação comunitária.", "isCorrect": true, "rationale": "Juventude como agente de proteção local." }, { "text": "Vigiar os outros para denunciar erros.", "isCorrect": false, "rationale": "É proteger o vulnerável e promover justiça." }, { "text": "Esperar ordens oficiais para agir.", "isCorrect": false, "rationale": "Exige autonomia e protagonismo no território." }, { "text": "Memorizar a declaração sem praticá-la.", "isCorrect": false, "rationale": "A prática ética é o que define o guardião." }] },
-        { "text": "Como a 'empatia' sustenta a justiça?", "options": [{ "text": "É o motor que nos faz indignar com a dor do outro.", "isCorrect": true, "rationale": "Sem empatia, as leis tornam-se indiferentes." }, { "text": "Empatia impede a punição justa.", "isCorrect": false, "rationale": "Garante que a justiça seja humana e equânime." }, { "text": "Empatia é fraqueza emocional.", "isCorrect": false, "rationale": "É a força que sustenta a solidariedade." }, { "text": "Deve ser evitada em tribunais.", "isCorrect": false, "rationale": "Base da 'constituição da humanidade' citada." }] },
-        { "text": "Por que o futuro precisa de 'pessoas inteiras'?", "options": [{ "text": "Porque a transformação real depende da ética no dia a dia.", "isCorrect": true, "rationale": "Pessoas comuns agindo com humanidade mudam o mundo." }, { "text": "Para que todos virem heróis de cinema.", "isCorrect": false, "rationale": "Foca no cidadão comum com sonhos vivos." }, { "text": "Para ignorar as dores do mundo.", "isCorrect": false, "rationale": "Exige estar presente e sensível ao outro." }, { "text": "Para focar apenas em dados técnicos.", "isCorrect": false, "rationale": "Valoriza o ser humano integral e comovido." }] }
+        {
+          "text": "Baseado na aula 3, o que são os Direitos Humanos na prática?",
+          "options": [
+            {
+              "text": "Formas de enxergar o outro com dignidade e empatia.",
+              "isCorrect": true,
+              "rationale": "Postura ética de reconhecimento do valor humano."
+            },
+            {
+              "text": "Regras comerciais para trocas de mercadoria.",
+              "isCorrect": false,
+              "rationale": "Foco na vida e na humanidade."
+            },
+            {
+              "text": "Privilégio de quem conhece as leis.",
+              "isCorrect": false,
+              "rationale": "São universais e inalienáveis."
+            },
+            {
+              "text": "Discurso para defesa de criminosos.",
+              "isCorrect": false,
+              "rationale": "Protegem a dignidade de toda pessoa humana."
+            }
+          ]
+        },
+        {
+          "text": "Qual a lição dos gregos e romanos citada na aula 3?",
+          "options": [
+            {
+              "text": "A razão e o direito natural distinguem o humano.",
+              "isCorrect": true,
+              "rationale": "Lançaram bases para a igualdade baseada na razão."
+            },
+            {
+              "text": "Apenas escravos tinham direitos.",
+              "isCorrect": false,
+              "rationale": "Lutavam pela participação dos homens livres."
+            },
+            {
+              "text": "Não havia leis sobre dignidade.",
+              "isCorrect": false,
+              "rationale": "Evoluíram para o conceito de jusnaturalismo."
+            },
+            {
+              "text": "Somente imperadores eram racionais.",
+              "isCorrect": false,
+              "rationale": "A razão era vista como universal aos homens."
+            }
+          ]
+        },
+        {
+          "text": "Por que direitos 'florescem da esperança'?",
+          "options": [
+            {
+              "text": "Porque o sonho de um mundo justo motiva a luta contra a dor.",
+              "isCorrect": true,
+              "rationale": "A esperança é motor da resistência afetiva."
+            },
+            {
+              "text": "Porque esperar é melhor do que agir.",
+              "isCorrect": false,
+              "rationale": "Esperança na aula é ativa e combatente."
+            },
+            {
+              "text": "Porque leis surgem do nada.",
+              "isCorrect": false,
+              "rationale": "Surgem da mobilização por dignidade."
+            },
+            {
+              "text": "Porque a tragédia é ignorada.",
+              "isCorrect": false,
+              "rationale": "Surgem justamente para que a tragédia não se repita."
+            }
+          ]
+        },
+        {
+          "text": "O que é esperança para Gonzaguinha e para a aula 3?",
+          "options": [
+            {
+              "text": "Resistência e acreditar mesmo quando tudo parece ruir.",
+              "isCorrect": true,
+              "rationale": "É uma postura corajosa de luta social."
+            },
+            {
+              "text": "Otimismo passivo de quem espera o governo.",
+              "isCorrect": false,
+              "rationale": "Diferencia-se da passividade ou inércia."
+            },
+            {
+              "text": "Certeza de que nada precisa ser feito.",
+              "isCorrect": false,
+              "rationale": "Esperança exige presença e comovência."
+            },
+            {
+              "text": "Conceito técnico de economia.",
+              "isCorrect": false,
+              "rationale": "É um valor humano e político profundo."
+            }
+          ]
+        },
+        {
+          "text": "Qual a verdadeira medida do progresso na aula 3?",
+          "options": [
+            {
+              "text": "Como a sociedade trata crianças, vulneráveis e florestas.",
+              "isCorrect": true,
+              "rationale": "Sucesso medido pelo cuidado e ética."
+            },
+            {
+              "text": "O valor do PIB e das exportações.",
+              "isCorrect": false,
+              "rationale": "Progresso econômico sem humanidade é vazio."
+            },
+            {
+              "text": "O avanço de armas militares.",
+              "isCorrect": false,
+              "rationale": "Progresso real é a paz e a dignidade."
+            },
+            {
+              "text": "A quantidade de asfalto nas ruas.",
+              "isCorrect": false,
+              "rationale": "Infraestrutura deve servir à vida e aos sonhos."
+            }
+          ]
+        },
+        {
+          "text": "O que significa ser 'guardião dos direitos humanos'?",
+          "options": [
+            {
+              "text": "Transformar indignação em ação comunitária.",
+              "isCorrect": true,
+              "rationale": "Juventude como agente de proteção local."
+            },
+            {
+              "text": "Vigiar os outros para denunciar erros.",
+              "isCorrect": false,
+              "rationale": "É proteger o vulnerável e promover justiça."
+            },
+            {
+              "text": "Esperar ordens oficiais para agir.",
+              "isCorrect": false,
+              "rationale": "Exige autonomia e protagonismo no território."
+            },
+            {
+              "text": "Memorizar a declaração sem praticá-la.",
+              "isCorrect": false,
+              "rationale": "A prática ética é o que define o guardião."
+            }
+          ]
+        },
+        {
+          "text": "Como a 'empatia' sustenta a justiça?",
+          "options": [
+            {
+              "text": "É o motor que nos faz indignar com a dor do outro.",
+              "isCorrect": true,
+              "rationale": "Sem empatia, as leis tornam-se indiferentes."
+            },
+            {
+              "text": "Empatia impede a punição justa.",
+              "isCorrect": false,
+              "rationale": "Garante que a justiça seja humana e equânime."
+            },
+            {
+              "text": "Empatia é fraqueza emocional.",
+              "isCorrect": false,
+              "rationale": "É a força que sustenta a solidariedade."
+            },
+            {
+              "text": "Deve ser evitada em tribunais.",
+              "isCorrect": false,
+              "rationale": "Base da 'constituição da humanidade' citada."
+            }
+          ]
+        },
+        {
+          "text": "Por que o futuro precisa de 'pessoas inteiras'?",
+          "options": [
+            {
+              "text": "Porque a transformação real depende da ética no dia a dia.",
+              "isCorrect": true,
+              "rationale": "Pessoas comuns agindo com humanidade mudam o mundo."
+            },
+            {
+              "text": "Para que todos virem heróis de cinema.",
+              "isCorrect": false,
+              "rationale": "Foca no cidadão comum com sonhos vivos."
+            },
+            {
+              "text": "Para ignorar as dores do mundo.",
+              "isCorrect": false,
+              "rationale": "Exige estar presente e sensível ao outro."
+            },
+            {
+              "text": "Para focar apenas em dados técnicos.",
+              "isCorrect": false,
+              "rationale": "Valoriza o ser humano integral e comovido."
+            }
+          ]
+        }
       ]
     },
     {
       "id": 4,
       "titulo": "Juventude e Direitos",
       "questions": [
-        { "text": "Segundo a aula 4, como se define juventude além da idade?", "options": [{ "text": "Período de potência, decisões e construção de identidade.", "isCorrect": true, "rationale": "Envolve descobrir-se como sujeito no mundo." }, { "text": "Fase de espera passiva pela vida adulta.", "isCorrect": false, "rationale": "É tempo de ação e construção imediata." }, { "text": "Período sem capacidade de decisão real.", "isCorrect": false, "rationale": "Cheia de força transformadora e escolhas." }, { "text": "Tempo focado apenas em lazer.", "isCorrect": false, "rationale": "Foca na construção do 'futuro presente'." }] },
-        { "text": "O que são Políticas Públicas na aula 4?", "options": [{ "text": "Ações ou omissões do Estado para garantir direitos.", "isCorrect": true, "rationale": "Resposta governamental aos problemas da sociedade." }, { "text": "Promessas feitas apenas em eleições.", "isCorrect": false, "rationale": "Instrumentos legais de governo para agir." }, { "text": "Regras de conduta individual.", "isCorrect": false, "rationale": "Focam no papel do Estado com o cidadão." }, { "text": "Doações de empresas para caridade.", "isCorrect": false, "rationale": "Refere-se ao investimento do setor público." }] },
-        { "text": "Qual a faixa etária da juventude brasileira?", "options": [{ "text": "15 a 29 anos.", "isCorrect": true, "rationale": "Conforme o Estatuto da Juventude (Lei 12.852/2013)." }, { "text": "12 a 18 anos.", "isCorrect": false, "rationale": "Esta faixa é a do adolescente no ECA." }, { "text": "18 a 25 anos.", "isCorrect": false, "rationale": "A lei estende a garantia até quase os 30 anos." }, { "text": "10 aos 21 anos.", "isCorrect": false, "rationale": "Começa aos 15 conforme legislação específica." }] },
-        { "text": "Qual a importância do Estatuto da Juventude?", "options": [{ "text": "Garante direitos específicos como saúde e trabalho para jovens.", "isCorrect": true, "rationale": "Obriga o Estado a olhar para as necessidades dessa fase." }, { "text": "É um código penal para jovens infratores.", "isCorrect": false, "rationale": "É um pacto de direitos e cidadania." }, { "text": "Guia de orientação exclusiva para pais.", "isCorrect": false, "rationale": "Define a relação entre Estado e jovem cidadão." }, { "text": "Imposta profissões obrigatórias.", "isCorrect": false, "rationale": "Promove autonomia e liberdade de escolha." }] },
-        { "text": "O que significa 'juventude não é promessa'?", "options": [{ "text": "O jovem é potência e força ativa no presente.", "isCorrect": true, "rationale": "O jovem já é importante hoje, não 'será'." }, { "text": "Promessas políticas não valem nada.", "isCorrect": false, "rationale": "Refere-se ao momento da ação transformadora." }, { "text": "Juventude não deve ser levada a sério.", "isCorrect": false, "rationale": "É a própria presença necessária ao mundo." }, { "text": "Não se deve planejar o futuro.", "isCorrect": false, "rationale": "Incentiva agir no presente para construir o amanhã." }] },
-        { "text": "Qual o papel do conhecimento na luta juvenil?", "options": [{ "text": "Dá embasamento para saber pelo que e como lutar.", "isCorrect": true, "rationale": "Conhecer direitos é a base da transformação." }, { "text": "Serve apenas para tirar boas notas.", "isCorrect": false, "rationale": "É ferramenta de libertação e cidadania." }, { "text": "Substitui a ação prática.", "isCorrect": false, "rationale": "O conhecimento fundamenta e impulsiona o agir." }, { "text": "Só se adquire após a faculdade.", "isCorrect": false, "rationale": "Pode ser buscado agora em espaços como este." }] },
-        { "text": "Como os direitos foram conquistados segundo a aula 4?", "options": [{ "text": "Fruto de anos de resistência e organização coletiva.", "isCorrect": true, "rationale": "Nada foi dado de graça; exigiu persistência." }, { "text": "Surgiram sozinhos com o tempo.", "isCorrect": false, "rationale": "Dependeram da luta de pessoas no passado." }, { "text": "Presentes dados por governos bondosos.", "isCorrect": false, "rationale": "São conquistas contra a negação de dignidade." }, { "text": "São fixos e nunca mudam.", "isCorrect": false, "rationale": "Precisam ser defendidos e reafirmados sempre." }] },
-        { "text": "O que é ser 'ativo na transformação'?", "options": [{ "text": "Agir conforme direitos e deveres para mudar a realidade.", "isCorrect": true, "rationale": "Envolve presença consciente no território." }, { "text": "Aceitar tudo o que o governo decide.", "isCorrect": false, "rationale": "Exige senso crítico e proposta de melhoria." }, { "text": "Fugir dos problemas da comunidade.", "isCorrect": false, "rationale": "É enfrentar o que incomoda no local." }, { "text": "Pensar só em si mesmo.", "isCorrect": false, "rationale": "Transformação real é coletiva e solidária." }] }
+        {
+          "text": "Segundo a aula 4, como se define juventude além da idade?",
+          "options": [
+            {
+              "text": "Período de potência, decisões e construção de identidade.",
+              "isCorrect": true,
+              "rationale": "Envolve descobrir-se como sujeito no mundo."
+            },
+            {
+              "text": "Fase de espera passiva pela vida adulta.",
+              "isCorrect": false,
+              "rationale": "É tempo de ação e construção imediata."
+            },
+            {
+              "text": "Período sem capacidade de decisão real.",
+              "isCorrect": false,
+              "rationale": "Cheia de força transformadora e escolhas."
+            },
+            {
+              "text": "Tempo focado apenas em lazer.",
+              "isCorrect": false,
+              "rationale": "Foca na construção do 'futuro presente'."
+            }
+          ]
+        },
+        {
+          "text": "O que são Políticas Públicas na aula 4?",
+          "options": [
+            {
+              "text": "Ações ou omissões do Estado para garantir direitos.",
+              "isCorrect": true,
+              "rationale": "Resposta governamental aos problemas da sociedade."
+            },
+            {
+              "text": "Promessas feitas apenas em eleições.",
+              "isCorrect": false,
+              "rationale": "Instrumentos legais de governo para agir."
+            },
+            {
+              "text": "Regras de conduta individual.",
+              "isCorrect": false,
+              "rationale": "Focam no papel do Estado com o cidadão."
+            },
+            {
+              "text": "Doações de empresas para caridade.",
+              "isCorrect": false,
+              "rationale": "Refere-se ao investimento do setor público."
+            }
+          ]
+        },
+        {
+          "text": "Qual a faixa etária da juventude brasileira?",
+          "options": [
+            {
+              "text": "15 a 29 anos.",
+              "isCorrect": true,
+              "rationale": "Conforme o Estatuto da Juventude (Lei 12.852/2013)."
+            },
+            {
+              "text": "12 a 18 anos.",
+              "isCorrect": false,
+              "rationale": "Esta faixa é a do adolescente no ECA."
+            },
+            {
+              "text": "18 a 25 anos.",
+              "isCorrect": false,
+              "rationale": "A lei estende a garantia até quase os 30 anos."
+            },
+            {
+              "text": "10 aos 21 anos.",
+              "isCorrect": false,
+              "rationale": "Começa aos 15 conforme legislação específica."
+            }
+          ]
+        },
+        {
+          "text": "Qual a importância do Estatuto da Juventude?",
+          "options": [
+            {
+              "text": "Garante direitos específicos como saúde e trabalho para jovens.",
+              "isCorrect": true,
+              "rationale": "Obriga o Estado a olhar para as necessidades dessa fase."
+            },
+            {
+              "text": "É um código penal para jovens infratores.",
+              "isCorrect": false,
+              "rationale": "É um pacto de direitos e cidadania."
+            },
+            {
+              "text": "Guia de orientação exclusiva para pais.",
+              "isCorrect": false,
+              "rationale": "Define a relação entre Estado e jovem cidadão."
+            },
+            {
+              "text": "Imposta profissões obrigatórias.",
+              "isCorrect": false,
+              "rationale": "Promove autonomia e liberdade de escolha."
+            }
+          ]
+        },
+        {
+          "text": "O que significa 'juventude não é promessa'?",
+          "options": [
+            {
+              "text": "O jovem é potência e força ativa no presente.",
+              "isCorrect": true,
+              "rationale": "O jovem já é importante hoje, não 'será'."
+            },
+            {
+              "text": "Promessas políticas não valem nada.",
+              "isCorrect": false,
+              "rationale": "Refere-se ao momento da ação transformadora."
+            },
+            {
+              "text": "Juventude não deve ser levada a sério.",
+              "isCorrect": false,
+              "rationale": "É a própria presença necessária ao mundo."
+            },
+            {
+              "text": "Não se deve planejar o futuro.",
+              "isCorrect": false,
+              "rationale": "Incentiva agir no presente para construir o amanhã."
+            }
+          ]
+        },
+        {
+          "text": "Qual o papel do conhecimento na luta juvenil?",
+          "options": [
+            {
+              "text": "Dá embasamento para saber pelo que e como lutar.",
+              "isCorrect": true,
+              "rationale": "Conhecer direitos é a base da transformação."
+            },
+            {
+              "text": "Serve apenas para tirar boas notas.",
+              "isCorrect": false,
+              "rationale": "É ferramenta de libertação e cidadania."
+            },
+            {
+              "text": "Substitui a ação prática.",
+              "isCorrect": false,
+              "rationale": "O conhecimento fundamenta e impulsiona o agir."
+            },
+            {
+              "text": "Só se adquire após a faculdade.",
+              "isCorrect": false,
+              "rationale": "Pode ser buscado agora em espaços como este."
+            }
+          ]
+        },
+        {
+          "text": "Como os direitos foram conquistados segundo a aula 4?",
+          "options": [
+            {
+              "text": "Fruto de anos de resistência e organização coletiva.",
+              "isCorrect": true,
+              "rationale": "Nada foi dado de graça; exigiu persistência."
+            },
+            {
+              "text": "Surgiram sozinhos com o tempo.",
+              "isCorrect": false,
+              "rationale": "Dependeram da luta de pessoas no passado."
+            },
+            {
+              "text": "Presentes dados por governos bondosos.",
+              "isCorrect": false,
+              "rationale": "São conquistas contra a negação de dignidade."
+            },
+            {
+              "text": "São fixos e nunca mudam.",
+              "isCorrect": false,
+              "rationale": "Precisam ser defendidos e reafirmados sempre."
+            }
+          ]
+        },
+        {
+          "text": "O que é ser 'ativo na transformação'?",
+          "options": [
+            {
+              "text": "Agir conforme direitos e deveres para mudar a realidade.",
+              "isCorrect": true,
+              "rationale": "Envolve presença consciente no território."
+            },
+            {
+              "text": "Aceitar tudo o que o governo decide.",
+              "isCorrect": false,
+              "rationale": "Exige senso crítico e proposta de melhoria."
+            },
+            {
+              "text": "Fugir dos problemas da comunidade.",
+              "isCorrect": false,
+              "rationale": "É enfrentar o que incomoda no local."
+            },
+            {
+              "text": "Pensar só em si mesmo.",
+              "isCorrect": false,
+              "rationale": "Transformação real é coletiva e solidária."
+            }
+          ]
+        }
       ]
     },
     {
       "id": 5,
       "titulo": "Identidade e Pertencimento",
       "questions": [
-        { "text": "Baseado na aula 5, o que é autoimagem?", "options": [{ "text": "Como eu me percebo: qualidades, medos e limitações.", "isCorrect": true, "rationale": "Percepção interna e subjetiva de si mesmo." }, { "text": "A foto que posto nas redes sociais.", "isCorrect": false, "rationale": "Envolve sentimentos profundos e autoconceito." }, { "text": "O que os outros pensam de mim.", "isCorrect": false, "rationale": "Isso seria a identidade social." }, { "text": "O nome que recebi ao nascer.", "isCorrect": false, "rationale": "Autoimagem é a construção psicológica interna." }] },
-        { "text": "Como o pertencimento ajuda o jovem?", "options": [{ "text": "Permite existir com autenticidade e segurança emocional.", "isCorrect": true, "rationale": "Sentir-se aceito valida quem você é." }, { "text": "Obriga a seguir o comportamento do grupo.", "isCorrect": false, "rationale": "Pertencimento saudável respeita a singularidade." }, { "text": "Faz com que a pessoa nunca mude.", "isCorrect": false, "rationale": "Dá base segura para a transformação contínua." }, { "text": "Serve apenas para não ficar sozinho.", "isCorrect": false, "rationale": "Fortalece a autoestima e a confiança no mundo." }] },
-        { "text": "O que é identidade coletiva na aula 5?", "options": [{ "text": "Lanços de união baseados em tradições e valores comuns.", "isCorrect": true, "rationale": "Conecta o indivíduo a algo maior (ex: nordestino)." }, { "text": "Seguir as mesmas roupas que todos.", "isCorrect": false, "rationale": "Baseia-se em cultura, história e território." }, { "text": "Identidade dada apenas por documentos.", "isCorrect": false, "rationale": "Surge de vivências e memórias compartilhadas." }, { "text": "Algo que anula a identidade individual.", "isCorrect": false, "rationale": "Complementa quem somos através do grupo." }] },
-        { "text": "Quais riscos da falta de pertencimento?", "options": [{ "text": "Isolamento, baixa autoestima e vulnerabilidade a grupos tóxicos.", "isCorrect": true, "rationale": "O jovem busca aceitação onde houver acolhimento." }, { "text": "Maior foco nos estudos técnicos.", "isCorrect": false, "rationale": "Afeta gravemente a saúde mental e social." }, { "text": "Ser mais independente e forte.", "isCorrect": false, "rationale": "O ser humano é social e precisa de elos saudáveis." }, { "text": "Nenhum, pois a solidão é natural.", "isCorrect": false, "rationale": "A invisibilidade gera apatia e sofrimento." }] },
-        { "text": "O que Lélia Gonzalez ensina sobre 'tornar-se negro'?", "options": [{ "text": "É uma conquista de consciência e resistência ao apagamento.", "isCorrect": true, "rationale": "Decisão de reivindicar a história e ancestralidade." }, { "text": "Mudança física ao longo dos anos.", "isCorrect": false, "rationale": "É uma construção identitária e política." }, { "text": "Algo que se descobre na escola apenas.", "isCorrect": false, "rationale": "Processo de vida e afirmação de raízes." }, { "text": "Modismo passageiro.", "isCorrect": false, "rationale": "É uma conquista dura de dignidade e valor." }] },
-        { "text": "Qual a importância da ancestralidade para Paulo Henrique?", "options": [{ "text": "É um elo vivo que orienta escolhas no presente.", "isCorrect": true, "rationale": "As raízes dão sentido e força à existência hoje." }, { "text": "Coisas do passado que não importam mais.", "isCorrect": false, "rationale": "Ancestralidade vive e resiste em nós agora." }, { "text": "Apenas saber nomes de bisavôs.", "isCorrect": false, "rationale": "É conexão com saberes, tecnologias e histórias." }, { "text": "Algo que impede a modernidade.", "isCorrect": false, "rationale": "É a base para inovar com significado real." }] },
-        { "text": "O que ensina Davi Kopenawa sobre a Terra?", "options": [{ "text": "Pertencer é ouvir o coração e a respiração da Terra.", "isCorrect": true, "rationale": "Conexão viva com o mundo, não apenas posse." }, { "text": "A Terra é apenas um recurso para explorar.", "isCorrect": false, "rationale": "Davi ensina que o lugar dá sentido à vida." }, { "text": "Devem-se construir mais cidades na floresta.", "isCorrect": false, "rationale": "Alerta que esquecer a floresta é esquecer de sonhar." }, { "text": "A identidade não depende do meio ambiente.", "isCorrect": false, "rationale": "Pertencimento nasce da relação com o território vivo." }] },
-        { "text": "Como a escola e a comunidade fortalecem o pertencimento?", "options": [{ "text": "Reconhecendo e respeitando as ideias e culturas de cada um.", "isCorrect": true, "rationale": "Ser visto e valorizado cria o sentimento de 'casa'." }, { "text": "Impondo silêncio e regras rígidas.", "isCorrect": false, "rationale": "O acolhimento e a participação são os motores." }, { "text": "Focando apenas em notas e provas.", "isCorrect": false, "rationale": "Valorizar a história do aluno é essencial." }, { "text": "Rindo dos sotaques diferentes.", "isCorrect": false, "rationale": "O preconceito destrói o vínculo e a identidade." }] }
+        {
+          "text": "Baseado na aula 5, o que é autoimagem?",
+          "options": [
+            {
+              "text": "Como eu me percebo: qualidades, medos e limitações.",
+              "isCorrect": true,
+              "rationale": "Percepção interna e subjetiva de si mesmo."
+            },
+            {
+              "text": "A foto que posto nas redes sociais.",
+              "isCorrect": false,
+              "rationale": "Envolve sentimentos profundos e autoconceito."
+            },
+            {
+              "text": "O que os outros pensam de mim.",
+              "isCorrect": false,
+              "rationale": "Isso seria a identidade social."
+            },
+            {
+              "text": "O nome que recebi ao nascer.",
+              "isCorrect": false,
+              "rationale": "Autoimagem é a construção psicológica interna."
+            }
+          ]
+        },
+        {
+          "text": "Como o pertencimento ajuda o jovem?",
+          "options": [
+            {
+              "text": "Permite existir com autenticidade e segurança emocional.",
+              "isCorrect": true,
+              "rationale": "Sentir-se aceito valida quem você é."
+            },
+            {
+              "text": "Obriga a seguir o comportamento do grupo.",
+              "isCorrect": false,
+              "rationale": "Pertencimento saudável respeita a singularidade."
+            },
+            {
+              "text": "Faz com que a pessoa nunca mude.",
+              "isCorrect": false,
+              "rationale": "Dá base segura para a transformação contínua."
+            },
+            {
+              "text": "Serve apenas para não ficar sozinho.",
+              "isCorrect": false,
+              "rationale": "Fortalece a autoestima e a confiança no mundo."
+            }
+          ]
+        },
+        {
+          "text": "O que é identidade coletiva na aula 5?",
+          "options": [
+            {
+              "text": "Lanços de união baseados em tradições e valores comuns.",
+              "isCorrect": true,
+              "rationale": "Conecta o indivíduo a algo maior (ex: nordestino)."
+            },
+            {
+              "text": "Seguir as mesmas roupas que todos.",
+              "isCorrect": false,
+              "rationale": "Baseia-se em cultura, história e território."
+            },
+            {
+              "text": "Identidade dada apenas por documentos.",
+              "isCorrect": false,
+              "rationale": "Surge de vivências e memórias compartilhadas."
+            },
+            {
+              "text": "Algo que anula a identidade individual.",
+              "isCorrect": false,
+              "rationale": "Complementa quem somos através do grupo."
+            }
+          ]
+        },
+        {
+          "text": "Quais riscos da falta de pertencimento?",
+          "options": [
+            {
+              "text": "Isolamento, baixa autoestima e vulnerabilidade a grupos tóxicos.",
+              "isCorrect": true,
+              "rationale": "O jovem busca aceitação onde houver acolhimento."
+            },
+            {
+              "text": "Maior foco nos estudos técnicos.",
+              "isCorrect": false,
+              "rationale": "Afeta gravemente a saúde mental e social."
+            },
+            {
+              "text": "Ser mais independente e forte.",
+              "isCorrect": false,
+              "rationale": "O ser humano é social e precisa de elos saudáveis."
+            },
+            {
+              "text": "Nenhum, pois a solidão é natural.",
+              "isCorrect": false,
+              "rationale": "A invisibilidade gera apatia e sofrimento."
+            }
+          ]
+        },
+        {
+          "text": "O que Lélia Gonzalez ensina sobre 'tornar-se negro'?",
+          "options": [
+            {
+              "text": "É uma conquista de consciência e resistência ao apagamento.",
+              "isCorrect": true,
+              "rationale": "Decisão de reivindicar a história e ancestralidade."
+            },
+            {
+              "text": "Mudança física ao longo dos anos.",
+              "isCorrect": false,
+              "rationale": "É uma construção identitária e política."
+            },
+            {
+              "text": "Algo que se descobre na escola apenas.",
+              "isCorrect": false,
+              "rationale": "Processo de vida e afirmação de raízes."
+            },
+            {
+              "text": "Modismo passageiro.",
+              "isCorrect": false,
+              "rationale": "É uma conquista dura de dignidade e valor."
+            }
+          ]
+        },
+        {
+          "text": "Qual a importância da ancestralidade para Paulo Henrique?",
+          "options": [
+            {
+              "text": "É um elo vivo que orienta escolhas no presente.",
+              "isCorrect": true,
+              "rationale": "As raízes dão sentido e força à existência hoje."
+            },
+            {
+              "text": "Coisas do passado que não importam mais.",
+              "isCorrect": false,
+              "rationale": "Ancestralidade vive e resiste em nós agora."
+            },
+            {
+              "text": "Apenas saber nomes de bisavôs.",
+              "isCorrect": false,
+              "rationale": "É conexão com saberes, tecnologias e histórias."
+            },
+            {
+              "text": "Algo que impede a modernidade.",
+              "isCorrect": false,
+              "rationale": "É a base para inovar com significado real."
+            }
+          ]
+        },
+        {
+          "text": "O que ensina Davi Kopenawa sobre a Terra?",
+          "options": [
+            {
+              "text": "Pertencer é ouvir o coração e a respiração da Terra.",
+              "isCorrect": true,
+              "rationale": "Conexão viva com o mundo, não apenas posse."
+            },
+            {
+              "text": "A Terra é apenas um recurso para explorar.",
+              "isCorrect": false,
+              "rationale": "Davi ensina que o lugar dá sentido à vida."
+            },
+            {
+              "text": "Devem-se construir mais cidades na floresta.",
+              "isCorrect": false,
+              "rationale": "Alerta que esquecer a floresta é esquecer de sonhar."
+            },
+            {
+              "text": "A identidade não depende do meio ambiente.",
+              "isCorrect": false,
+              "rationale": "Pertencimento nasce da relação com o território vivo."
+            }
+          ]
+        },
+        {
+          "text": "Como a escola e a comunidade fortalecem o pertencimento?",
+          "options": [
+            {
+              "text": "Reconhecendo e respeitando as ideias e culturas de cada um.",
+              "isCorrect": true,
+              "rationale": "Ser visto e valorizado cria o sentimento de 'casa'."
+            },
+            {
+              "text": "Impondo silêncio e regras rígidas.",
+              "isCorrect": false,
+              "rationale": "O acolhimento e a participação são os motores."
+            },
+            {
+              "text": "Focando apenas em notas e provas.",
+              "isCorrect": false,
+              "rationale": "Valorizar a história do aluno é essencial."
+            },
+            {
+              "text": "Rindo dos sotaques diferentes.",
+              "isCorrect": false,
+              "rationale": "O preconceito destrói o vínculo e a identidade."
+            }
+          ]
+        }
       ]
     },
     {
       "id": 6,
       "titulo": "Protagonismo e Território",
       "questions": [
-        { "text": "Segundo a aula 6, como se define protagonismo juvenil?", "options": [{ "text": "Assumir o papel principal nas decisões sobre sua vida e lugar.", "isCorrect": true, "rationale": "Ser autor da própria história e agente de mudança." }, { "text": "Seguir ordens sem questionar os desafios.", "isCorrect": false, "rationale": "Protagonismo exige autonomia e iniciativa." }, { "text": "Ser famoso na internet por diversão.", "isCorrect": false, "rationale": "É ação consciente voltada para o bem comum." }, { "text": "Esperar ser adulto para ter opinião.", "isCorrect": false, "rationale": "O jovem já é sujeito de direitos e ação agora." }] },
-        { "text": "Como transformar desafios (desemprego, desigualdade) em ação?", "options": [{ "text": "Usando-os como ponto de partida para criar soluções e cultura.", "isCorrect": true, "rationale": "Indignação transformada em força transformadora." }, { "text": "Ignorando os problemas e focando só em lazer.", "isCorrect": false, "rationale": "Protagonismo enfrenta a realidade local." }, { "text": "Esperando que o governo resolva tudo sozinho.", "isCorrect": false, "rationale": "A mudança começa pela iniciativa dos jovens." }, { "text": "Aceitando a desigualdade como algo natural.", "isCorrect": false, "rationale": "O curso incentiva a coragem de mudar o cenário." }] },
-        { "text": "O que significa a viagem começar 'dentro da gente' (aula 6)?", "options": [{ "text": "Refletir sobre nossos valores para agir no território.", "isCorrect": true, "rationale": "Identidade e território estão conectados na ação." }, { "text": "Ficar em casa apenas imaginando o mundo.", "isCorrect": false, "rationale": "É o ponto de partida para o engajamento externo." }, { "text": "Ignorar o que sentimos sobre o Ceará.", "isCorrect": false, "rationale": "Valoriza o orgulho e o pertencimento regional." }, { "text": "Estudar apenas geografia física.", "isCorrect": false, "rationale": "Une sentimentos à compreensão do espaço vivido." }] },
-        { "text": "Como a arte (música sobre Pacoti) reforça a cidadania?", "options": [{ "text": "Ao valorizar e preservar a memória e beleza do lugar.", "isCorrect": true, "rationale": "Cuidamos daquilo que reconhecemos como valioso." }, { "text": "Servindo apenas como entretenimento passageiro.", "isCorrect": false, "rationale": "Arte é forma de registro e amor ao território." }, { "text": "Ignorando as outras cidades do Ceará.", "isCorrect": false, "rationale": "É um exemplo da riqueza de todo o estado." }, { "text": "Promovendo apenas o turismo de luxo.", "isCorrect": false, "rationale": "Foca na ternura da terra e raízes populares." }] },
-        { "text": "Por que o Ceará de Valores incentiva o protagonismo agora?", "options": [{ "text": "Porque o jovem já é potência e a mudança deve ser no presente.", "isCorrect": true, "rationale": "Juventude não é promessa, é presença." }, { "text": "Para acelerar a conclusão do curso.", "isCorrect": false, "rationale": "Visa o impacto real nas comunidades agora." }, { "text": "Porque os adultos desistiram de mudar.", "isCorrect": false, "rationale": "É um convite à colaboração entre gerações." }, { "text": "Para evitar que os jovens reclamem.", "isCorrect": false, "rationale": "Transforma a reclamação em projeto e solução." }] },
-        { "text": "Qual a importância de conhecer a própria região para a aula 6?", "options": [{ "text": "Conhecer a terra ajuda a conhecer quem nós somos.", "isCorrect": true, "rationale": "Nossa identidade é moldada pelo espaço onde vivemos." }, { "text": "Apenas para não se perder em viagens.", "isCorrect": false, "rationale": "Envolve pertencimento e raízes culturais." }, { "text": "Para comparar com outros países.", "isCorrect": false, "rationale": "Foco na valorização do nosso jeito de ser." }, { "text": "Não tem importância para a cidadania.", "isCorrect": false, "rationale": "Reconhecer o valor local motiva o cuidado." }] },
-        { "text": "O que Lia Soares quer dizer com 'nosso jeito de ser'?", "options": [{ "text": "Nossos valores, cultura e força guerreira cearense.", "isCorrect": true, "rationale": "A identidade regional é motor de transformação." }, { "text": "Apenas o sotaque engraçado.", "isCorrect": false, "rationale": "Refere-se à resiliência e criatividade do povo." }, { "text": "Um padrão que todos devem seguir.", "isCorrect": false, "rationale": "Celebra a diversidade dentro do ser cearense." }, { "text": "Algo que deve ser mudado para evoluirmos.", "isCorrect": false, "rationale": "É a base para uma inovação autêntica." }] },
-        { "text": "Qual o convite final da aula 6 aos jovens?", "options": [{ "text": "Inovar, ousar e inspirar através de ações e projetos.", "isCorrect": true, "rationale": "Chamado ao protagonismo transformador." }, { "text": "Focar apenas em si mesmo.", "isCorrect": false, "rationale": "Incentiva a construção coletiva do amanhã." }, { "text": "Aceitar o mundo como ele é.", "isCorrect": false, "rationale": "Convida a reescrever a história no presente." }, { "text": "Esperar um convite oficial para agir.", "isCorrect": false, "rationale": "O jovem deve tomar a iniciativa agora." }] }
+        {
+          "text": "Segundo a aula 6, como se define protagonismo juvenil?",
+          "options": [
+            {
+              "text": "Assumir o papel principal nas decisões sobre sua vida e lugar.",
+              "isCorrect": true,
+              "rationale": "Ser autor da própria história e agente de mudança."
+            },
+            {
+              "text": "Seguir ordens sem questionar os desafios.",
+              "isCorrect": false,
+              "rationale": "Protagonismo exige autonomia e iniciativa."
+            },
+            {
+              "text": "Ser famoso na internet por diversão.",
+              "isCorrect": false,
+              "rationale": "É ação consciente voltada para o bem comum."
+            },
+            {
+              "text": "Esperar ser adulto para ter opinião.",
+              "isCorrect": false,
+              "rationale": "O jovem já é sujeito de direitos e ação agora."
+            }
+          ]
+        },
+        {
+          "text": "Como transformar desafios (desemprego, desigualdade) em ação?",
+          "options": [
+            {
+              "text": "Usando-os como ponto de partida para criar soluções e cultura.",
+              "isCorrect": true,
+              "rationale": "Indignação transformada em força transformadora."
+            },
+            {
+              "text": "Ignorando os problemas e focando só em lazer.",
+              "isCorrect": false,
+              "rationale": "Protagonismo enfrenta a realidade local."
+            },
+            {
+              "text": "Esperando que o governo resolva tudo sozinho.",
+              "isCorrect": false,
+              "rationale": "A mudança começa pela iniciativa dos jovens."
+            },
+            {
+              "text": "Aceitando a desigualdade como algo natural.",
+              "isCorrect": false,
+              "rationale": "O curso incentiva a coragem de mudar o cenário."
+            }
+          ]
+        },
+        {
+          "text": "O que significa a viagem começar 'dentro da gente' (aula 6)?",
+          "options": [
+            {
+              "text": "Refletir sobre nossos valores para agir no território.",
+              "isCorrect": true,
+              "rationale": "Identidade e território estão conectados na ação."
+            },
+            {
+              "text": "Ficar em casa apenas imaginando o mundo.",
+              "isCorrect": false,
+              "rationale": "É o ponto de partida para o engajamento externo."
+            },
+            {
+              "text": "Ignorar o que sentimos sobre o Ceará.",
+              "isCorrect": false,
+              "rationale": "Valoriza o orgulho e o pertencimento regional."
+            },
+            {
+              "text": "Estudar apenas geografia física.",
+              "isCorrect": false,
+              "rationale": "Une sentimentos à compreensão do espaço vivido."
+            }
+          ]
+        },
+        {
+          "text": "Como a arte (música sobre Pacoti) reforça a cidadania?",
+          "options": [
+            {
+              "text": "Ao valorizar e preservar a memória e beleza do lugar.",
+              "isCorrect": true,
+              "rationale": "Cuidamos daquilo que reconhecemos como valioso."
+            },
+            {
+              "text": "Servindo apenas como entretenimento passageiro.",
+              "isCorrect": false,
+              "rationale": "Arte é forma de registro e amor ao território."
+            },
+            {
+              "text": "Ignorando as outras cidades do Ceará.",
+              "isCorrect": false,
+              "rationale": "É um exemplo da riqueza de todo o estado."
+            },
+            {
+              "text": "Promovendo apenas o turismo de luxo.",
+              "isCorrect": false,
+              "rationale": "Foca na ternura da terra e raízes populares."
+            }
+          ]
+        },
+        {
+          "text": "Por que o Ceará de Valores incentiva o protagonismo agora?",
+          "options": [
+            {
+              "text": "Porque o jovem já é potência e a mudança deve ser no presente.",
+              "isCorrect": true,
+              "rationale": "Juventude não é promessa, é presença."
+            },
+            {
+              "text": "Para acelerar a conclusão do curso.",
+              "isCorrect": false,
+              "rationale": "Visa o impacto real nas comunidades agora."
+            },
+            {
+              "text": "Porque os adultos desistiram de mudar.",
+              "isCorrect": false,
+              "rationale": "É um convite à colaboração entre gerações."
+            },
+            {
+              "text": "Para evitar que os jovens reclamem.",
+              "isCorrect": false,
+              "rationale": "Transforma a reclamação em projeto e solução."
+            }
+          ]
+        },
+        {
+          "text": "Qual a importância de conhecer a própria região para a aula 6?",
+          "options": [
+            {
+              "text": "Conhecer a terra ajuda a conhecer quem nós somos.",
+              "isCorrect": true,
+              "rationale": "Nossa identidade é moldada pelo espaço onde vivemos."
+            },
+            {
+              "text": "Apenas para não se perder em viagens.",
+              "isCorrect": false,
+              "rationale": "Envolve pertencimento e raízes culturais."
+            },
+            {
+              "text": "Para comparar com outros países.",
+              "isCorrect": false,
+              "rationale": "Foco na valorização do nosso jeito de ser."
+            },
+            {
+              "text": "Não tem importância para a cidadania.",
+              "isCorrect": false,
+              "rationale": "Reconhecer o valor local motiva o cuidado."
+            }
+          ]
+        },
+        {
+          "text": "O que Lia Soares quer dizer com 'nosso jeito de ser'?",
+          "options": [
+            {
+              "text": "Nossos valores, cultura e força guerreira cearense.",
+              "isCorrect": true,
+              "rationale": "A identidade regional é motor de transformação."
+            },
+            {
+              "text": "Apenas o sotaque engraçado.",
+              "isCorrect": false,
+              "rationale": "Refere-se à resiliência e criatividade do povo."
+            },
+            {
+              "text": "Um padrão que todos devem seguir.",
+              "isCorrect": false,
+              "rationale": "Celebra a diversidade dentro do ser cearense."
+            },
+            {
+              "text": "Algo que deve ser mudado para evoluirmos.",
+              "isCorrect": false,
+              "rationale": "É a base para uma inovação autêntica."
+            }
+          ]
+        },
+        {
+          "text": "Qual o convite final da aula 6 aos jovens?",
+          "options": [
+            {
+              "text": "Inovar, ousar e inspirar através de ações e projetos.",
+              "isCorrect": true,
+              "rationale": "Chamado ao protagonismo transformador."
+            },
+            {
+              "text": "Focar apenas em si mesmo.",
+              "isCorrect": false,
+              "rationale": "Incentiva a construção coletiva do amanhã."
+            },
+            {
+              "text": "Aceitar o mundo como ele é.",
+              "isCorrect": false,
+              "rationale": "Convida a reescrever a história no presente."
+            },
+            {
+              "text": "Esperar um convite oficial para agir.",
+              "isCorrect": false,
+              "rationale": "O jovem deve tomar a iniciativa agora."
+            }
+          ]
+        }
       ]
     },
     {
       "id": 7,
-      "titulo": "Orientação de Projetos",
+      "titulo": "Cidadania em Ação",
       "questions": [
-        { "text": "Qual o objetivo central do projeto final?", "options": [{ "text": "Colocar em prática as aprendizagens para fortalecer as comunidades.", "isCorrect": true, "rationale": "Foco no protagonismo e impacto social local." }, { "text": "Apenas ganhar o certificado do curso.", "isCorrect": false, "rationale": "Visa a aplicação real de soluções inovadoras." }, { "text": "Criar empresas internacionais.", "isCorrect": false, "rationale": "O foco é o território cearense." }, { "text": "Fazer um resumo de todas as aulas por escrito.", "isCorrect": false, "rationale": "Exige a criação de uma solução ou ação prática." }] },
-        { "text": "Quem está habilitado para submeter o projeto?", "options": [{ "text": "Alunos inscritos e ativos que participaram das trilhas.", "isCorrect": true, "rationale": "Participação integral é requisito básico." }, { "text": "Qualquer morador da cidade, mesmo sem o curso.", "isCorrect": false, "rationale": "Exclusivo para os alunos do Ceará de Valores." }, { "text": "Apenas os mentores do Instituto Centec.", "isCorrect": false, "rationale": "Os protagonistas são os jovens participantes." }, { "text": "Somente grupos de 10 pessoas.", "isCorrect": false, "rationale": "Grupos são de até cinco pessoas." }] },
-        { "text": "Qual o limite de pessoas por grupo de projeto?", "options": [{ "text": "Até 5 integrantes por grupo.", "isCorrect": true, "rationale": "Pode ser individual ou em pequenos grupos." }, { "text": "Grupos de no mínimo 8 pessoas.", "isCorrect": false, "rationale": "O limite máximo é de cinco registros." }, { "text": "Apenas projetos individuais são aceitos.", "isCorrect": false, "rationale": "O trabalho colaborativo é incentivado." }, { "text": "Não existe limite de integrantes.", "isCorrect": false, "rationale": "Regra oficial limita a cinco integrantes." }] },
-        { "text": "O que se espera da natureza das propostas?", "options": [{ "text": "Autorias originais com soluções viáveis para desafios reais.", "isCorrect": true, "rationale": "Inovação aplicada a problemas do cotidiano local." }, { "text": "Cópias de projetos já existentes no exterior.", "isCorrect": false, "rationale": "Exige originalidade e contexto cearense." }, { "text": "Ideias puramente teóricas sem aplicação.", "isCorrect": false, "rationale": "Devem propor algo executável no território." }, { "text": "Projetos focados apenas em lucro financeiro.", "isCorrect": false, "rationale": "Foco em impacto positivo e responsabilidade social." }] },
-        { "text": "Quais os critérios da Comissão Avaliadora?", "options": [{ "text": "Inovação, Impacto Comunitário e Viabilidade.", "isCorrect": true, "rationale": "Critérios para garantir criatividade e resultados." }, { "text": "Quantidade de likes e beleza do logo.", "isCorrect": false, "rationale": "Foco técnico na qualidade da solução proposta." }, { "text": "Sorteio e ordem de inscrição.", "isCorrect": false, "rationale": "Seleção baseada no mérito do projeto." }, { "text": "Uso de tecnologias caras e inacessíveis.", "isCorrect": false, "rationale": "Procura soluções inteligentes para a realidade local." }] },
-        { "text": "É permitido plágio ou discriminação nos projetos?", "options": [{ "text": "Não, projetos devem respeitar ética e valores humanos.", "isCorrect": true, "rationale": "Compromisso com inclusão e diversidade é regra." }, { "text": "Sim, desde que a ideia seja muito boa.", "isCorrect": false, "rationale": "Ética e autoria são pilares fundamentais." }, { "text": "Apenas se for plágio de projetos nacionais.", "isCorrect": false, "rationale": "Exige originalidade total dos participantes." }, { "text": "Depende do município do grupo.", "isCorrect": false, "rationale": "A regra é igual para todo o estado." }] },
-        { "text": "Qual o prêmio máximo para os vencedores na final?", "options": [{ "text": "Até 15 mil reais.", "isCorrect": true, "rationale": "Grande final premia os melhores do estado." }, { "text": "Apenas 500 reais para o grupo todo.", "isCorrect": false, "rationale": "Os valores visam apoiar a execução real." }, { "text": "Um contrato de emprego fixo vitalício.", "isCorrect": false, "rationale": "Prêmio financeiro para apoio ao projeto." }, { "text": "Apenas medalhas simbólicas.", "isCorrect": false, "rationale": "Oferece fomento para a juventude empreendedora." }] },
-        { "text": "O que os premiados recebem além do valor em dinheiro?", "options": [{ "text": "Apoio para execução via mentoria técnica.", "isCorrect": true, "rationale": "Suporte do Centec para tirar a ideia do papel." }, { "text": "Obrigação de vender a ideia para empresas.", "isCorrect": false, "rationale": "Protagonismo continua sendo dos jovens autores." }, { "text": "Nada além do valor financeiro.", "isCorrect": false, "rationale": "A mentoria é parte fundamental do processo." }, { "text": "Acesso vitalício à Assembleia Legislativa.", "isCorrect": false, "rationale": "Foco é o suporte ao projeto comunitário." }] }
+        {
+          "text": "Baseado no conteúdo da aula 7, a Constituição Brasileira apresenta a cidadania como um dos fundamentos da República, apoiada em três pilares essenciais. Quais são eles?",
+          "options": [
+            {
+              "text": "Direitos, Deveres e Participação.",
+              "isCorrect": true,
+              "rationale": "A aula destaca que a Constituição não vê a cidadania apenas como um enfeite, mas como a base do país, sustentada por Direitos (dignidade própria), Deveres (dignidade do outro) e Participação (ação no coletivo)."
+            },
+            {
+              "text": "Liberdade, Igualdade e Fraternidade.",
+              "isCorrect": false,
+              "rationale": "Este é o lema da Revolução Francesa, não os pilares específicos citados na aula sobre a Constituição Brasileira."
+            },
+            {
+              "text": "Segurança, Saúde e Educação.",
+              "isCorrect": false,
+              "rationale": "Estes são exemplos de direitos sociais garantidos pela Constituição, mas não os três pilares conceituais da cidadania apresentados."
+            },
+            {
+              "text": "Voto, Documentação e Obediência Civil.",
+              "isCorrect": false,
+              "rationale": "A aula enfatiza que cidadania vai muito além do documento (título de eleitor) ou do voto."
+            }
+          ]
+        },
+        {
+          "text": "A aula utiliza a frase 'Com grandes poderes vêm grandes responsabilidades'. No contexto da cidadania abordado pela professora Evelyn Freitas, o que representa o 'superpoder' do jovem na vida real?",
+          "options": [
+            {
+              "text": "O simples ato de existir, ter voz, corpo e ocupar um lugar na sociedade.",
+              "isCorrect": true,
+              "rationale": "Diferente dos filmes, na vida real o nosso 'poder' é a nossa própria existência e presença no mundo. A responsabilidade é participar ativamente."
+            },
+            {
+              "text": "A capacidade técnica de criar leis e decretos.",
+              "isCorrect": false,
+              "rationale": "O conteúdo menciona que você não precisa dominar a política institucional para ter poder cidadão."
+            },
+            {
+              "text": "A força física para construir prédios no bairro.",
+              "isCorrect": false,
+              "rationale": "O poder citado é subjetivo e social, relacionado à presença e identidade, não à força física."
+            },
+            {
+              "text": "A habilidade de influenciar milhões de seguidores na internet.",
+              "isCorrect": false,
+              "rationale": "O poder cidadão é inerente a qualquer pessoa, independentemente da fama ou números nas redes sociais."
+            }
+          ]
+        },
+        {
+          "text": "Analise a afirmação da aula: 'Você pode não dominar a política institucional, mas ela domina o seu cotidiano'. O que isso significa na prática?",
+          "options": [
+            {
+              "text": "Que a política está presente em tudo, desde o preço da passagem até a qualidade da escola, independentemente do nosso interesse.",
+              "isCorrect": true,
+              "rationale": "A aula ensina que se ausentar da política permite que outros decidam sobre o transporte, saúde e educação que você usa."
+            },
+            {
+              "text": "Que a política é um assunto chato que só deve ser tratado por políticos profissionais.",
+              "isCorrect": false,
+              "rationale": "O objetivo da aula é justamente mostrar que a política pertence a todos e afeta o dia a dia."
+            },
+            {
+              "text": "Que devemos ignorar as notícias para viver uma vida mais tranquila.",
+              "isCorrect": false,
+              "rationale": "Ignorar a política não impede que ela afete sua vida; a consciência é necessária para a cidadania."
+            },
+            {
+              "text": "Que a política só influencia a vida de quem trabalha no governo.",
+              "isCorrect": false,
+              "rationale": "A política afeta a vida de todos os cidadãos, através dos serviços públicos e direitos."
+            }
+          ]
+        },
+        {
+          "text": "Sobre o exercício da 'Cidadania na Internet' discutido na aula, qual atitude demonstra um consumo crítico de informação?",
+          "options": [
+            {
+              "text": "Refletir sobre o que sentiu, verificar a veracidade da informação e decidir conscientemente se vale a pena compartilhar.",
+              "isCorrect": true,
+              "rationale": "Exercer cidadania digital envolve pausar para não reagir apenas com a emoção e evitar espalhar desinformação."
+            },
+            {
+              "text": "Compartilhar imediatamente qualquer notícia que gere revolta para alertar os amigos.",
+              "isCorrect": false,
+              "rationale": "O compartilhamento impulsivo, movido apenas pela emoção, é desencorajado na aula."
+            },
+            {
+              "text": "Entrar em discussões agressivas para defender seu ponto de vista a qualquer custo.",
+              "isCorrect": false,
+              "rationale": "A agressividade vai contra a ideia de convivência e gentileza propostas na cidadania."
+            },
+            {
+              "text": "Nunca usar a internet para opinar sobre assuntos sociais.",
+              "isCorrect": false,
+              "rationale": "A internet é um espaço válido de participação, desde que usado com responsabilidade e consciência."
+            }
+          ]
+        },
+        {
+          "text": "A aula cita o filme 'Extraordinário' com a ideia: 'Quando tiver que escolher entre estar certo e ser gentil, escolha ser gentil'. Como isso se aplica à cidadania?",
+          "options": [
+            {
+              "text": "A gentileza é uma ferramenta de convivência que melhora o ambiente coletivo, superando a necessidade individual de ter razão.",
+              "isCorrect": true,
+              "rationale": "Cidadania é sobre viver com o outro. A gentileza cria laços de pertencimento e respeito mútuo essenciais para a comunidade."
+            },
+            {
+              "text": "Ser gentil significa aceitar injustiças sem reclamar.",
+              "isCorrect": false,
+              "rationale": "Gentileza não é passividade; é uma forma de agir com respeito mesmo ao buscar direitos."
+            },
+            {
+              "text": "A cidadania exige que estejamos sempre certos perante a lei, não importando a gentileza.",
+              "isCorrect": false,
+              "rationale": "Estar 'certo' de forma arrogante pode ferir a convivência, que é base da cidadania."
+            },
+            {
+              "text": "Essa frase se aplica apenas a crianças na escola, não à sociedade.",
+              "isCorrect": false,
+              "rationale": "O conceito é expandido na aula para a vida em sociedade como um todo."
+            }
+          ]
+        },
+        {
+          "text": "Na atividade do 'Mapa Afetivo', o fluxo proposto é Eu-Espaço-Ação. Qual das opções abaixo representa uma intervenção cidadã baseada no ponto 'Ação/Transformação'?",
+          "options": [
+            {
+              "text": "Identificar uma praça abandonada (invisibilidade) e organizar um mutirão de limpeza e cultura com amigos.",
+              "isCorrect": true,
+              "rationale": "Esta opção completa o ciclo: diagnostica um problema local e propõe uma ação coletiva prática para resolvê-lo."
+            },
+            {
+              "text": "Reclamar nas redes sociais que o bairro é perigoso e não tem jeito.",
+              "isCorrect": false,
+              "rationale": "A reclamação sem proposta de solução não configura a etapa de 'Ação/Transformação' proposta no mapa."
+            },
+            {
+              "text": "Ignorar os problemas do bairro e focar apenas na sua casa.",
+              "isCorrect": false,
+              "rationale": "O isolamento nega o aspecto de 'Espaço' e 'Ação' coletiva da cidadania."
+            },
+            {
+              "text": "Esperar que a prefeitura resolva todos os problemas sozinha.",
+              "isCorrect": false,
+              "rationale": "A cidadania ativa envolve a participação do indivíduo na transformação, não apenas a espera passiva."
+            }
+          ]
+        },
+        {
+          "text": "O conteúdo da aula menciona que o Ceará possui 'fortalezas' que ajudam no exercício da cidadania. Qual alternativa NÃO é uma dessas fortalezas?",
+          "options": [
+            {
+              "text": "A ausência completa de desigualdade social e problemas urbanos.",
+              "isCorrect": true,
+              "rationale": "A aula reconhece os desafios e desigualdades regionais. A cidadania acontece apesar dos problemas, usando a força da cultura e da gente."
+            },
+            {
+              "text": "O calor humano e a força da nossa gente.",
+              "isCorrect": false,
+              "rationale": "Citado no encerramento como um ponto de partida para a cidadania ('começa no calor da nossa gente')."
+            },
+            {
+              "text": "A cultura identitária forte do povo cearense.",
+              "isCorrect": false,
+              "rationale": "A identidade cultural é apresentada como uma potência para a ação cidadã."
+            },
+            {
+              "text": "As redes de apoio e solidariedade entre as pessoas.",
+              "isCorrect": false,
+              "rationale": "A conexão com o outro e o solo compartilhado são vistos como bases para a ação."
+            }
+          ]
+        },
+        {
+          "text": "Como a competência socioemocional de 'Autogestão' se conecta com a cidadania segundo a aula 7?",
+          "options": [
+            {
+              "text": "Permite entender o que afeta sua vida e tomar decisões responsáveis que impactam o coletivo.",
+              "isCorrect": true,
+              "rationale": "Autogestão na cidadania é sair do piloto automático e agir com intencionalidade e responsabilidade no mundo."
+            },
+            {
+              "text": "Serve apenas para organizar a agenda de estudos escolares.",
+              "isCorrect": false,
+              "rationale": "A aplicação na aula é voltada para a vida em sociedade e tomada de decisão, não apenas estudos."
+            },
+            {
+              "text": "É a capacidade de gerir empresas sozinho.",
+              "isCorrect": false,
+              "rationale": "O contexto aqui é socioemocional e cidadão, não empresarial."
+            },
+            {
+              "text": "Ensina a controlar o comportamento das outras pessoas.",
+              "isCorrect": false,
+              "rationale": "Autogestão é sobre si mesmo ('Auto'), e como suas ações reverberam nos outros."
+            }
+          ]
+        }
       ]
     }
   ]
