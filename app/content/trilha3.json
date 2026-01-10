@@ -1,0 +1,784 @@
+{
+  "trilha": 3,
+  "titulo": "Empreendedorismo e Inovação",
+  "aulas": [
+    {
+      "id": 1,
+      "titulo": "Fundamentos do Empreendedorismo",
+      "questions": [
+        {
+          "text": "Baseado no conteúdo da aula 1, o empreendedorismo é descrito como um processo que vai além de abrir uma empresa. Qual das opções abaixo melhor define a essência desse processo segundo a aula?",
+          "options": [
+            {
+              "text": "É o ato de criar, inovar e gerenciar um negócio, assumindo riscos calculados para transformar ideias em realidade.",
+              "isCorrect": true,
+              "rationale": "O texto define empreendedorismo como o processo de criar, inovar e gerenciar, transformando ideias em realidade e assumindo riscos necessários[cite: 6]."
+            },
+            {
+              "text": "É a capacidade de evitar todos os riscos possíveis para garantir a segurança financeira imediata.",
+              "isCorrect": false,
+              "rationale": "O empreendedor deve saber calcular e mitigar riscos, mas a disposição para assumir desafios é essencial, não a evitação total[cite: 17, 18]."
+            },
+            {
+              "text": "É a habilidade de trabalhar sozinho sem depender de sócios ou colaboradores.",
+              "isCorrect": false,
+              "rationale": "Embora exista o empreendedorismo individual, a definição geral envolve liderança e muitas vezes gestão de equipes e stakeholders[cite: 43, 54]."
+            },
+            {
+              "text": "É o foco exclusivo na geração de lucro acima de qualquer impacto social ou inovação.",
+              "isCorrect": false,
+              "rationale": "O empreendedorismo também busca satisfação pessoal e pode ter foco social, não apenas lucro financeiro[cite: 6, 60]."
+            }
+          ],
+          "hint": "Lembre-se dos verbos 'criar', 'inovar' e 'gerenciar' citados na definição."
+        },
+        {
+          "text": "Baseado no conteúdo da aula 1, sobre o perfil do empreendedor, como é caracterizada a atitude em relação aos riscos?",
+          "options": [
+            {
+              "text": "O empreendedor assume desafios de forma planejada, buscando mapear e prever riscos para proteger a saúde financeira.",
+              "isCorrect": true,
+              "rationale": "O empreendedor deve ter disposição para assumir desafios, mas sempre de forma planejada e calculada para evitar consequências negativas graves[cite: 18, 30]."
+            },
+            {
+              "text": "O empreendedor deve ser ousado e ignorar previsões pessimistas para não perder oportunidades.",
+              "isCorrect": false,
+              "rationale": "Ignorar riscos contradiz a necessidade de planejamento e cálculo para mitigar consequências negativas[cite: 30]."
+            },
+            {
+              "text": "O empreendedor deve focar apenas em cenários onde não existe possibilidade de fracasso.",
+              "isCorrect": false,
+              "rationale": "O risco é inerente ao empreendedorismo; o foco é calculá-lo, não buscar a inexistência dele[cite: 6, 17]."
+            },
+            {
+              "text": "O empreendedor delega a gestão de riscos inteiramente para sua equipe financeira.",
+              "isCorrect": false,
+              "rationale": "O perfil do empreendedor inclui saber calcular e mitigar riscos pessoalmente como parte de sua competência[cite: 17]."
+            }
+          ],
+          "hint": "O texto menciona que o risco deve ser 'calculado' e 'mitigado'."
+        },
+        {
+          "text": "Baseado no conteúdo da aula 1, a Matriz GUT é citada como uma ferramenta de priorização de problemas. O que a letra 'T' (Tendência) representa nesta metodologia?",
+          "options": [
+            {
+              "text": "A probabilidade do problema se repetir, evoluir ou se propagar caso não seja resolvido.",
+              "isCorrect": true,
+              "rationale": "A Tendência refere-se ao quanto o problema pode crescer, se repetir ou piorar com o tempo[cite: 36, 37]."
+            },
+            {
+              "text": "O tempo limite que o empreendedor tem para resolver a situação.",
+              "isCorrect": false,
+              "rationale": "Isso estaria mais relacionado à 'Urgência'[cite: 35]."
+            },
+            {
+              "text": "O impacto financeiro imediato que o problema causa na empresa.",
+              "isCorrect": false,
+              "rationale": "Isso está relacionado à 'Gravidade' do problema[cite: 34]."
+            },
+            {
+              "text": "A tendência de mercado que causou o problema externo.",
+              "isCorrect": false,
+              "rationale": "A matriz foca na evolução do problema em si, não necessariamente na tendência de mercado externa[cite: 37]."
+            }
+          ],
+          "hint": "Pense em como o problema pode evoluir ou crescer no futuro."
+        },
+        {
+          "text": "Baseado no conteúdo da aula 1, qual é a principal diferença entre 'Missão' e 'Visão' no planejamento estratégico?",
+          "options": [
+            {
+              "text": "Missão foca no que a empresa faz hoje e seus objetivos diários; Visão foca onde a empresa quer chegar no futuro.",
+              "isCorrect": true,
+              "rationale": "Missão refere-se ao cotidiano e o que a empresa faz agora, enquanto Visão são os objetivos e sonhos para anos à frente[cite: 128, 129]."
+            },
+            {
+              "text": "Missão é para empresas sem fins lucrativos; Visão é para empresas comerciais.",
+              "isCorrect": false,
+              "rationale": "Ambas são aplicáveis a qualquer tipo de planejamento empresarial[cite: 126]."
+            },
+            {
+              "text": "Missão define os lucros esperados; Visão define os valores éticos.",
+              "isCorrect": false,
+              "rationale": "Valores são os princípios éticos, distintos de Missão e Visão[cite: 135]."
+            },
+            {
+              "text": "Missão é definida pelos clientes; Visão é definida pelos sócios.",
+              "isCorrect": false,
+              "rationale": "Ambos são definidos internamente no planejamento estratégico da empresa[cite: 126]."
+            }
+          ],
+          "hint": "Associe 'Missão' ao presente/agora e 'Visão' ao futuro/sonho."
+        },
+        {
+          "text": "Baseado no conteúdo da aula 1, o termo 'Intraempreendedorismo' refere-se a:",
+          "options": [
+            {
+              "text": "Ação de colaboradores que inovam e melhoram processos dentro de uma organização já existente.",
+              "isCorrect": true,
+              "rationale": "O intraempreendedorismo ou empreendedorismo corporativo ocorre quando funcionários usam espírito empreendedor para beneficiar a própria organização onde trabalham[cite: 59]."
+            },
+            {
+              "text": "Abertura de uma empresa individual (MEI) para prestar serviços a terceiros.",
+              "isCorrect": false,
+              "rationale": "Isso é classificado como empreendedorismo individual[cite: 54]."
+            },
+            {
+              "text": "Criação de ONGs focadas exclusivamente em impacto social.",
+              "isCorrect": false,
+              "rationale": "Isso refere-se ao empreendedorismo social[cite: 60]."
+            },
+            {
+              "text": "Fusão de duas empresas grandes para dominar o mercado.",
+              "isCorrect": false,
+              "rationale": "Isso é uma estratégia corporativa, mas não a definição de intraempreendedorismo dada no texto."
+            }
+          ],
+          "hint": "O prefixo 'Intra' sugere algo que acontece 'dentro' de uma estrutura."
+        },
+        {
+          "text": "Baseado no conteúdo da aula 1, ao analisar a viabilidade financeira, qual a distinção feita entre 'Rentabilidade' e 'Lucratividade'?",
+          "options": [
+            {
+              "text": "Rentabilidade relaciona-se ao rendimento total (similar ao lucro bruto), enquanto Lucratividade refere-se ao ganho real após descontos (lucro líquido).",
+              "isCorrect": true,
+              "rationale": "O texto associa rentabilidade ao que a empresa rende no total (lucro bruto) e lucratividade ao quanto sobra de fato (lucro líquido) após gastos[cite: 149, 150, 151]."
+            },
+            {
+              "text": "Rentabilidade é o dinheiro que entra no caixa; Lucratividade é o dinheiro que sai para pagar contas.",
+              "isCorrect": false,
+              "rationale": "Ambos são indicadores de ganho, mas com bases de cálculo diferentes[cite: 149, 150]."
+            },
+            {
+              "text": "Rentabilidade é medida apenas anualmente; Lucratividade é medida mensalmente.",
+              "isCorrect": false,
+              "rationale": "O texto não faz essa distinção temporal, mas sim conceitual sobre o tipo de ganho[cite: 149]."
+            },
+            {
+              "text": "Não há diferença, são sinônimos perfeitos no contexto empresarial.",
+              "isCorrect": false,
+              "rationale": "O texto explicita uma diferença técnica entre os dois conceitos[cite: 149, 150]."
+            }
+          ],
+          "hint": "Um termo foca no 'bruto' e o outro no 'líquido' (o que realmente sobra)."
+        },
+        {
+          "text": "Baseado no conteúdo da aula 1, o que é o 'Simples Nacional' e qual sua principal vantagem mencionada?",
+          "options": [
+            {
+              "text": "Um sistema governamental que unifica o pagamento de vários impostos em uma única guia, agilizando o processo.",
+              "isCorrect": true,
+              "rationale": "O Simples Nacional permite pagar todos os impostos de uma vez só, evitando o cálculo individual de cada tributo[cite: 181, 183]."
+            },
+            {
+              "text": "Um tipo de empréstimo bancário exclusivo para microempreendedores do Nordeste.",
+              "isCorrect": false,
+              "rationale": "O texto cita o 'Crediamigo' do Banco do Nordeste como exemplo de crédito, não o Simples Nacional[cite: 108]."
+            },
+            {
+              "text": "Uma licença especial para vender produtos agrícolas e farmacêuticos.",
+              "isCorrect": false,
+              "rationale": "Licenças são documentos específicos para operação, distintos do regime tributário[cite: 171]."
+            },
+            {
+              "text": "Um software de gestão de estoque gratuito oferecido pelo governo.",
+              "isCorrect": false,
+              "rationale": "É um regime tributário, não um software de estoque[cite: 181]."
+            }
+          ],
+          "hint": "A palavra 'Simples' sugere a simplificação de algo complexo, como o pagamento de tributos."
+        },
+        {
+          "text": "Baseado no conteúdo da aula 1, o 'Ponto de Equilíbrio' é um indicador financeiro crucial que indica:",
+          "options": [
+            {
+              "text": "O momento em que o investimento inicial se paga, ou seja, o equilíbrio entre o que foi gasto e o que foi ganho.",
+              "isCorrect": true,
+              "rationale": "O ponto de equilíbrio é definido como quando o investimento se autopaga, igualando gastos e ganhos[cite: 145, 147]."
+            },
+            {
+              "text": "O momento em que a empresa contrata seu primeiro funcionário.",
+              "isCorrect": false,
+              "rationale": "Isso é um marco operacional, não financeiro de equilíbrio[cite: 145]."
+            },
+            {
+              "text": "Quando a empresa decide abrir capital na bolsa de valores.",
+              "isCorrect": false,
+              "rationale": "Isso refere-se a uma Sociedade Anônima (SA), não ao ponto de equilíbrio[cite: 163]."
+            },
+            {
+              "text": "O valor máximo que a empresa pode gastar com aluguel e energia.",
+              "isCorrect": false,
+              "rationale": "Isso refere-se à estrutura de custos fixos e variáveis, não ao ponto de equilíbrio[cite: 117]."
+            }
+          ],
+          "hint": "Pense numa balança onde os ganhos finalmente igualam os gastos iniciais."
+        }
+      ]
+    },
+    {
+      "id": 2,
+      "titulo": "Inovação e Criatividade",
+      "questions": [
+        {
+          "text": "Baseado no conteúdo da aula 2, é comum acreditar que a criatividade é um talento nato. Como o professor desconstrói essa ideia e redefine o conceito?",
+          "options": [
+            {
+              "text": "A criatividade não é um dom ou talento raro, mas uma habilidade que pode ser desenvolvida e aperfeiçoada, muitas vezes ligada à sobrevivência.",
+              "isCorrect": true,
+              "rationale": "O texto enfatiza que se a criatividade fosse um dom, poucos a teriam. Ela é descrita como uma competência treinável e essencial para resolver problemas."
+            },
+            {
+              "text": "A criatividade é um dom artístico exclusivo de pintores e músicos, não aplicável ao mundo dos negócios.",
+              "isCorrect": false,
+              "rationale": "A aula expande a criatividade para além das artes, citando exemplos cotidianos como consertos e ferramentas de trabalho."
+            },
+            {
+              "text": "A criatividade depende exclusivamente de sorte e momentos de inspiração divina, sem relação com esforço.",
+              "isCorrect": false,
+              "rationale": "O professor menciona explicitamente que o destaque vem de pensar diferente e agir, não da sorte."
+            },
+            {
+              "text": "A criatividade é uma característica genética que não pode ser alterada ao longo da vida.",
+              "isCorrect": false,
+              "rationale": "O texto afirma o oposto: que é algo que se pode desenvolver e aperfeiçoar."
+            }
+          ],
+          "hint": "Lembre-se da comparação feita com a 'sobrevivência' e o 'improviso'."
+        },
+        {
+          "text": "Baseado no conteúdo da aula 2, qual é o principal gatilho histórico apontado para o surgimento de grandes inovações, como a roda ou o domínio do fogo?",
+          "options": [
+            {
+              "text": "A necessidade extrema e a dificuldade, onde a inovação surge como ferramenta de sobrevivência ou facilitação do trabalho.",
+              "isCorrect": true,
+              "rationale": "O professor cita guerras, crises e necessidades físicas (como carregar peso ou se aquecer) como os motores da inovação, não o luxo."
+            },
+            {
+              "text": "O desejo de status e luxo das civilizações antigas.",
+              "isCorrect": false,
+              "rationale": "O texto refuta a ideia de 'inovar por moda' ou luxo, focando na necessidade funcional."
+            },
+            {
+              "text": "A disponibilidade excessiva de recursos e tempo livre para pensar.",
+              "isCorrect": false,
+              "rationale": "Pelo contrário, o texto diz que a criatividade 'nunca aparece quando está tudo fácil'."
+            },
+            {
+              "text": "A ordem direta de reis e imperadores para criar novas tecnologias.",
+              "isCorrect": false,
+              "rationale": "O foco da aula é na necessidade prática do dia a dia, não em ordens hierárquicas."
+            }
+          ],
+          "hint": "O texto usa a frase 'quando o sapato aperta' para ilustrar esse momento."
+        },
+        {
+          "text": "Baseado no conteúdo da aula 2, o professor utiliza o exemplo do conserto da dobradiça de seu notebook para ilustrar uma competência empreendedora específica. Qual é ela?",
+          "options": [
+            {
+              "text": "A capacidade de transformar um problema pessoal em uma oportunidade de negócio, aprendendo uma nova habilidade e oferecendo-a ao mercado.",
+              "isCorrect": true,
+              "rationale": "Ele narra como o improviso inicial evoluiu para uma técnica aprimorada (resina) e, posteriormente, para um serviço pago."
+            },
+            {
+              "text": "A importância de economizar dinheiro a todo custo, evitando pagar profissionais qualificados.",
+              "isCorrect": false,
+              "rationale": "Embora tenha economizado, o foco do exemplo foi a percepção da oportunidade de ganhar dinheiro, não apenas a economia."
+            },
+            {
+              "text": "A habilidade de piratear peças de computador para revenda.",
+              "isCorrect": false,
+              "rationale": "O exemplo trata de reparo e prestação de serviço, não de pirataria."
+            },
+            {
+              "text": "A necessidade de abandonar a carreira de professor para virar técnico de informática.",
+              "isCorrect": false,
+              "rationale": "O exemplo ilustra a mentalidade empreendedora, não uma mudança definitiva de carreira."
+            }
+          ],
+          "hint": "Analise a transição entre 'consertar para si mesmo' e 'anunciar o serviço'."
+        },
+        {
+          "text": "Baseado no conteúdo da aula 2, qual a relação estabelecida entre 'improviso' (o famoso 'jeitinho') e a criatividade?",
+          "options": [
+            {
+              "text": "O improviso é uma manifestação prática da criatividade, surgindo quando o planejado falha e é necessário encontrar uma saída imediata.",
+              "isCorrect": true,
+              "rationale": "O professor valida o improviso ('não é errado, é criatividade') como uma forma de resolver problemas quando o plano original não funciona."
+            },
+            {
+              "text": "O improviso é o oposto da criatividade, pois demonstra falta de planejamento e profissionalismo.",
+              "isCorrect": false,
+              "rationale": "O texto diz explicitamente: 'E não é errado, é criatividade'."
+            },
+            {
+              "text": "O improviso só é válido em situações domésticas, nunca no ambiente de trabalho ou estudo.",
+              "isCorrect": false,
+              "rationale": "O exemplo do trabalho escolar entregue sem internet mostra o improviso no contexto acadêmico/profissional."
+            },
+            {
+              "text": "O improviso é uma ferramenta que deve ser evitada por empreendedores de sucesso.",
+              "isCorrect": false,
+              "rationale": "A aula encoraja a capacidade de 'se virar' como uma qualidade positiva."
+            }
+          ],
+          "hint": "Lembre-se da expressão 'te vira' citada na aula."
+        },
+        {
+          "text": "Baseado no conteúdo da aula 2, a invenção do fogo e o aprendizado humano são associados a um processo específico de tentativa. Qual conceito resume esse processo?",
+          "options": [
+            {
+              "text": "Persistência e o método de tentativa e erro.",
+              "isCorrect": true,
+              "rationale": "O texto menciona que o homem não acordou genial, mas aprendeu 'errando, se queimando e insistindo até dar certo'."
+            },
+            {
+              "text": "Planejamento estratégico de longo prazo sem falhas.",
+              "isCorrect": false,
+              "rationale": "A ênfase é no erro como parte do aprendizado, não em um plano infalível."
+            },
+            {
+              "text": "Cópia de tecnologias de outras civilizações.",
+              "isCorrect": false,
+              "rationale": "O texto foca na observação da natureza e experimentação própria."
+            },
+            {
+              "text": "Teoria acadêmica aplicada à prática.",
+              "isCorrect": false,
+              "rationale": "O exemplo remete a tempos pré-históricos, anteriores à academia."
+            }
+          ],
+          "hint": "A palavra-chave é mencionada logo após o exemplo do fósforo e do vento."
+        },
+        {
+          "text": "Baseado no conteúdo da aula 2, como o período da pandemia é analisado sob a ótica da inovação?",
+          "options": [
+            {
+              "text": "Como um momento de reinvenção forçada, onde o home office e as vendas online não foram escolhas por status, mas por necessidade de adaptação.",
+              "isCorrect": true,
+              "rationale": "A aula destaca que a mudança para o digital não foi 'glamour', mas a única saída para muitos continuarem trabalhando."
+            },
+            {
+              "text": "Como um período de estagnação onde nenhuma inovação ocorreu.",
+              "isCorrect": false,
+              "rationale": "O texto cita vários exemplos de inovação (aulas online, vendas de comida) durante esse período."
+            },
+            {
+              "text": "Como a prova de que a tecnologia substitui completamente o contato humano.",
+              "isCorrect": false,
+              "rationale": "O foco é na adaptação das ferramentas (Google Meet), não na substituição total do valor humano."
+            },
+            {
+              "text": "Como um evento que afetou apenas grandes empresas, sem impacto nos pequenos empreendedores.",
+              "isCorrect": false,
+              "rationale": "O texto menciona pessoas vendendo doces e dando aulas particulares, exemplos de microempreendedorismo."
+            }
+          ],
+          "hint": "Pense no conceito de 'reinventar-se' citado no texto."
+        },
+        {
+          "text": "Baseado no conteúdo da aula 2, o exemplo do jardineiro que criou uma tesoura de poda com cabos longos demonstra qual nível de aplicação da criatividade?",
+          "options": [
+            {
+              "text": "A melhoria de processos visando eficiência e segurança no trabalho.",
+              "isCorrect": true,
+              "rationale": "A invenção permitiu podar sem subir em escadas, reduzindo riscos (segurança) e facilitando o alcance (eficiência)."
+            },
+            {
+              "text": "A criação de um produto estético para impressionar clientes.",
+              "isCorrect": false,
+              "rationale": "A finalidade descrita era funcional (não precisar subir na árvore), não estética."
+            },
+            {
+              "text": "O uso de tecnologia digital para resolver problemas manuais.",
+              "isCorrect": false,
+              "rationale": "A solução foi mecânica/analógica (tesoura com cabos), não digital."
+            },
+            {
+              "text": "A complexidade desnecessária para realizar uma tarefa simples.",
+              "isCorrect": false,
+              "rationale": "A inovação simplificou o trabalho, tornando-o 'mais tranquilo', ao invés de complicar."
+            }
+          ],
+          "hint": "Avalie o benefício que a ferramenta trouxe para a integridade física do jardineiro."
+        }
+      ]
+    },
+    {
+      "id": 3,
+      "titulo": "O Perfil do Empreendedor e o Cenário Cearense",
+      "questions": [
+        {
+          "text": "Baseado no conteúdo da aula 3, a professora faz uma distinção importante entre 'empreendedor' e 'empresário'. Qual é a principal diferença apontada entre esses dois perfis?",
+          "options": [
+            {
+              "text": "O empreendedor é focado na inovação, visão e criação de soluções, enquanto o empresário foca na gestão, otimização de recursos e estabilidade do negócio.",
+              "isCorrect": true,
+              "rationale": "A aula define o empreendedor como o visionário/inovador e o empresário como o gestor que garante a viabilidade financeira e a continuidade a longo prazo."
+            },
+            {
+              "text": "O empreendedor é quem tem muito dinheiro para investir, enquanto o empresário é quem começa sem capital.",
+              "isCorrect": false,
+              "rationale": "A distinção feita no texto é sobre a atitude (inovação vs gestão), não sobre o capital inicial."
+            },
+            {
+              "text": "O empresário é aquele que trabalha sozinho, enquanto o empreendedor lidera grandes equipes.",
+              "isCorrect": false,
+              "rationale": "Ambos podem liderar equipes; a diferença está no foco (inovação vs sustentabilidade do negócio)."
+            },
+            {
+              "text": "Não há diferença, os termos são usados como sinônimos exatos durante toda a aula.",
+              "isCorrect": false,
+              "rationale": "A professora dedica uma seção inteira para explicar as diferenças de foco entre os dois papéis."
+            }
+          ],
+          "hint": "Associe 'Empreendedor' a 'Inovação' e 'Empresário' a 'Gestão/Recursos'."
+        },
+        {
+          "text": "Baseado no conteúdo da aula 3, uma das 10 características essenciais do empreendedor é a capacidade de 'calcular riscos'. O que isso significa na prática?",
+          "options": [
+            {
+              "text": "Mapear possíveis problemas (concorrentes, economia, fornecedores) e planejar soluções para reduzir a chance de erro, sem agir cegamente.",
+              "isCorrect": true,
+              "rationale": "O texto explica que o empreendedor assume riscos, mas com cautela, prevendo obstáculos e planejando como superá-los para não inviabilizar a empresa."
+            },
+            {
+              "text": "Evitar qualquer tipo de investimento que não tenha 100% de garantia de lucro imediato.",
+              "isCorrect": false,
+              "rationale": "Empreender sempre envolve risco; a chave é calculá-lo, não eliminá-lo completamente, o que seria impossível."
+            },
+            {
+              "text": "Ignorar os perigos e confiar apenas na intuição e na sorte para ter sucesso.",
+              "isCorrect": false,
+              "rationale": "Isso é o oposto de 'risco calculado'. O texto enfatiza o planejamento e a previsão."
+            },
+            {
+              "text": "Delegar toda a responsabilidade dos riscos para o governo ou parceiros externos.",
+              "isCorrect": false,
+              "rationale": "A responsabilidade de mapear e assumir riscos é descrita como intrínseca ao empreendedor."
+            }
+          ],
+          "hint": "A palavra-chave no texto é 'planejar' e 'prever' para reduzir problemas."
+        },
+        {
+          "text": "Baseado no conteúdo da aula 3, o Ceará é destacado por sua força na 'economia criativa'. Quais elementos compõem esse setor segundo a aula?",
+          "options": [
+            {
+              "text": "Setores baseados no conhecimento, cultura, inovação, turismo, gastronomia e artes (como música, teatro e artesanato).",
+              "isCorrect": true,
+              "rationale": "A aula cita especificamente a cultura rica, o artesanato, o humor, a música e o turismo como pilares dessa economia no estado."
+            },
+            {
+              "text": "Apenas a indústria pesada e a extração de minérios.",
+              "isCorrect": false,
+              "rationale": "Embora a indústria seja citada no crescimento do PIB, a 'economia criativa' refere-se aos bens culturais e intelectuais."
+            },
+            {
+              "text": "Exclusivamente o setor de tecnologia da informação e venda de computadores.",
+              "isCorrect": false,
+              "rationale": "A economia criativa no Ceará é descrita de forma mais ampla, englobando cultura e artes, não apenas TI."
+            },
+            {
+              "text": "A agricultura de subsistência e a pecuária extensiva.",
+              "isCorrect": false,
+              "rationale": "Estes são setores tradicionais, distintos do conceito de economia criativa apresentado."
+            }
+          ],
+          "hint": "Pense nos exemplos dados: festivais, humoristas, artesanato e turismo."
+        },
+        {
+          "text": "Baseado no conteúdo da aula 3, ao definir metas para o negócio, quais critérios o empreendedor deve seguir para que elas sejam eficientes?",
+          "options": [
+            {
+              "text": "As metas devem ser claras, mensuráveis (que podem ser medidas), possíveis de realizar e ter prazos definidos.",
+              "isCorrect": true,
+              "rationale": "O texto destaca que metas precisam ser 'passo a passo', concretas e passíveis de medição e controle."
+            },
+            {
+              "text": "As metas devem ser vagas e subjetivas para permitir mudanças constantes sem planejamento.",
+              "isCorrect": false,
+              "rationale": "Metas vagas dificultam o controle e o direcionamento da equipe."
+            },
+            {
+              "text": "As metas devem ser impossíveis de alcançar para forçar a equipe a trabalhar mais.",
+              "isCorrect": false,
+              "rationale": "A aula diz explicitamente que as metas devem ser 'possíveis' e 'viáveis', embora desafiadoras."
+            },
+            {
+              "text": "As metas dizem respeito apenas ao lucro final, ignorando os processos do dia a dia.",
+              "isCorrect": false,
+              "rationale": "Metas envolvem o passo a passo e processos diários, não apenas o resultado financeiro final."
+            }
+          ],
+          "hint": "Lembre-se que a meta precisa ser 'mensurável' e 'viável'."
+        },
+        {
+          "text": "Baseado no conteúdo da aula 3, qual é o papel das instituições citadas (como Dragão do Mar, Cucas, Escolas de Gastronomia e Universidades) para o empreendedor cearense?",
+          "options": [
+            {
+              "text": "Elas funcionam como polos de formação, capacitação profissional e fomento à cultura, oferecendo oportunidades de aprendizado.",
+              "isCorrect": true,
+              "rationale": "A professora lista essas instituições como referências no setor de formação das pessoas, essenciais para preparar novos profissionais."
+            },
+            {
+              "text": "Elas servem apenas como locais de lazer, sem impacto na economia ou na formação profissional.",
+              "isCorrect": false,
+              "rationale": "O texto enfatiza o papel delas na 'formação' e 'oportunidade de novos negócios'."
+            },
+            {
+              "text": "São locais exclusivos para turistas estrangeiros, inacessíveis para a população local.",
+              "isCorrect": false,
+              "rationale": "Muitas são citadas como abertas ao público, gratuitas ou de baixo custo para a juventude local (ex: Cucas)."
+            },
+            {
+              "text": "Elas são concorrentes diretos que impedem o crescimento dos pequenos negócios.",
+              "isCorrect": false,
+              "rationale": "Pelo contrário, elas são apresentadas como parte da rede de apoio e estrutura sólida do estado."
+            }
+          ],
+          "hint": "O texto menciona essas instituições no contexto de 'investir na formação' e 'estrutura sólida'."
+        },
+        {
+          "text": "Baseado no conteúdo da aula 3, a professora menciona a importância da 'Rede de Contatos' (Networking). Como essa habilidade auxilia o empreendedor?",
+          "options": [
+            {
+              "text": "Permite influenciar pessoas, conseguir apoio de fornecedores e parceiros, e criar relacionamentos comerciais que impulsionam o negócio.",
+              "isCorrect": true,
+              "rationale": "A persuasão e a rede de contatos são citadas como essenciais para alcançar objetivos estratégicos através de relacionamentos."
+            },
+            {
+              "text": "Serve apenas para conseguir empréstimos bancários com juros mais baixos.",
+              "isCorrect": false,
+              "rationale": "A rede de contatos é descrita de forma mais ampla, envolvendo influência e parcerias, não apenas crédito."
+            },
+            {
+              "text": "É usada para copiar as ideias dos concorrentes sem que eles percebam.",
+              "isCorrect": false,
+              "rationale": "O foco é em 'bons relacionamentos comerciais' e apoio, não em espionagem ou cópia."
+            },
+            {
+              "text": "Substitui a necessidade de planejamento, já que os amigos resolverão os problemas.",
+              "isCorrect": false,
+              "rationale": "Networking é uma das 10 habilidades, mas não substitui as outras como planejamento e monitoramento."
+            }
+          ],
+          "hint": "Envolve 'persuasão' e 'bons relacionamentos comerciais'."
+        },
+        {
+          "text": "Baseado no conteúdo da aula 3, qual reflexão é feita sobre o perfil demográfico dos empreendedores no Brasil e o objetivo do programa Ceará de Valores?",
+          "options": [
+            {
+              "text": "Embora o cenário atual mostre maioria de homens brancos, o programa visa democratizar o acesso e empoderar jovens de todos os perfis para mudar essa realidade.",
+              "isCorrect": true,
+              "rationale": "A professora apresenta os dados estatísticos atuais, mas reforça que a iniciativa existe para mudar isso e dar oportunidades a todos."
+            },
+            {
+              "text": "O programa busca manter o perfil atual, pois considera que apenas homens mais velhos têm sucesso.",
+              "isCorrect": false,
+              "rationale": "O texto diz explicitamente: 'A ideia de iniciativa como a nossa é exatamente mudar isso'."
+            },
+            {
+              "text": "O perfil demográfico não importa para o empreendedorismo, por isso não é discutido na aula.",
+              "isCorrect": false,
+              "rationale": "A aula dedica uma seção específica para discutir esses dados de raça e gênero."
+            },
+            {
+              "text": "Os dados mostram que jovens não têm capacidade de empreender, devendo esperar até os 30 anos.",
+              "isCorrect": false,
+              "rationale": "A aula incentiva constantemente os jovens, chamando-os de criativos e corajosos."
+            }
+          ],
+          "hint": "O programa aposta na 'mudança' e na 'oportunidade para todos'."
+        }
+      ]
+    },
+    {
+      "id": 4,
+      "titulo": "Comportamento Empreendedor",
+      "questions": [
+        {
+          "text": "Baseado no conteúdo da aula 4, o professor apresenta o modelo de gestão 'CHÁ' como um tripé para o sucesso profissional. O que significam, respectivamente, as siglas C, H e A e suas definições práticas?",
+          "options": [
+            {
+              "text": "Conhecimento (Saber Teórico), Habilidade (Saber Fazer) e Atitude (Querer Fazer).",
+              "isCorrect": true,
+              "rationale": "O texto define explicitamente: Conhecimento é o que se aprende (teoria), Habilidade é colocar em prática, e Atitude é a vontade e proatividade de executar."
+            },
+            {
+              "text": "Criatividade (Ter Ideias), Honestidade (Ser Ético) e Ação (Executar).",
+              "isCorrect": false,
+              "rationale": "Embora sejam qualidades importantes, não correspondem à sigla CHÁ apresentada na aula."
+            },
+            {
+              "text": "Conhecimento (Ler Livros), Habilidade (Ter Talento Nato) e Ambição (Querer Lucro).",
+              "isCorrect": false,
+              "rationale": "Habilidade é definida como 'saber fazer' (prática), não necessariamente talento nato, e Atitude é 'querer fazer', não apenas ambição."
+            },
+            {
+              "text": "Coragem (Enfrentar Medo), Harmonia (Trabalhar em Equipe) e Agilidade (Ser Rápido).",
+              "isCorrect": false,
+              "rationale": "Essas são características comportamentais, mas não a definição do acrônimo CHÁ."
+            }
+          ],
+          "hint": "Lembre-se da sequência: Saber, Saber Fazer e Querer Fazer."
+        },
+        {
+          "text": "Baseado no conteúdo da aula 4, qual a distinção fundamental feita pelo professor entre 'Conhecimento' e 'Habilidade' usando o exemplo da autoescola ou culinária?",
+          "options": [
+            {
+              "text": "Conhecimento é aprender a teoria (leis de trânsito ou receita), enquanto Habilidade é a capacidade de executar na prática (dirigir ou fazer o bolo).",
+              "isCorrect": true,
+              "rationale": "O professor usa o exemplo de aprender a receita (teoria/conhecimento) versus efetivamente fazer o bolo (prática/habilidade) para ilustrar a diferença."
+            },
+            {
+              "text": "Conhecimento é o que se aprende sozinho, enquanto Habilidade é o que se aprende em grupo.",
+              "isCorrect": false,
+              "rationale": "A distinção não é sobre o método de aprendizado (sozinho/grupo), mas sobre teoria versus prática."
+            },
+            {
+              "text": "Conhecimento é prático e Habilidade é teórica.",
+              "isCorrect": false,
+              "rationale": "É exatamente o oposto: Conhecimento é teórico e Habilidade é prática."
+            },
+            {
+              "text": "Não há diferença, pois quem tem conhecimento automaticamente tem habilidade.",
+              "isCorrect": false,
+              "rationale": "O texto enfatiza que é possível saber (teoria) sem saber fazer (prática) ou sem querer fazer (atitude), por isso são distintos."
+            }
+          ],
+          "hint": "Pense na diferença entre ler uma receita e cozinhar o prato."
+        },
+        {
+          "text": "Baseado no conteúdo da aula 4, a 'Resiliência' é explicada através de uma analogia com uma liga (elástico). O que essa comparação busca demonstrar sobre o comportamento empreendedor?",
+          "options": [
+            {
+              "text": "A capacidade de se adaptar, sofrer pressão e recuperar-se, voltando a tentar mesmo após falhas ou dificuldades.",
+              "isCorrect": true,
+              "rationale": "A liga estica (sofre tensão/adaptação) e volta ao seu estado original (recuperação). Isso ilustra a capacidade de levantar e começar de novo."
+            },
+            {
+              "text": "A capacidade de se manter rígido e inflexível diante das mudanças do mercado.",
+              "isCorrect": false,
+              "rationale": "A resiliência envolve flexibilidade e adaptação, o oposto de rigidez."
+            },
+            {
+              "text": "A habilidade de esticar os recursos financeiros até o limite.",
+              "isCorrect": false,
+              "rationale": "A analogia refere-se à postura emocional e mental diante de obstáculos, não a finanças."
+            },
+            {
+              "text": "A facilidade de se romper quando pressionado.",
+              "isCorrect": false,
+              "rationale": "O objetivo da analogia é mostrar que ela volta (recupera), não que ela quebra."
+            }
+          ],
+          "hint": "O que acontece com o elástico depois que você o solta?"
+        },
+        {
+          "text": "Baseado no conteúdo da aula 4, o professor conta a história de uma entrevista de emprego em um hospital para ilustrar a 'Proatividade'. Qual ação definiu a aprovação do candidato?",
+          "options": [
+            {
+              "text": "Tomar a iniciativa de recolher um papel do chão e jogá-lo no lixo, sem que ninguém precisasse mandar.",
+              "isCorrect": true,
+              "rationale": "A proatividade é definida como 'não esperar que alguém mande fazer'. O candidato viu o problema (papel) e resolveu."
+            },
+            {
+              "text": "Ter o melhor currículo acadêmico entre todos os presentes.",
+              "isCorrect": false,
+              "rationale": "A história foca na atitude comportamental durante o teste prático, não no currículo."
+            },
+            {
+              "text": "Fazer perguntas inteligentes durante a visita guiada.",
+              "isCorrect": false,
+              "rationale": "Embora bom, o fator decisivo citado foi a ação de limpar o papel."
+            },
+            {
+              "text": "Chegar mais cedo que a entrevistadora.",
+              "isCorrect": false,
+              "rationale": "Pontualidade é importante, mas o exemplo específico da proatividade foi a ação com o papel."
+            }
+          ],
+          "hint": "O candidato fez algo que os outros ignoraram no corredor."
+        },
+        {
+          "text": "Baseado no conteúdo da aula 4, como o conceito de 'Inovação' é desmistificado para o empreendedor iniciante?",
+          "options": [
+            {
+              "text": "Inovação não precisa ser criar algo 100% novo, mas pode ser apenas aprimorar ou melhorar algo que já existe.",
+              "isCorrect": true,
+              "rationale": "O professor explica que 'nova ideia' não significa necessariamente uma invenção do zero, mas muitas vezes a melhoria de um produto existente."
+            },
+            {
+              "text": "Inovação só é válida se envolver alta tecnologia e aplicativos digitais.",
+              "isCorrect": false,
+              "rationale": "Embora cite apps, ele generaliza a inovação como qualquer melhoria, inclusive em produtos físicos."
+            },
+            {
+              "text": "Inovação é um dom que não pode ser desenvolvido; ou você tem ou não tem.",
+              "isCorrect": false,
+              "rationale": "A aula defende que a visão inovadora pode ser desenvolvida enfrentando medos e exercitando a criatividade."
+            },
+            {
+              "text": "Inovação requer grandes investimentos financeiros iniciais.",
+              "isCorrect": false,
+              "rationale": "O texto foca na ideia e na visão, não no capital."
+            }
+          ],
+          "hint": "Você precisa reinventar a roda ou apenas fazê-la girar melhor?"
+        },
+        {
+          "text": "Baseado no conteúdo da aula 4, qual a recomendação do professor sobre a 'Tomada de Risco' e a importância de ter um 'Plano B'?",
+          "options": [
+            {
+              "text": "Riscos são inevitáveis, por isso o empreendedor deve assumir riscos calculados e ter alternativas preparadas para imprevistos.",
+              "isCorrect": true,
+              "rationale": "Ele cita exemplos como falta de energia ou chuva, enfatizando a necessidade de focar no projeto e ter alternativas (Plano B) para driblar problemas."
+            },
+            {
+              "text": "O empreendedor deve evitar qualquer situação de risco para garantir a segurança do negócio.",
+              "isCorrect": false,
+              "rationale": "O texto diz que 'não existe nada nessa vida sem risco', então evitá-los totalmente é impossível."
+            },
+            {
+              "text": "Ter um Plano B demonstra falta de confiança no Plano A.",
+              "isCorrect": false,
+              "rationale": "Pelo contrário, demonstra preparo e comportamento empreendedor maduro."
+            },
+            {
+              "text": "Riscos devem ser ignorados se o empreendedor tiver pensamento positivo.",
+              "isCorrect": false,
+              "rationale": "Pensamento positivo é citado, mas junto com a ação de driblar situações e ter planos alternativos."
+            }
+          ],
+          "hint": "O que você faria se seu projeto de placa solar enfrentasse dias de chuva?"
+        },
+        {
+          "text": "Baseado no conteúdo da aula 4, a quarta dica envolve 'Cuidar da Mente e Investir em Conhecimento'. Qual atitude é desencorajada nesse ponto?",
+          "options": [
+            {
+              "text": "Achar que já sabe de tudo, domina tudo e não precisa ouvir quem veio antes.",
+              "isCorrect": true,
+              "rationale": "O professor alerta contra a arrogância de achar que já 'manja tudo' e recomenda humildade para continuar aprendendo."
+            },
+            {
+              "text": "Buscar cursos e novas fontes de aprendizado constantemente.",
+              "isCorrect": false,
+              "rationale": "Isso é encorajado como parte do investimento em conhecimento."
+            },
+            {
+              "text": "Ouvir experiências de pessoas mais velhas ou experientes.",
+              "isCorrect": false,
+              "rationale": "Isso é encorajado como forma de humildade e aprendizado."
+            },
+            {
+              "text": "Manter a saúde mental em dia.",
+              "isCorrect": false,
+              "rationale": "Isso é parte do título da dica ('Cuidar da Mente'), portanto é encorajado."
+            }
+          ],
+          "hint": "O excesso de confiança pode impedir o aprendizado."
+        }
+      ]
+    }
+  ]
+}

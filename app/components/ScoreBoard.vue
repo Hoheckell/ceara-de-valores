@@ -60,7 +60,7 @@ const getMedal = (index) => {
                     <template v-else>
                         <tr
 v-for="(item, index) in ranking" :key="item.municipio"
-                            class="hover:bg-blue-50/30 transition-colors">
+                            class="hover:bg-blue-50/30 transition-colors"> 
                             <td class="px-6 py-4 font-black text-slate-400">
                                 <span v-if="getMedal(index)" class="text-xl">{{ getMedal(index) }}</span>
                                 <span v-else>#{{ index + 1 }}</span>
