@@ -11,7 +11,7 @@ import ScoreBoard from './components/ScoreBoard.vue';
 import ODSSimulator from './components/ODSSimulator.vue';
 import MissionHistory from './components/MissionHistory.vue';
 const mostrarSugestoes = ref(false);
-
+const config = useRuntimeConfig()
 // Filtra a lista baseada no que o utilizador escreve
 const sugestoesFiltradas = computed(() => {
   const busca = userData.value.municipio.toLowerCase().trim();
@@ -329,7 +329,10 @@ watch(() => userData.value.cpf, (val) => {
 </script>
 
 <template>
-  <div class="min-h-screen bg-slate-50 font-sans">
+  <div>
+    <NuxtPage />
+  </div>
+  <div v-if="!config.public.maintenanceMode" class="min-h-screen bg-slate-50 font-sans">
     <header class="bg-blue-700 text-white p-4 sticky top-0 z-50 shadow-md">
       <div class="max-w-2xl mx-auto flex justify-between items-center">
         <div class="flex items-center gap-2">
