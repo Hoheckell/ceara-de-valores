@@ -5,6 +5,7 @@ import { ref} from 'vue'
 // Estados do Simulador
 const step = ref('form') // form, loading, result
 const formData = ref({
+  cpf: '',
   afinidade: '',
   problema: '',
   habilidade: ''
@@ -102,9 +103,18 @@ href="/imagens/ods-objetivos-sustentaveis-1.png" target="_blank"
           class="w-full p-4 rounded-2xl bg-slate-50 border-2 border-transparent focus:border-orange-400 focus:bg-white transition-all outline-none font-medium"
         >
       </div>
+      <div>
+        <label class="block text-sm font-bold text-slate-700 mb-3 text-center uppercase tracking-wide">3.seu CPF</label>
+        <input 
+          v-model="formData.cpf"
+          type="text" 
+          placeholder="Ex: 000.000.000-00"
+          class="w-full p-4 rounded-2xl bg-slate-50 border-2 border-transparent focus:border-orange-400 focus:bg-white transition-all outline-none font-medium"
+        >
+      </div>
 
       <div>
-        <label class="block text-sm font-bold text-slate-700 mb-3 text-center uppercase tracking-wide">3. Qual é o teu superpoder?</label>
+        <label class="block text-sm font-bold text-slate-700 mb-3 text-center uppercase tracking-wide">4. Qual é o teu superpoder?</label>
         <div class="flex gap-2">
           <button 
             v-for="hab in habilidades" :key="hab.id"

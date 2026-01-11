@@ -9,6 +9,7 @@ import municipiosCeara from './content/municipios.json';
 import ScoreboardSection from './components/ScoreboardSection.vue';
 import ScoreBoard from './components/ScoreBoard.vue';
 import ODSSimulator from './components/ODSSimulator.vue';
+import MissionHistory from './components/MissionHistory.vue';
 const mostrarSugestoes = ref(false);
 
 // Filtra a lista baseada no que o utilizador escreve
@@ -422,6 +423,7 @@ href="/arquivos/orientacoes-projetos.pdf" target="_blank"
             <br>
             <ScoreBoard />
             <ODSSimulator />
+            <MissionHistory />
           </div>
         </section>
       </div>
