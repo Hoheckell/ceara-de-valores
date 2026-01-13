@@ -140,7 +140,7 @@ const startQuiz = async () => {
     const usernameLimpo = userData.value.username.toLowerCase().trim().replace(/[^a-z0-9_]/g, '');
     const emailSintetico = `${usernameLimpo}@aluno.cearadevalores.com.br`;
 
-    if (!usernameLimpo || !userData.value.senha) {
+    if (!usernameLimpo || !userData.value.senha || !userData.value.municipio) {
         alert("Por favor, preencha todos os campos corretamente.");
         return;
     }
