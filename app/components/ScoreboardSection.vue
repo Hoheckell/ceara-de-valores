@@ -2,22 +2,21 @@
 const supabase = useSupabaseClient(); // Ou como você estiver instanciando o Supabase
 const leaderboardData = ref([]);
 const carregandoRanking = ref(true);
-
+const infoMunicipioOpen = ref(false);
 const fetchRanking = async () => {
     carregandoRanking.value = true;
     try {
         const { data, error } = await supabase
             .from('ranking_municipios') // Nome da view que criamos
-            .select('municipio, total_participacoes, media_acertos')
-            .order('total_participacoes', { ascending: false });
+            .select('municipio, total_pontos')
+            .order('total_pontos', { ascending: false });
 
         if (error) throw error;
 
         // Mapeamos os dados para o formato que o nosso gráfico espera
         leaderboardData.value = data.map(item => ({
             nome: item.municipio,
-            total: item.total_participacoes,
-            media: item.media_acertos
+            total: item.total_pontos
         }));
     } catch (err) {
         console.error("Erro ao carregar ranking:", err.message);
@@ -53,10 +52,43 @@ const getMediaColorClass = (media) => {
 </script>
 
 <template>
+    <Transition name="fade">
+        <div
+v-if="infoMunicipioOpen"
+            class="fixed inset-0 z-[60] flex items-center justify-center p-4 bg-blue-900/40 backdrop-blur-sm"
+            @click.self="infoMunicipioOpen = false">
+            <div class="bg-white w-full max-w-md rounded-[2.5rem] p-8 shadow-2xl border-4 border-blue-50 relative">
+                <button
+class="absolute top-6 right-6 text-slate-300 hover:text-blue-600 font-black"
+                    @click="infoMunicipioOpen = false">✕</button>
+
+                <div class="space-y-4">
+                    <div
+                        class="bg-blue-600 w-12 h-12 rounded-2xl flex items-center justify-center text-white text-2xl mb-4">
+                        🏙️</div>
+                    <h3 class="text-2xl font-black text-blue-900 uppercase italic">A Nossa Força Coletiva</h3>
+                    <p class="text-slate-600 leading-relaxed">
+                        Este gráfico mostra o esforço somado de todos os jovens da tua terra. Quando a tua cidade sobe
+                        no ranking, não é apenas um aluno que vence, é a comunidade inteira que brilha!
+                    </p>
+                    <div class="bg-slate-50 p-4 rounded-2xl border-2 border-dashed border-slate-200">
+                        <p class="text-[10px] font-black text-slate-400 uppercase tracking-widest mb-1">Cálculo em Tempo
+                            Real:</p>
+                        <p class="text-sm font-bold text-blue-800">Σ (Pontos de todos os alunos do município)</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </Transition>
     <section class="py-4">
         <div class="flex items-center justify-between mb-4 px-2">
             <h2 class="text-sm font-black text-slate-400 uppercase tracking-widest flex items-center gap-2">
                 <span>📊</span> Placar das Cidades
+            <button
+                class="w-6 h-6 flex items-center justify-center bg-blue-100 text-blue-600 rounded-full hover:bg-orange-500 hover:text-white transition-all animate-pulse"
+                @click="infoMunicipioOpen = true">
+                <span class="font-black text-xs">i</span>
+            </button>
             </h2>
             <button class="text-blue-600 hover:rotate-180 transition-transform duration-500" @click="fetchRanking">
                 <span v-if="!carregandoRanking">🔄</span>
@@ -79,10 +111,6 @@ v-if="carregandoRanking"
                             <span v-if="getRankIcon(index)" class="text-lg">{{ getRankIcon(index) }}</span>
                             <span v-else class="text-slate-400 text-xs w-6 text-center">#{{ index + 1 }}</span>
                             <span>{{ item.nome }}</span>
-                            <span
-                                :class="['text-[10px] px-1.5 py-0.5 rounded border font-bold ml-1', getMediaColorClass(item.media)]">
-                                ★ {{ item.media.toFixed(1) }}
-                            </span>
                         </div>
                         <div class="font-black text-blue-900">
                             {{ item.total }} <span class="text-[10px] text-slate-400 font-normal lowercase">part.</span>
@@ -92,7 +120,7 @@ v-if="carregandoRanking"
                     <div class="h-3 bg-slate-100 rounded-full overflow-hidden shadow-inner relative">
                         <div
 class="h-full rounded-full bg-gradient-to-r from-blue-500 to-indigo-600 transition-all duration-1000 ease-out"
-                            :style="{ width: (item.total / maxTotal * 100) + '%' }"/>
+                            :style="{ width: (item.total / maxTotal * 100) + '%' }" />
                     </div>
                 </div>
             </div>

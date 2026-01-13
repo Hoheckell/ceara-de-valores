@@ -1,16 +1,15 @@
 
 <script setup>
 import { ref} from 'vue'
-
+const { userData } = useUser();
 // Estados do Simulador
 const step = ref('form') // form, loading, result
 const formData = ref({
-  cpf: '',
+  user_id: userData.value.user_id,
   afinidade: '',
   problema: '',
   habilidade: ''
 })
-
 const missionResult = ref(null)
 // Opções de afinidade (Baseadas nos ODS)
 const afinidades = [
@@ -26,24 +25,6 @@ const habilidades = [
   { id: 'maker', label: 'Criar soluções e tecnologia', icon: '🛠️' },
   { id: 'gestor', label: 'Organizar e planejar ações', icon: '📋' }
 ]
-
-// Função para simular a chamada à IA (ou integração real com o Flowise)
-// const gerarMissao = async () => {
-//   step.value = 'loading'
-  
-//   // Simula um delay de processamento da IA
-//   setTimeout(() => {
-//     // Aqui você integraria com o seu backend/Flowise
-//     // Por agora, geramos uma resposta estruturada mockada
-//     missionResult.value = {
-//       titulo: `Missão: ${formData.value.problema.substring(0, 15)}...`,
-//       ods: afinidades.find(a => a.id === formData.value.afinidade).ods,
-//       desafio: `Como você se identifica como ${formData.value.habilidade}, o seu desafio é criar uma iniciativa local em sua cidade para resolver o problema de "${formData.value.problema}".`,
-//       provocacao: "Qual seria o primeiro passo que daria amanhã de manhã para tirar esta ideia do papel?"
-//     }
-//     step.value = 'result'
-//   }, 2000)
-// }
 
 const gerarMissao = async () => {
   step.value = 'loading'
@@ -70,6 +51,7 @@ const shareOnWhatsapp = () => {
     <div class="text-center mb-4">
       <h2 class="text-2xl font-black text-blue-900 uppercase italic">Simulador de Impacto 🚀</h2>
       <p class="text-slate-500 text-sm">Transforma a tua realidade através dos ODS<br><em>Objetivos de Desenvolvimento Sustentável</em></p>
+      <p v-if="estaLogado == false" class="text-blue text-sm">Faça login abaixo para simular uma missão</p>
     </div>
 
           <a
@@ -78,7 +60,7 @@ href="/imagens/ods-objetivos-sustentaveis-1.png" target="_blank"
             <span>📖</span>
             <span>Painel dos ODS</span>
           </a>
-    <div v-if="step === 'form'" class="bg-white rounded-3xl shadow-xl border border-slate-100 p-6 space-y-6">
+    <div v-if="(step === 'form' && userData.username != '')" class="bg-white rounded-3xl shadow-xl border border-slate-100 p-6 space-y-6">
       <div>
         <label class="block text-sm font-bold text-slate-700 mb-3 text-center uppercase tracking-wide">1. O que mais te motiva a mudar o mundo?</label>
         <div class="grid grid-cols-2 gap-3">
@@ -103,16 +85,6 @@ href="/imagens/ods-objetivos-sustentaveis-1.png" target="_blank"
           class="w-full p-4 rounded-2xl bg-slate-50 border-2 border-transparent focus:border-orange-400 focus:bg-white transition-all outline-none font-medium"
         >
       </div>
-      <div>
-        <label class="block text-sm font-bold text-slate-700 mb-3 text-center uppercase tracking-wide">3.seu CPF</label>
-        <input 
-          v-model="formData.cpf"
-          type="text" 
-          placeholder="Ex: 000.000.000-00"
-          class="w-full p-4 rounded-2xl bg-slate-50 border-2 border-transparent focus:border-orange-400 focus:bg-white transition-all outline-none font-medium"
-        >
-      </div>
-
       <div>
         <label class="block text-sm font-bold text-slate-700 mb-3 text-center uppercase tracking-wide">4. Qual é o teu superpoder?</label>
         <div class="flex gap-2">

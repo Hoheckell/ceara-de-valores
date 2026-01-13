@@ -3,7 +3,6 @@ import { serverSupabaseClient } from '#supabase/server'
 export default defineEventHandler(async (event) => {
   const body = await readBody(event)
   const client = await serverSupabaseClient(event)
-  const config = useRuntimeConfig()
   
 
   const url = process.env.FLOWISE_API_URL
@@ -30,7 +29,7 @@ export default defineEventHandler(async (event) => {
   const { error } = await client
     .from('missoes_ods')
     .insert({
-      cpf: body.cpf, // CPF vindo do formulário
+      user_id: body.user_id, // CPF vindo do formulário
       titulo: missionObj.titulo,
       ods: missionObj.ods,
       desafio: missionObj.desafio,
