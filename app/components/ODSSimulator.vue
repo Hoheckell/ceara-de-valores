@@ -1,11 +1,13 @@
 
 <script setup>
 import { ref} from 'vue'
+const supabase = useSupabaseClient();
+const estaLogado = ref(false);
 const { userData } = useUser();
 // Estados do Simulador
 const step = ref('form') // form, loading, result
 const formData = ref({
-  user_id: userData.value.user_id,
+  user_id: '',
   afinidade: '',
   problema: '',
   habilidade: ''
@@ -31,7 +33,7 @@ const gerarMissao = async () => {
   try {
     const data = await $fetch('/api/generate-mission', {
       method: 'POST',
-      body: formData.value
+      body: {...formData.value, user_id: userData.value.user_id}
     })
     missionResult.value = JSON.parse(data['text']); // Ajuste conforme o formato de saída do seu Flowise
     step.value = 'result';
@@ -44,6 +46,19 @@ const shareOnWhatsapp = () => {
   const text = `🚀 Acabei de gerar uma Missão ODS no Ceará de Valores! \n\nMinha missão: ${missionResult.value.titulo}\nFoco: ${missionResult.value.ods}\n\nBora mudar o mundo?`
   window.open(`https://wa.me/?text=${encodeURIComponent(text)}`, '_blank')
 }
+
+onMounted(async () => {
+  const { data: { session } } = await supabase.auth.getSession();
+  if (session) {
+    estaLogado.value = true;
+  }
+});
+watch(() => userData.value.user_id, (newId) => {
+  if (newId) {
+    formData.value.user_id = newId;
+    console.log("ID do usuário sincronizado no Simulador:", newId);
+  }
+}, { immediate: true });
 </script>
 
 <template>

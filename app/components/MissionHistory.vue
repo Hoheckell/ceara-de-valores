@@ -1,7 +1,8 @@
 <script setup>
 const supabase = useSupabaseClient();
-const userData = ref({ username: '', senha: '' });
+const userData = ref({ user_id: '',username: '', senha: '' });
 const estaLogado = ref(false);
+const actualSession = ref();
 const carregando = ref(false);
 const missoes = ref([]);
 const { setUsuario } = useUser();
@@ -12,6 +13,7 @@ onMounted(async () => {
   const { data: { session } } = await supabase.auth.getSession();
   if (session) {
     estaLogado.value = true;
+    actualSession.value = session;
     buscarHistorico(session.user.id);
   }
 });
@@ -78,6 +80,12 @@ const openDetails = (mission) => {
   selectedMission.value = mission
   isModalOpen.value = true
 }
+
+watch(() => userData.value.user_id, (newId) => {
+  if (newId) {
+    userData.value.user_id = newId;
+  }
+}, { immediate: true });
 </script>
 
 <template>
@@ -90,16 +98,19 @@ const openDetails = (mission) => {
       </p>
 
       <div class="max-w-xs mx-auto space-y-4">
-        <input v-model="userData.username" type="text" placeholder="Teu Username"
+        <input
+v-model="userData.username" type="text" placeholder="Teu Username"
           class="w-full p-4 bg-slate-50 border-2 border-slate-100 rounded-2xl outline-none focus:border-blue-500 font-bold">
 
-        <input v-model="userData.senha" type="password" placeholder="Tua Senha"
+        <input
+v-model="userData.senha" type="password" placeholder="Tua Senha"
           class="w-full p-4 bg-slate-50 border-2 border-slate-100 rounded-2xl outline-none focus:border-blue-500 font-bold">
 
-        <button :disabled="carregando"
+        <button
+:disabled="carregando"
           class="w-full bg-blue-600 text-white font-black py-4 rounded-2xl shadow-lg shadow-blue-100 active:scale-95 transition-all"
           @click="fazerLoginHistorico">
-          {{ carregando ? 'A ACEDER...' : 'VER MEU HISTÓRICO' }}
+          {{ carregando ? 'A ACEDER...' : 'VER ITEM' }}
         </button>
       </div>
     </div>
@@ -110,17 +121,21 @@ const openDetails = (mission) => {
         <span class="bg-orange-100 text-orange-600 px-4 py-1 rounded-full font-black text-[10px] uppercase">
           {{ missoes.length }} Registos
         </span>
+        <button  @click="buscarHistorico(actualSession.user.id)">
+          Atualizar 🗘
+        </button>
       </div>
 
       <div v-if="missoes.length > 0" class="grid gap-4">
         <div v-for="missao in missoes" :key="missao.id" class="p-4 border-2 border-slate-50 rounded-2xl">
           <h4 class="font-bold text-blue-900">{{ missao.titulo }}</h4>
-          <p class="text-xs text-slate-500">{{ new Date(missao.created_at).toLocaleDateString() }}</p>
+          <p class="text-sm text-slate-500">{{ new Date(missao.created_at).toLocaleDateString() }}</p>
 
-          <button :disabled="carregando"
+          <button
+:disabled="carregando"
             class="w-full bg-blue-600 text-white font-black py-4 rounded-2xl shadow-lg shadow-blue-100 active:scale-95 transition-all"
             @click="openDetails(missao)">
-            {{ carregando ? 'A ACEDER...' : 'VER MEU HISTÓRICO' }}
+            {{ carregando ? 'A ACEDER...' : 'VER ITEM' }}
           </button>
         </div>
       </div>
@@ -132,16 +147,19 @@ const openDetails = (mission) => {
 
   </div>
   <Transition name="modal">
-    <div v-if="isModalOpen && selectedMission"
+    <div
+v-if="isModalOpen && selectedMission"
       class="fixed inset-0 z-50 flex items-center justify-center p-4 bg-slate-900/90 backdrop-blur-md"
       @click.self="isModalOpen = false">
       <div
         class="bg-white w-full max-w-lg rounded-[3rem] overflow-hidden shadow-2xl transform transition-all border-4 border-white">
 
         <div class="bg-gradient-to-r from-blue-700 to-blue-900 p-8 text-white relative">
-          <button class="absolute top-6 right-6 hover:rotate-90 transition-transform duration-300"
+          <button
+class="absolute top-6 right-6 hover:rotate-90 transition-transform duration-300"
             @click="isModalOpen = false">
-            <svg xmlns="http://www.w3.org/2000/svg" class="h-8 w-8 text-white/50" fill="none" viewBox="0 0 24 24"
+            <svg
+xmlns="http://www.w3.org/2000/svg" class="h-8 w-8 text-white/50" fill="none" viewBox="0 0 24 24"
               stroke="currentColor">
               <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M6 18L18 6M6 6l12 12" />
             </svg>

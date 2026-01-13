@@ -14,8 +14,8 @@
       <div class="bg-white p-6 rounded-[2rem] shadow-xl border-2 border-blue-100 inline-block w-full">
         <div class="flex items-center justify-center gap-2 mb-2">
           <span class="relative flex h-3 w-3">
-            <span class="animate-ping absolute inline-flex h-full w-full rounded-full bg-orange-400 opacity-75"></span>
-            <span class="relative inline-flex rounded-full h-3 w-3 bg-orange-500"></span>
+            <span class="animate-ping absolute inline-flex h-full w-full rounded-full bg-orange-400 opacity-75"/>
+            <span class="relative inline-flex rounded-full h-3 w-3 bg-orange-500"/>
           </span>
           <span class="text-[10px] font-black uppercase tracking-widest text-slate-400">Status do Sistema</span>
         </div>
