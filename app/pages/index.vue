@@ -60,7 +60,7 @@ const carregarSessao = async () => {
                 .select('*', { count: 'exact', head: true })
                 .eq('user_id', session.user.id);
 
-            progressoTotal.value = Math.min((count / countTotal.value) * 100, 100); // Ex: 10 quizzes para 100%
+            progressoTotal.value = Math.min((count / countTotal.value) * 100, 100).toFixed(0); // Ex: 10 quizzes para 100%
         }
     }
 };
@@ -478,7 +478,7 @@ src="https://cearadevalores.com.br/wp-content/uploads/2025/09/cropped-estrela-e1
                     <div class="flex flex-col items-center gap-1">
                         <div class="mr-3 flex justify-between w-24 text-[8px] font-black text-white uppercase">
                             <span>Progresso</span>
-                            <span>{{ progressoTotal }}%</span>
+                            <span>&nbsp;{{ progressoTotal }}%</span>
                         </div>
                         <div class="w-24 h-1.5 bg-slate-100 rounded-full overflow-hidden border border-slate-200">
                             <div
