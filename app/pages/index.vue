@@ -12,6 +12,8 @@ import MissionHistory from '../components/MissionHistory.vue';
 const mostrarSugestoes = ref(false);
 const config = useRuntimeConfig();
 const { userData } = useUser();
+const countTotal = ref(trilhaUm.aulas.length + trilhaDois.aulas.length + trilhaTres.aulas.length + 1);
+
 // Filtra a lista baseada no que o utilizador escreve
 const sugestoesFiltradas = computed(() => {
     const busca = userData.value.municipio.toLowerCase().trim();
@@ -58,7 +60,7 @@ const carregarSessao = async () => {
                 .select('*', { count: 'exact', head: true })
                 .eq('user_id', session.user.id);
 
-            progressoTotal.value = Math.min((count / 10) * 100, 100); // Ex: 10 quizzes para 100%
+            progressoTotal.value = Math.min((count / countTotal.value) * 100, 100); // Ex: 10 quizzes para 100%
         }
     }
 };

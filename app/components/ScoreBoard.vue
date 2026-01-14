@@ -1,8 +1,4 @@
 <script setup>
-import trilhaDois from '../content/trilha2.json';
-import trilhaUm from '../content/trilha1.json';
-import trilhaTres from '../content/trilha3.json';
-const numQuizzes = trilhaDois.aulas.length + trilhaUm.aulas.length + trilhaTres.aulas.length;
 const supabase = useSupabaseClient();
 const ranking = ref([]);
 const carregando = ref(true);
