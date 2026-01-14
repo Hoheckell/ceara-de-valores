@@ -1444,6 +1444,168 @@
           ]
         }
       ]
+    },
+    {
+      "id": 8,
+      "titulo": "Sertão de Sobral e a Força do Cariri",
+      "questions": [
+        {
+          "text": "Baseado no conteúdo da aula 8, qual fator geográfico foi determinante para o surgimento do núcleo urbano que deu origem à cidade de Sobral?",
+          "options": [
+            {
+              "text": "A proximidade com riachos e a importância estratégica do Rio Acaraú.",
+              "isCorrect": true,
+              "rationale": "A formação de arraiais como São José se baseou na disponibilidade hídrica essencial para a agricultura e pecuária iniciais."
+            },
+            {
+              "text": "A construção imediata de uma malha ferroviária para exportação.",
+              "isCorrect": false,
+              "rationale": "Embora importante depois, o desenvolvimento inicial foi hídrico e pastoril."
+            },
+            {
+              "text": "A existência de minas de ouro descobertas em 1773.",
+              "isCorrect": false,
+              "rationale": "A economia baseou-se na ocupação de terras para pecuária e agricultura (sesmarias)."
+            },
+            {
+              "text": "Apenas o comércio de tecidos vindos da capital.",
+              "isCorrect": false,
+              "rationale": "A base econômica original foi a apropriação de terras e atividades agropastoris."
+            }
+          ],
+          "hint": "Pense no elemento natural que facilita a vida e o transporte em regiões de sertão."
+        },
+        {
+          "text": "Baseado no conteúdo da aula 8, como o desenvolvimento econômico de Sobral impactou a sua relevância política e administrativa no século XIX?",
+          "options": [
+            {
+              "text": "A cidade tornou-se um polo isolado sem conexão com outros municípios.",
+              "isCorrect": false,
+              "rationale": "Sobral consolidou-se como um centro regional de influência sobre cidades vizinhas."
+            },
+            {
+              "text": "Sua localização e economia converteram a vila em um centro comercial e educacional de destaque.",
+              "isCorrect": true,
+              "rationale": "O crescimento econômico permitiu que Sobral exercesse liderança regional, tornando-se referência em serviços e formação."
+            },
+            {
+              "text": "O desenvolvimento foi interrompido pela falta de mão de obra qualificada.",
+              "isCorrect": false,
+              "rationale": "Pelo contrário, a região é citada como polo de formação de mão de obra."
+            },
+            {
+              "text": "A cidade perdeu importância para o litoral por causa da pecuária.",
+              "isCorrect": false,
+              "rationale": "Sobral se manteve como a 'Princesa do Norte', mantendo forte influência interiorana."
+            }
+          ],
+          "hint": "Pense no apelido histórico da cidade e sua função de 'centro'."
+        },
+        {
+          "text": "Baseado no conteúdo da aula 8, o Geoparque Araripe é citado como uma referência mundial. Qual é o pilar principal dessa estratégia de desenvolvimento no Cariri?",
+          "options": [
+            {
+              "text": "A exploração industrial intensiva dos fósseis para exportação.",
+              "isCorrect": false,
+              "rationale": "O Geoparque foca na conservação e educação, não na exploração predatória."
+            },
+            {
+              "text": "O turismo sustentável conectado diretamente com as ações da comunidade local.",
+              "isCorrect": true,
+              "rationale": "O Geoparque é referência por unir a preservação do patrimônio natural com o desenvolvimento da comunidade e o turismo."
+            },
+            {
+              "text": "A transformação de toda a Chapada do Araripe em uma área fechada sem moradores.",
+              "isCorrect": false,
+              "rationale": "O modelo de Geoparque pressupõe a integração das pessoas com o território."
+            },
+            {
+              "text": "A substituição da cultura local por modelos de turismo estrangeiros.",
+              "isCorrect": false,
+              "rationale": "O conteúdo destaca a conexão com a cultura e belezas naturais próprias da região."
+            }
+          ],
+          "hint": "Lembre-se da palavra que une preservação e geração de renda."
+        },
+        {
+          "text": "Baseado no conteúdo da aula 8, quais elementos formam o diferencial competitivo da região do Cariri para novos negócios?",
+          "options": [
+            {
+              "text": "Apenas a agricultura de subsistência e o isolamento geográfico.",
+              "isCorrect": false,
+              "rationale": "O Cariri é descrito como um polo dinâmico, não isolado."
+            },
+            {
+              "text": "A combinação de cultura, academia (formação), localização estratégica e belezas naturais.",
+              "isCorrect": true,
+              "rationale": "A aula destaca que o polo de comércio, serviços e educação, unido à cultura rica, atrai investimentos e novos negócios."
+            },
+            {
+              "text": "A dependência exclusiva de incentivos governamentais temporários.",
+              "isCorrect": false,
+              "rationale": "A região possui potencialidades intrínsecas como turismo e mão de obra formada."
+            },
+            {
+              "text": "O foco único na produção de calçados artesanais sem tecnologia.",
+              "isCorrect": false,
+              "rationale": "Embora a cultura (como a de Espedito Seleiro) seja importante, a região é um polo acadêmico e de serviços complexos."
+            }
+          ],
+          "hint": "Pense em educação, arte e posição no mapa."
+        },
+        {
+          "text": "Baseado no conteúdo da aula 8, a música 'Ventania Cariri' menciona Bárbara de Alencar. Analisando o contexto da aula, qual o papel da cultura e da história na identidade do jovem cearense?",
+          "options": [
+            {
+              "text": "A história serve apenas para recordar o passado sem afetar o presente.",
+              "isCorrect": false,
+              "rationale": "A aula usa a história como motor de esperança e coragem para o futuro."
+            },
+            {
+              "text": "A cultura e a ancestralidade (como a fé e a luta) são ferramentas de resistência e inovação.",
+              "isCorrect": true,
+              "rationale": "A letra e a aula reforçam que a identidade cultural gera 'coragem e motins' contra a estagnação, incentivando a juventude a lutar."
+            },
+            {
+              "text": "A cultura regional deve ser deixada de lado para o progresso tecnológico ocorrer.",
+              "isCorrect": false,
+              "rationale": "O programa Ceará de Valores busca justamente unir valores humanos/culturais com habilidades profissionais."
+            },
+            {
+              "text": "A identidade cearense é baseada apenas no sofrimento da seca.",
+              "isCorrect": false,
+              "rationale": "A aula foca no potencial de desenvolvimento, na riqueza da Chapada e na força do povo."
+            }
+          ],
+          "hint": "Relacione 'Bárbara de Alencar' com a voz que 'não se cala' na música."
+        },
+        {
+          "text": "Baseado no conteúdo da aula 8, se você fosse abrir um negócio sustentável no Cariri, qual recurso citado na aula seria o mais estratégico para aliar preservação e lucro?",
+          "options": [
+            {
+              "text": "O uso de madeira nativa da Chapada para construção civil.",
+              "isCorrect": false,
+              "rationale": "Isso iria contra a preservação ambiental citada."
+            },
+            {
+              "text": "O desenvolvimento de roteiros de ecoturismo baseados na biodiversidade da Chapada e do Geoparque.",
+              "isCorrect": true,
+              "rationale": "Esta ação aplica o conceito de turismo sustentável e conexão comunitária abordado na aula."
+            },
+            {
+              "text": "A criação de gado em áreas protegidas para exportação.",
+              "isCorrect": false,
+              "rationale": "A aula foca no potencial turístico e cultural como nova fronteira de renda."
+            },
+            {
+              "text": "A venda de fósseis originais para colecionadores.",
+              "isCorrect": false,
+              "rationale": "A proteção de fósseis é fundamental no conceito de Geoparque mundial."
+            }
+          ],
+          "hint": "Pense na atividade que permite 'conhecer a região' sem destruí-la."
+        }
+      ]
     }
   ]
 }
