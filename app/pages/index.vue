@@ -9,10 +9,34 @@ import ScoreboardSection from '../components/ScoreboardSection.vue';
 import ScoreBoard from '../components/ScoreBoard.vue';
 import ODSSimulator from '../components/ODSSimulator.vue';
 import MissionHistory from '../components/MissionHistory.vue';
+
+const supabase = useSupabaseClient();
 const mostrarSugestoes = ref(false);
 const config = useRuntimeConfig();
 const { userData } = useUser();
 const countTotal = ref(trilhaUm.aulas.length + trilhaDois.aulas.length + trilhaTres.aulas.length + 1);
+const novoNome = ref('');
+const novoUsername = ref('');
+const novoMunicipio = ref('');
+const progressoTotal = ref(0); // Ex: percentagem de quizzes concluídos
+
+// 4. Estados Reativos de Navegação e Dados
+const step = ref('trilha-selection');
+const selectedTrilha = ref(null);
+const currentQuiz = ref(null);
+// 5. Estados Reativos do Quiz
+const currentIndex = ref(0);
+const score = ref(0);
+const selectedOption = ref(null);
+const isAnswered = ref(false);
+const estaLogado = ref(false);
+
+const jaRespondeu = ref(false);
+const carregandoVerificacao = ref(false);
+const erroNome = ref('');
+const linkPDFProjetos = "/arquivos/orientacoes-projetos.pdf";
+const quizzesRealizados = ref([]);
+const carregandoQuizzes = ref(true);// Substitua pelo link real
 
 // Filtra a lista baseada no que o utilizador escreve
 const sugestoesFiltradas = computed(() => {
@@ -29,7 +53,6 @@ const abrirQuizProjetos = () => {
     selectedTrilha.value = null;
     prepararEIniciarQuiz(projetoData);
 };
-const progressoTotal = ref(0); // Ex: percentagem de quizzes concluídos
 
 const carregarSessao = async () => {
     const { data: { session } } = await supabase.auth.getSession();
@@ -60,7 +83,8 @@ const carregarSessao = async () => {
                 .select('*', { count: 'exact', head: true })
                 .eq('user_id', session.user.id);
 
-            progressoTotal.value = Math.min((count / countTotal.value) * 100, 100).toFixed(0); // Ex: 10 quizzes para 100%
+            progressoTotal.value = Math.min((count / countTotal.value) * 100, 100).toFixed(0);
+            estaLogado.value = true;// Ex: 10 quizzes para 100%
         }
     }
 };
@@ -68,7 +92,6 @@ const selecionarMunicipio = (nome) => {
     userData.value.municipio = nome;
     mostrarSugestoes.value = false;
 };
-const supabase = useSupabaseClient();
 // Dados Organizados por Trilha
 const todasAsTrilhas = [
     { id: 1, nome: "Trilha 1: Competências Socioemocionais", status: "Disponível", icon: "🧠", aulas: trilhaUm.aulas },
@@ -81,18 +104,6 @@ const todasAsTrilhas = [
     },
     { id: 3, nome: "Trilha 3: Empreendedorismo e Inovação", status: "Disponível", icon: "💡", aulas: trilhaTres.aulas }
 ];
-// 4. Estados Reativos de Navegação e Dados
-const step = ref('trilha-selection');
-const selectedTrilha = ref(null);
-const currentQuiz = ref(null);
-// 5. Estados Reativos do Quiz
-const currentIndex = ref(0);
-const score = ref(0);
-const selectedOption = ref(null);
-const isAnswered = ref(false);
-
-const jaRespondeu = ref(false);
-const carregandoVerificacao = ref(false);
 
 // 1. Escolhe a Trilha e vai para a lista de aulas
 const escolherTrilha = (trilha) => {
@@ -138,79 +149,83 @@ const selectAula = (aula) => {
 
 // 3. Valida o registro e inicia o quiz
 const startQuiz = async () => {
-    // 1. Limpeza rigorosa
-    const usernameLimpo = userData.value.username.toLowerCase().trim().replace(/[^a-z0-9_]/g, '');
-    const emailSintetico = `${usernameLimpo}@aluno.cearadevalores.com.br`;
+    if (!estaLogado.value) {
+        // 1. Limpeza rigorosa
+        const usernameLimpo = userData.value.username.toLowerCase().trim().replace(/[^a-z0-9_]/g, '');
+        const emailSintetico = `${usernameLimpo}@aluno.cearadevalores.com.br`;
 
-    if (!usernameLimpo || !userData.value.senha || !userData.value.municipio) {
-        alert("Por favor, preencha todos os campos corretamente.");
-        return;
-    }
+        if (!usernameLimpo || !userData.value.senha || !userData.value.municipio) {
+            alert("Por favor, preencha todos os campos corretamente.");
+            return;
+        }
 
-    try {
-        // TENTATIVA 1: Tentar Login Direto
-        const { data: signInData, error: signInError } = await supabase.auth.signInWithPassword({
-            email: emailSintetico,
-            password: userData.value.senha
-        });
+        try {
+            // TENTATIVA 1: Tentar Login Direto
+            const { data: signInData, error: signInError } = await supabase.auth.signInWithPassword({
+                email: emailSintetico,
+                password: userData.value.senha
+            });
 
-        if (!signInError && signInData.user) {
-            // Usuário logou com sucesso. Agora verificamos se ele tem perfil.
-            const { data: perfil } = await supabase
-                .from('perfis')
-                .select('id')
-                .eq('id', signInData.user.id)
-                .single();
+            if (!signInError && signInData.user) {
+                // Usuário logou com sucesso. Agora verificamos se ele tem perfil.
+                const { data: perfil } = await supabase
+                    .from('perfis')
+                    .select('id')
+                    .eq('id', signInData.user.id)
+                    .single();
 
-            // Se logou mas não tem perfil (erro de cadastro anterior), cria agora
-            if (!perfil) {
-                await supabase.from('perfis').insert({
-                    id: signInData.user.id,
+                // Se logou mas não tem perfil (erro de cadastro anterior), cria agora
+                if (!perfil) {
+                    await supabase.from('perfis').insert({
+                        id: signInData.user.id,
+                        username: usernameLimpo,
+                        nome: userData.value.nome,
+                        municipio: userData.value.municipio
+                    });
+                }
+
+                userData.value.user_id = signInData.user.id;
+                step.value = 'quiz';
+                return; // Sucesso absoluto
+            }
+
+            // TENTATIVA 2: Se o login falhou porque o usuário NÃO existe, tentamos Cadastro
+            // O erro de "Invalid login credentials" acontece se o usuário não existe ou senha errada.
+            // Se o erro NÃO for de credenciais inválidas, tentamos o SignUp.
+
+            const { data: signUpData, error: signUpError } = await supabase.auth.signUp({
+                email: emailSintetico,
+                password: userData.value.senha,
+            });
+
+            if (signUpError) {
+                if (signUpError.message.includes("already registered")) {
+                    throw new Error("Este username já está em uso por outro aluno ou a senha está incorreta.");
+                }
+                throw signUpError;
+            }
+
+            if (signUpData.user) {
+                // Criar o perfil imediatamente após o cadastro
+                const { error: perfilError } = await supabase.from('perfis').insert({
+                    id: signUpData.user.id,
                     username: usernameLimpo,
                     nome: userData.value.nome,
                     municipio: userData.value.municipio
                 });
+
+                if (perfilError) throw perfilError;
+
+                userData.value.user_id = signUpData.user.id;
+                step.value = 'quiz';
             }
 
-            userData.value.user_id = signInData.user.id;
-            step.value = 'quiz';
-            return; // Sucesso absoluto
+        } catch (err) {
+            console.error("Erro detalhado:", err);
+            alert(err.message || "Erro ao acessar o sistema.");
         }
-
-        // TENTATIVA 2: Se o login falhou porque o usuário NÃO existe, tentamos Cadastro
-        // O erro de "Invalid login credentials" acontece se o usuário não existe ou senha errada.
-        // Se o erro NÃO for de credenciais inválidas, tentamos o SignUp.
-
-        const { data: signUpData, error: signUpError } = await supabase.auth.signUp({
-            email: emailSintetico,
-            password: userData.value.senha,
-        });
-
-        if (signUpError) {
-            if (signUpError.message.includes("already registered")) {
-                throw new Error("Este username já está em uso por outro aluno ou a senha está incorreta.");
-            }
-            throw signUpError;
-        }
-
-        if (signUpData.user) {
-            // Criar o perfil imediatamente após o cadastro
-            const { error: perfilError } = await supabase.from('perfis').insert({
-                id: signUpData.user.id,
-                username: usernameLimpo,
-                nome: userData.value.nome,
-                municipio: userData.value.municipio
-            });
-
-            if (perfilError) throw perfilError;
-
-            userData.value.user_id = signUpData.user.id;
-            step.value = 'quiz';
-        }
-
-    } catch (err) {
-        console.error("Erro detalhado:", err);
-        alert(err.message || "Erro ao acessar o sistema.");
+    } else {
+        step.value = 'quiz';
     }
 };
 
@@ -229,6 +244,8 @@ const goBack = () => {
         if (confirm("Deseja mesmo sair?")) step.value = 'home';
     } else if (step.value === 'results') {
         step.value = 'trilha-selection';
+    } else if (step.value === 'perfil') {
+        step.value = 'home';
     }
 };
 // --- FUNÇÕES DE LÓGICA DO QUIZ ---
@@ -253,76 +270,80 @@ const nextQuestion = () => {
 
 const finishAndSave = async () => {
     step.value = 'saving';
+    
     try {
-        const { error } = await supabase
+        // 1. Verificar se já existe uma nota para este quiz
+        const { data: notaExistente } = await supabase
             .from('respostas_quizzes')
-            .insert([
-                {
-                    user_id: userData.value.user_id, // Nova chave de ligação 
+            .select('pontuacao')
+            .eq('user_id', userData.value.user_id)
+            .eq('trilha_id', selectedTrilha.value.id)
+            .eq('aula_id', currentQuiz.value.id)
+            .single();
+
+        // 2. Só salva se não existir nota OU se a nota atual for maior
+        if (!notaExistente || score.value > notaExistente.pontuacao) {
+            const { error } = await supabase
+                .from('respostas_quizzes')
+                .upsert({
+                    user_id: userData.value.user_id,
                     nome: userData.value.nome,
                     municipio: userData.value.municipio,
                     trilha_id: selectedTrilha.value.id,
                     aula_id: currentQuiz.value.id,
                     aula_titulo: currentQuiz.value.titulo,
                     pontuacao: score.value,
-                    total_questoes: currentQuiz.value.questions.length
-                }
-            ]);
+                    total_questoes: currentQuiz.value.questions.length,
+                    updated_at: new Date()
+                }, { onConflict: 'user_id,trilha_id,aula_id' });
 
-        if (error) throw error;
+            if (error) throw error;
+        }
+
         step.value = 'results';
     } catch (err) {
         console.error(err.message);
         step.value = 'results';
     }
 };
-// Estados adicionais
-const cpfError = ref('');
 
-// Função para validar a lógica do CPF (Algoritmo oficial)
-const validarCPF = (cpf) => {
-    cpf = cpf.replace(/[^\d]+/g, '');
-    if (cpf.length !== 11 || !!cpf.match(/(\d)\1{10}/)) return false;
+const validarNomeCompleto = (nome) => {
+    // 1. Remove espaços extras no início e fim
+    const nomeLimpo = nome.trim();
 
-    let add = 0;
-    for (let i = 0; i < 9; i++) add += parseInt(cpf.charAt(i)) * (10 - i);
-    let rev = 11 - (add % 11);
-    if (rev === 10 || rev === 11) rev = 0;
-    if (rev !== parseInt(cpf.charAt(9))) return false;
+    // 2. Regex: Permite apenas letras (incluindo acentos) e espaços
+    // Não permite números ou caracteres como @, #, $, etc.
+    const apenasLetras = /^[A-Za-zÀ-ÖØ-öø-ÿ\s]+$/;
 
-    add = 0;
-    for (let i = 0; i < 10; i++) add += parseInt(cpf.charAt(i)) * (11 - i);
-    rev = 11 - (add % 11);
-    if (rev === 10 || rev === 11) rev = 0;
-    if (rev !== parseInt(cpf.charAt(10))) return false;
+    // 3. Verifica se tem pelo menos um espaço (indicando sobrenome)
+    const temSobrenome = nomeLimpo.includes(' ');
 
-    return true;
+    // 4. Verifica o comprimento mínimo (ex: "Ana Li" = 6 caracteres)
+    const comprimentoMinimo = nomeLimpo.length >= 6;
+
+    if (!apenasLetras.test(nomeLimpo)) {
+        return { valido: false, msg: "O nome não deve conter números ou símbolos." };
+    }
+
+    if (!temSobrenome) {
+        return { valido: false, msg: "Por favor, digite seu nome completo (nome e sobrenome)." };
+    }
+
+    if (!comprimentoMinimo) {
+        return { valido: false, msg: "O nome parece muito curto." };
+    }
+
+    return { valido: true, msg: "" };
 };
 
-// Máscara reativa para o campo
-watch(() => userData.value.cpf, (newValue) => {
-    if (!newValue) return;
-
-    // Remove tudo que não é número
-    let v = newValue.replace(/\D/g, '');
-
-    // Aplica a máscara
-    if (v.length <= 11) {
-        v = v.replace(/(\d{3})(\d)/, '$1.$2');
-        v = v.replace(/(\d{3})(\d)/, '$1.$2');
-        v = v.replace(/(\d{3})(\d{1,2})$/, '$1-$2');
-    }
-
-    userData.value.cpf = v;
-
-    // Limpa o erro enquanto digita
-    if (v.length < 14) {
-        cpfError.value = '';
+const tratarInputNome = () => {
+    const resultado = validarNomeCompleto(userData.value.nome);
+    if (!resultado.valido) {
+        erroNome.value = resultado.msg;
     } else {
-        cpfError.value = validarCPF(v) ? '' : 'CPF Inválido';
+        erroNome.value = '';
     }
-});
-const linkPDFProjetos = "/arquivos/orientacoes-projetos.pdf"; // Substitua pelo link real
+};
 
 const resultadoFinal = computed(() => {
     const percentual = (score.value / currentQuiz.value.questions.length) * 100;
@@ -406,6 +427,41 @@ const verificarRespostaExistente = async () => {
 watch(() => userData.value.user_id, (val) => {
     if (val.length === 14) verificarRespostaExistente();
 });
+// Carrega os dados uma única vez quando o usuário é identificado
+watch(() => userData.value.user_id, (id) => {
+    if (id && !novoNome.value) { // Só preenche se o campo estiver vazio
+        novoNome.value = userData.value.nome;
+        novoUsername.value = userData.value.username;
+        novoMunicipio.value = userData.value.municipio;
+    }
+}, { immediate: true });
+watch(novoNome, (valorOriginal) => {
+    // 1. LIMPEZA: Remove números e caracteres especiais (exceto letras e espaços)
+    // Isso impede que o aluno digite "Jo4o" ou "Maria_Silva"
+    let valorProcessado = valorOriginal.replace(/[0-9!@#$%¨&*()_+=[\]{}|\\;:'",.<>?/]/g, '');
+
+    // 2. FORMATAÇÃO (Capitalização Automática)
+    // Só aplicamos o "Title Case" quando o usuário digita um espaço, 
+    // para não "forçar" a letra maiúscula enquanto ele ainda está escrevendo a palavra.
+    if (valorProcessado.endsWith(' ')) {
+        valorProcessado = formatarNomeProprio(valorProcessado);
+    }
+
+    // 3. SINCRONIZAÇÃO: Se o valor mudou após a limpeza/formatação, atualizamos o ref
+    // O 'if' evita um loop infinito de atualizações
+    if (valorOriginal !== valorProcessado) {
+        novoNome.value = valorProcessado;
+    }
+
+    // 4. VALIDAÇÃO: Verifica se é nome completo e se é válido
+    const resultado = validarNomeCompleto(valorProcessado);
+
+    if (!resultado.valido && valorProcessado.length > 0) {
+        erroNome.value = resultado.msg;
+    } else {
+        erroNome.value = '';
+    }
+});
 // Adicione ao seu script setup no app.vue ou index.vue
 onMounted(async () => {
     carregarSessao();
@@ -448,6 +504,61 @@ const confirmarLogout = async () => {
         window.location.reload();
     }
 };
+const editPerfil = () => {
+    step.value = 'perfil';
+    buscarHistoricoQuizzes();
+};
+// Dentro do componente de Edição de Perfil
+const salvarAlteracoes = async () => {
+    // Formatação final antes de enviar para o banco
+    const nomeFinal = formatarNomeProprio(novoNome.value.trim());
+
+    // Agora sim, envia nomeFinal para o Supabase...
+    const { error } = await supabase
+        .from('perfis')
+        .update({ nome: nomeFinal, municipio: novoMunicipio.value, username: novoUsername.value })
+        .eq('id', userData.value.user_id);
+    if (!error) {
+        userData.value.nome = nomeFinal; // Atualiza o estado global
+        alert("Perfil salvo com sucesso!");
+    }
+    carregarSessao();
+};
+const formatarNomeProprio = (nome) => {
+    const conectores = ['de', 'da', 'do', 'dos', 'das', 'e'];
+
+    return nome.toLowerCase().split(' ').map(palavra => {
+        // Se for um conector, mantém minúsculo
+        if (conectores.includes(palavra)) return palavra;
+
+        // Capitaliza a primeira letra
+        return palavra.charAt(0).toUpperCase() + palavra.slice(1);
+    }).join(' ');
+};
+const buscarHistoricoQuizzes = async () => {
+    if (!userData.value.user_id) return;
+
+    carregandoQuizzes.value = true;
+    try {
+        const { data, error } = await supabase
+            .from('respostas_quizzes')
+            .select('id, trilha_id, aula_id, aula_titulo, pontuacao, created_at')
+            .eq('user_id', userData.value.user_id)
+            .order('created_at', { ascending: false });
+
+        if (error) throw error;
+        quizzesRealizados.value = data;
+    } catch (err) {
+        console.error("Erro ao carregar quizzes:", err.message);
+    } finally {
+        carregandoQuizzes.value = false;
+    }
+};
+
+// Carrega assim que o ID do usuário estiver disponível
+watch(() => userData.value.user_id, (id) => {
+    if (id) buscarHistoricoQuizzes();
+}, { immediate: true });
 </script>
 
 <template>
@@ -456,8 +567,7 @@ const confirmarLogout = async () => {
         <header class="bg-blue-700 text-white p-4 sticky top-0 z-50 shadow-md">
             <div class="max-w-2xl mx-auto flex justify-between items-center">
                 <div class="flex items-center gap-2">
-                    <img
-src="https://cearadevalores.com.br/wp-content/uploads/2025/09/cropped-estrela-e1756834379223-32x32.png"
+                    <img src="https://cearadevalores.com.br/wp-content/uploads/2025/09/cropped-estrela-e1756834379223-32x32.png"
                         class="w-6 h-6">
                     <h1 class="font-bold">Ceará de Valores</h1>
                 </div>
@@ -472,6 +582,12 @@ src="https://cearadevalores.com.br/wp-content/uploads/2025/09/cropped-estrela-e1
                             <p class="text-[9px] font-black text-white uppercase tracking-tighter leading-none">
                                 Explorador(a)</p>
                             <h2 class="text-xs font-black text-white uppercase italic">@{{ userData.username }}</h2>
+
+                            <button
+                                class="w-full bg-blue-600 mt-1 hover:bg-blue-700 text-white font-black py-1 px-3 rounded-[2rem] shadow-lg shadow-blue-200 transition-all active:scale-95"
+                                @click="editPerfil">
+                                Meu perfil
+                            </button>
                         </div>
                     </div>
 
@@ -481,9 +597,8 @@ src="https://cearadevalores.com.br/wp-content/uploads/2025/09/cropped-estrela-e1
                             <span>&nbsp;{{ progressoTotal }}%</span>
                         </div>
                         <div class="w-24 h-1.5 bg-slate-100 rounded-full overflow-hidden border border-slate-200">
-                            <div
-class="h-full bg-blue-600 rounded-full transition-all duration-1000"
-                                :style="{ width: `${progressoTotal}%` }"/>
+                            <div class="h-full bg-blue-600 rounded-full transition-all duration-1000"
+                                :style="{ width: `${progressoTotal}%` }" />
                         </div>
                     </div>
 
@@ -492,8 +607,7 @@ class="h-full bg-blue-600 rounded-full transition-all duration-1000"
                         <span class="text-[10px] font-black text-blue uppercase italic">{{ userData.municipio }}</span>
                     </div>
                 </div>
-                <button
-v-if="step !== 'trilha-selection'" class="text-md bg-blue-800 px-3 py-1 rounded-lg"
+                <button v-if="step !== 'trilha-selection'" class="text-md bg-blue-800 px-3 py-1 rounded-lg"
                     @click="goBack">
                     ← Voltar
                 </button>
@@ -501,26 +615,21 @@ v-if="step !== 'trilha-selection'" class="text-md bg-blue-800 px-3 py-1 rounded-
         </header>
 
         <main class="max-w-2xl mx-auto p-4">
-
             <div v-if="step === 'trilha-selection'" class="space-y-6">
                 <div class="relative w-full h-48 md:h-64 rounded-3xl overflow-hidden shadow-lg mb-8">
-                    <img
-src="/imagens/banner_home.png" class="w-full h-full object-cover object-[center_8%]"
+                    <img src="/imagens/banner_home.png" class="w-full h-full object-cover object-[center_8%]"
                         alt="Ceará de Valores">
                     <div class="absolute inset-0 bg-gradient-to-t from-blue-900/40 to-transparent" />
                 </div>
 
-                <a
-href="https://academy.centec.org.br" target="_blank"
+                <a href="https://academy.centec.org.br" target="_blank"
                     class="flex items-center justify-center gap-2 w-full py-3 bg-white border-2 border-dashed border-slate-200 rounded-xl text-blue-700 text-md font-bold hover:bg-blue-50 hover:border-blue-200 transition-all">
                     <span>📖</span>
                     <span>Acessar a plataforma</span>
                 </a>
-                <a
-href="https://wa.me/5585997653319?text=Olá" target="_blank"
+                <a href="https://wa.me/5585997653319?text=Olá" target="_blank"
                     class="flex items-center justify-center gap-2 w-full py-3 bg-white border-2 border-dashed border-slate-200 rounded-xl text-blue-700 text-md font-bold hover:bg-blue-50 hover:border-blue-200 transition-all">
-                    <svg
-xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="currentColor"
+                    <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="currentColor"
                         viewBox="0 0 16 16">
                         <path
                             d="M13.601 2.326A7.85 7.85 0 0 0 7.994 0C3.627 0 .068 3.558.064 7.926c0 1.399.366 2.76 1.057 3.965L0 16l4.204-1.102a7.9 7.9 0 0 0 3.79.965h.004c4.368 0 7.926-3.558 7.93-7.93A7.9 7.9 0 0 0 13.6 2.326zM7.994 14.521a6.6 6.6 0 0 1-3.356-.92l-.24-.144-2.494.654.666-2.433-.156-.251a6.56 6.56 0 0 1-1.007-3.505c0-3.626 2.957-6.584 6.591-6.584a6.56 6.56 0 0 1 4.66 1.931 6.56 6.56 0 0 1 1.928 4.66c-.004 3.639-2.961 6.592-6.592 6.592m3.615-4.934c-.197-.099-1.17-.578-1.353-.646-.182-.065-.315-.099-.445.099-.133.197-.513.646-.627.775-.114.133-.232.148-.43.05-.197-.1-.836-.308-1.592-.985-.59-.525-.985-1.175-1.103-1.372-.114-.198-.011-.304.088-.403.087-.088.197-.232.296-.346.1-.114.133-.198.198-.33.065-.134.034-.248-.015-.347-.05-.099-.445-1.076-.612-1.47-.16-.389-.323-.335-.445-.34-.114-.007-.247-.007-.38-.007a.73.73 0 0 0-.529.247c-.182.198-.691.677-.691 1.654s.71 1.916.81 2.049c.098.133 1.394 2.132 3.383 2.992.47.205.84.326 1.129.418.475.152.904.129 1.246.08.38-.058 1.171-.48 1.338-.943.164-.464.164-.86.114-.943-.049-.084-.182-.133-.38-.232" />
@@ -532,8 +641,7 @@ xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="currentColor"
                     <p class="text-slate-500">Selecione uma trilha para começar</p>
                 </div>
                 <div class="grid gap-4">
-                    <button
-v-for="trilha in todasAsTrilhas" :key="trilha.id"
+                    <button v-for="trilha in todasAsTrilhas" :key="trilha.id"
                         class="p-6 bg-white rounded-2xl shadow-sm border-2 text-left flex items-center gap-4 transition-all"
                         :class="trilha.aulas.length > 0 ? 'border-transparent hover:border-blue-500' : 'opacity-50 cursor-not-allowed'"
                         @click="escolherTrilha(trilha)">
@@ -569,8 +677,7 @@ v-for="trilha in todasAsTrilhas" :key="trilha.id"
                             DICAS DE OURO
                         </div>
                     </button>
-                    <a
-href="/arquivos/orientacoes-projetos.pdf" target="_blank"
+                    <a href="/arquivos/orientacoes-projetos.pdf" target="_blank"
                         class="flex items-center justify-center gap-2 w-full py-3 bg-white border-2 border-dashed border-slate-200 rounded-xl text-blue-700 text-md font-bold hover:bg-blue-50 hover:border-blue-200 transition-all">
                         <span>📖</span>
                         <span>Ler PDF de Orientações sobre projetos antes de começar</span>
@@ -598,8 +705,7 @@ href="/arquivos/orientacoes-projetos.pdf" target="_blank"
                     </span>
                 </h2>
                 <div class="grid gap-3">
-                    <button
-v-for="aula in selectedTrilha.aulas" :key="aula.id"
+                    <button v-for="aula in selectedTrilha.aulas" :key="aula.id"
                         class="p-4 bg-white rounded-xl shadow-sm border border-slate-200 flex justify-between items-center group"
                         @click="selectAula(aula)">
                         <span class="font-bold text-slate-700">Aula {{ aula.id }}: {{ aula.titulo }}</span>
@@ -628,22 +734,23 @@ v-for="aula in selectedTrilha.aulas" :key="aula.id"
                     </p>
                     <div class="space-y-1">
                         <label class="text-[10px] font-black text-slate-400 uppercase ml-2">Teu Nome</label>
-                        <input
-v-model="userData.nome" type="text" placeholder="Como queres ser chamado?"
-                            class="w-full p-4 bg-slate-50 border-2 border-slate-100 rounded-2xl focus:border-blue-500 outline-none font-bold text-blue-900">
+                        <input v-model="userData.nome" type="text" placeholder="Como queres ser chamado?"
+                            class="w-full p-4 bg-slate-50 border-2 border-slate-100 rounded-2xl focus:border-blue-500 outline-none font-bold text-blue-900"
+                            :class="erroNome ? 'border-red-300 focus:border-red-500' : 'border-slate-100 focus:border-blue-500'"
+                            @blur="tratarInputNome">
+                        <p v-if="erroNome" class="text-[10px] text-red-500 font-bold mt-2 animate-bounce">
+                            ⚠️ {{ erroNome }}
+                        </p>
                     </div>
 
                     <div class="space-y-1 relative">
                         <label class="text-[10px] font-black text-slate-400 uppercase ml-2">Teu Município</label>
-                        <input
-v-model="userData.municipio" type="text" placeholder="Ex: Iguatu"
+                        <input v-model="userData.municipio" type="text" placeholder="Ex: Iguatu"
                             class="w-full p-4 bg-slate-50 border-2 border-slate-100 rounded-2xl focus:border-blue-500 outline-none font-bold text-blue-900"
                             @focus="mostrarSugestoes = true">
-                        <ul
-v-if="mostrarSugestoes && sugestoesFiltradas.length > 0"
+                        <ul v-if="mostrarSugestoes && sugestoesFiltradas.length > 0"
                             class="absolute z-10 w-full bg-white border-2 border-slate-100 rounded-2xl mt-1 shadow-xl max-h-40 overflow-y-auto">
-                            <li
-v-for="m in sugestoesFiltradas" :key="m"
+                            <li v-for="m in sugestoesFiltradas" :key="m"
                                 class="p-3 hover:bg-blue-50 cursor-pointer font-bold text-slate-600 text-sm border-b last:border-0"
                                 @click="selecionarMunicipio(m)">
                                 {{ m }}
@@ -654,14 +761,12 @@ v-for="m in sugestoesFiltradas" :key="m"
                     <div class="grid grid-cols-2 gap-3">
                         <div class="space-y-1">
                             <label class="text-[10px] font-black text-slate-400 uppercase ml-2">Username Único</label>
-                            <input
-v-model="userData.username" type="text" placeholder="joao_maker"
+                            <input v-model="userData.username" type="text" placeholder="joao_maker"
                                 class="w-full p-4 bg-slate-50 border-2 border-slate-100 rounded-2xl focus:border-blue-500 outline-none font-bold text-blue-900">
                         </div>
                         <div class="space-y-1">
                             <label class="text-[10px] font-black text-slate-400 uppercase ml-2">Senha</label>
-                            <input
-v-model="userData.senha" type="password" placeholder="****"
+                            <input v-model="userData.senha" type="password" placeholder="****"
                                 class="w-full p-4 bg-slate-50 border-2 border-slate-100 rounded-2xl focus:border-blue-500 outline-none font-bold text-blue-900">
                         </div>
                     </div>
@@ -682,8 +787,7 @@ v-model="userData.senha" type="password" placeholder="****"
                         </span>
                     </div>
                     <div class="w-full bg-slate-100 h-2 rounded-full overflow-hidden">
-                        <div
-class="bg-blue-600 h-full transition-all duration-500 ease-out"
+                        <div class="bg-blue-600 h-full transition-all duration-500 ease-out"
                             :style="{ width: ((currentIndex + 1) / currentQuiz.questions.length) * 100 + '%' }" />
                     </div>
                 </div>
@@ -694,8 +798,7 @@ class="bg-blue-600 h-full transition-all duration-500 ease-out"
                     </h3>
 
                     <div class="space-y-3">
-                        <button
-v-for="(opt, idx) in currentQuiz.questions[currentIndex].options" :key="idx"
+                        <button v-for="(opt, idx) in currentQuiz.questions[currentIndex].options" :key="idx"
                             :disabled="isAnswered"
                             class="w-full p-4 rounded-2xl text-left border-2 transition-all duration-200 flex justify-between items-center group"
                             :class="{
@@ -721,15 +824,13 @@ v-for="(opt, idx) in currentQuiz.questions[currentIndex].options" :key="idx"
 
                             <div v-if="isAnswered">
                                 <span v-if="opt.isCorrect" class="text-green-600 text-xl font-bold">✔</span>
-                                <span
-v-else-if="selectedOption === opt && !opt.isCorrect"
+                                <span v-else-if="selectedOption === opt && !opt.isCorrect"
                                     class="text-red-600 text-xl font-bold">✖</span>
                             </div>
                         </button>
                     </div>
 
-                    <div
-v-if="isAnswered"
+                    <div v-if="isAnswered"
                         class="mt-8 p-5 bg-blue-50 rounded-2xl border-l-4 border-blue-500 animate-in fade-in slide-in-from-bottom-2">
                         <p class="text-[10px] font-black text-blue-600 uppercase mb-1 tracking-widest">💡 Por que esta
                             resposta?</p>
@@ -774,8 +875,7 @@ v-if="isAnswered"
                         </p>
 
                         <div v-if="resultadoFinal.showPDF" class="mb-8">
-                            <a
-:href="linkPDFProjetos" target="_blank"
+                            <a :href="linkPDFProjetos" target="_blank"
                                 class="inline-flex items-center gap-3 bg-red-50 text-red-700 border-2 border-red-100 px-6 py-4 rounded-2xl font-black hover:bg-red-100 transition-all w-full justify-center">
                                 <span class="text-2xl">📕</span>
                                 <div class="text-left">
@@ -803,6 +903,104 @@ v-if="isAnswered"
                                 @click="step = 'home'">
                                 Revisar outras aulas
                             </button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div v-else-if="step === 'perfil'" class="space-y-4">
+                <div class="text-center mb-6">
+                    <span class="bg-orange-100 text-orange-600 px-4 py-1 rounded-full text-xs font-black uppercase">Aqui
+                        vocẽ altera ou consulta seus dados de acesso</span>
+                    <h2 class="text-2xl font-black text-slate-800 mt-2">Meu Perfil</h2>
+                </div>
+
+                <div class="space-y-4">
+                    <h2 class="text-xl font-black text-blue-900 uppercase italic">Identificação</h2>
+                    <div class="space-y-1">
+                        <label class="text-[10px] font-black text-slate-400 uppercase ml-2">Teu Nome</label>
+                        <input v-model="novoNome" type="text" placeholder="Como queres ser chamado?"
+                            class="w-full p-4 bg-slate-50 border-2 border-slate-100 rounded-2xl focus:border-blue-500 outline-none font-bold text-blue-900"
+                            :class="erroNome ? 'border-red-300 focus:border-red-500' : 'border-slate-100 focus:border-blue-500'"
+                            @blur="tratarInputNome">
+                        <p v-if="erroNome" class="text-[10px] text-red-500 font-bold mt-2 animate-bounce">
+                            ⚠️ {{ erroNome }}
+                        </p>
+                    </div>
+
+                    <div class="space-y-1 relative">
+                        <label class="text-[10px] font-black text-slate-400 uppercase ml-2">Teu Município</label>
+                        <input v-model="novoMunicipio" type="text" placeholder="Ex: Iguatu"
+                            class="w-full p-4 bg-slate-50 border-2 border-slate-100 rounded-2xl focus:border-blue-500 outline-none font-bold text-blue-900"
+                            @focus="mostrarSugestoes = true">
+                        <ul v-if="mostrarSugestoes && sugestoesFiltradas.length > 0"
+                            class="absolute z-10 w-full bg-white border-2 border-slate-100 rounded-2xl mt-1 shadow-xl max-h-40 overflow-y-auto">
+                            <li v-for="m in sugestoesFiltradas" :key="m"
+                                class="p-3 hover:bg-blue-50 cursor-pointer font-bold text-slate-600 text-sm border-b last:border-0"
+                                @click="selecionarMunicipio(m)">
+                                {{ m }}
+                            </li>
+                        </ul>
+                    </div>
+
+                    <div class="grid grid-cols-2 gap-3">
+                        <div class="space-y-1">
+                            <label class="text-[10px] font-black text-slate-400 uppercase ml-2">Username Único</label>
+                            <input v-model="novoUsername" type="text" placeholder="joao_maker"
+                                class="w-full p-4 bg-slate-50 border-2 border-slate-100 rounded-2xl focus:border-blue-500 outline-none font-bold text-blue-900">
+                        </div>
+                        <div class="space-y-1">
+                            <label class="text-[10px] font-black text-slate-400 uppercase ml-2">Senha</label>
+                            <input v-model="userData.senha" disbled type="password" placeholder="****"
+                                class="w-full p-4 bg-slate-50 border-2 border-slate-100 rounded-2xl focus:border-blue-500 outline-none font-bold text-blue-900">
+                        </div>
+                    </div>
+                    <button
+                        class="w-full bg-blue-600 hover:bg-blue-700 text-white font-black py-5 rounded-[2rem] shadow-lg shadow-blue-200 transition-all active:scale-95"
+                        @click="salvarAlteracoes">
+                        REGISTRAR ALTERAÇÕES
+                    </button>
+                </div>
+                <div class="mt-10">
+                    <h3 class="text-xl font-black text-blue-900 uppercase italic mb-6 flex items-center gap-2">
+                        <span class="text-2xl">📝</span> Meus Quizzes Concluídos
+                    </h3>
+
+                    <div v-if="carregandoQuizzes"
+                        class="text-center py-10 text-slate-400 font-bold animate-pulse uppercase text-[10px]">
+                        Consultando teus registros...
+                    </div>
+
+                    <div v-else-if="quizzesRealizados.length === 0"
+                        class="bg-slate-50 border-2 border-dashed border-slate-200 p-8 rounded-[2rem] text-center">
+                        <p class="text-slate-500 font-bold text-sm">Vocẽ ainda não respondeu nenhum questionário. <br>
+                            Que tal
+                            começar uma trilha agora?</p>
+                    </div>
+
+                    <div v-else class="grid gap-4">
+                        <div v-for="quiz in quizzesRealizados" :key="quiz.id"
+                            class="bg-white border-2 border-slate-100 p-5 rounded-3xl flex justify-between items-center hover:border-blue-200 transition-colors shadow-sm">
+
+                            <div class="flex items-center gap-4">
+                                <div
+                                    class="w-12 h-12 bg-blue-50 rounded-2xl flex flex-col items-center justify-center border border-blue-100">
+                                    <span
+                                        class="text-[8px] font-black text-blue-400 uppercase leading-none">Trilha</span>
+                                    <span class="text-lg font-black text-blue-600">{{ quiz.trilha_id }}</span>
+                                </div>
+                                <div>
+                                    <h4 class="font-bold text-blue-900 text-sm uppercase">Aula {{ quiz.aula_id }} {{ quiz.aula_titulo }}</h4>
+                                    <p class="text-[10px] text-slate-400 font-bold uppercase tracking-tighter">
+                                        Concluído em {{ new Date(quiz.created_at).toLocaleDateString('pt-BR') }}
+                                    </p>
+                                </div>
+                            </div>
+
+                            <div class="text-right">
+                                <span
+                                    class="block text-[10px] font-black text-slate-300 uppercase leading-none">Pontuação</span>
+                                <span class="text-xl font-black text-orange-500">+{{ quiz.pontuacao }}</span>
+                            </div>
                         </div>
                     </div>
                 </div>
