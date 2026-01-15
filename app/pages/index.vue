@@ -140,7 +140,11 @@ const prepararEIniciarQuiz = (quizData) => {
     jaRespondeu.value = false; // Reset da trava de duplicidade para nova checagem
 
     // Encaminha para o registro/identificação
-    step.value = 'register';
+    if (!estaLogado.value) {
+        step.value = 'register';
+    } else {
+        step.value = 'quiz';
+    }
 };
 
 const selectAula = (aula) => {
@@ -283,7 +287,7 @@ const finishAndSave = async () => {
             .from('respostas_quizzes')
             .select('pontuacao')
             .eq('user_id', userData.value.user_id)
-            .eq('trilha_id', selectedTrilha.value.id)
+            .eq('trilha_id', selectedTrilha.value != null ? selectedTrilha.value.id : 99)
             .eq('aula_id', currentQuiz.value.id)
             .single();
 
@@ -295,7 +299,7 @@ const finishAndSave = async () => {
                     user_id: userData.value.user_id,
                     nome: userData.value.nome,
                     municipio: userData.value.municipio,
-                    trilha_id: selectedTrilha.value.id,
+                    trilha_id: selectedTrilha.value != null ? selectedTrilha.value.id : 99,
                     aula_id: currentQuiz.value.id,
                     aula_titulo: currentQuiz.value.titulo,
                     pontuacao: score.value,
