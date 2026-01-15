@@ -173,17 +173,19 @@ const startQuiz = async () => {
                     .select('id')
                     .eq('id', signInData.user.id)
                     .single();
+
                 const resultado = validarNomeCompleto(userData.value.nome);
                 if (!resultado.valido) {
                     alert(resultado.msg);
                     return;
                 }
+                const nomeFinal = formatarNomeProprio(userData.value.trim());
                 // Se logou mas não tem perfil (erro de cadastro anterior), cria agora
                 if (!perfil) {
                     await supabase.from('perfis').insert({
                         id: signInData.user.id,
                         username: usernameLimpo,
-                        nome: userData.value.nome,
+                        nome: nomeFinal,
                         municipio: userData.value.municipio
                     });
                 }
@@ -274,7 +276,7 @@ const nextQuestion = () => {
 
 const finishAndSave = async () => {
     step.value = 'saving';
-    
+
     try {
         // 1. Verificar se já existe uma nota para este quiz
         const { data: notaExistente } = await supabase
@@ -341,7 +343,7 @@ const validarNomeCompleto = (nome) => {
 };
 
 const tratarInputNome = () => {
-    const resultado = validarNomeCompleto(userData.value.nome);
+    const resultado = validarNomeCompleto(novoNome.value.nome);
     if (!resultado.valido) {
         erroNome.value = resultado.msg;
     } else {
@@ -521,15 +523,23 @@ const salvarAlteracoes = async () => {
         alert(resultado.msg);
         return;
     }
-    // Agora sim, envia nomeFinal para o Supabase...
-    const { error } = await supabase
-        .from('perfis')
-        .update({ nome: nomeFinal, municipio: novoMunicipio.value, username: novoUsername.value })
-        .eq('id', userData.value.user_id);
-    if (!error) {
-        userData.value.nome = nomeFinal; // Atualiza o estado global
-        alert("Perfil salvo com sucesso!");
-    }
+    const { data, error } = await useFetch('/api/update-user-admin', {
+        method: 'POST',
+        body: {
+            userId: userData.value.user_id,
+            novoUsername: novoUsername.value.trim(),
+            novoNome: nomeFinal,
+            novoMunicipio: novoMunicipio.value
+        }
+    })
+
+    if (error.value) throw new Error(error.value.statusMessage)
+
+    // Atualiza o estado global para refletir no Header
+    userData.value.username = novoUsername.value
+    userData.value.nome = novoNome.value
+
+    alert("Perfil atualizado com sucesso!");
     carregarSessao();
 };
 const formatarNomeProprio = (nome) => {
@@ -997,7 +1007,8 @@ watch(() => userData.value.user_id, (id) => {
                                     <span class="text-lg font-black text-blue-600">{{ quiz.trilha_id }}</span>
                                 </div>
                                 <div>
-                                    <h4 class="font-bold text-blue-900 text-sm uppercase">Aula {{ quiz.aula_id }} {{ quiz.aula_titulo }}</h4>
+                                    <h4 class="font-bold text-blue-900 text-sm uppercase">Aula {{ quiz.aula_id }} {{
+                                        quiz.aula_titulo }}</h4>
                                     <p class="text-[10px] text-slate-400 font-bold uppercase tracking-tighter">
                                         Concluído em {{ new Date(quiz.created_at).toLocaleDateString('pt-BR') }}
                                     </p>
