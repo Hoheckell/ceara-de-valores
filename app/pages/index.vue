@@ -173,7 +173,11 @@ const startQuiz = async () => {
                     .select('id')
                     .eq('id', signInData.user.id)
                     .single();
-
+                const resultado = validarNomeCompleto(userData.value.nome);
+                if (!resultado.valido) {
+                    alert(resultado.msg);
+                    return;
+                }
                 // Se logou mas não tem perfil (erro de cadastro anterior), cria agora
                 if (!perfil) {
                     await supabase.from('perfis').insert({
@@ -512,7 +516,11 @@ const editPerfil = () => {
 const salvarAlteracoes = async () => {
     // Formatação final antes de enviar para o banco
     const nomeFinal = formatarNomeProprio(novoNome.value.trim());
-
+    const resultado = validarNomeCompleto(nomeFinal);
+    if (!resultado.valido) {
+        alert(resultado.msg);
+        return;
+    }
     // Agora sim, envia nomeFinal para o Supabase...
     const { error } = await supabase
         .from('perfis')
