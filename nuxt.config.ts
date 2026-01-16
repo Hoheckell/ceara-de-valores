@@ -39,4 +39,7 @@ export default defineNuxtConfig({
     redirect: false,
     types: undefined, // Geralmente útil colocar false para não barrar usuários antes do login
   },
+  nitro: {
+    preset: 'node-server'
+  }
 })
