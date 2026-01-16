@@ -49,6 +49,17 @@ const sugestoesFiltradas = computed(() => {
     ).slice(0, 5); // Mostra apenas as 5 primeiras para não tapar o ecrã
 });
 
+const validaMunicipio = (municipio) => {
+    const busca = municipio.toLowerCase().trim();
+    if (busca.length < 2) return false;
+    const resultado = municipiosCeara.filter(m =>
+        m.toLowerCase().normalize("NFD").replace(/[\u0300-\u036f]/g, "").includes(
+            busca.normalize("NFD").replace(/[\u0300-\u036f]/g, "")
+        )
+    ).slice(0, 5);
+    return resultado.length > 0;
+}
+
 const abrirQuizProjetos = () => {
     selectedTrilha.value = null;
     prepararEIniciarQuiz(projetoData);
@@ -157,9 +168,9 @@ const startQuiz = async () => {
         // 1. Limpeza rigorosa
         const usernameLimpo = userData.value.username.toLowerCase().trim().replace(/[^a-z0-9_]/g, '');
         const emailSintetico = `${usernameLimpo}@aluno.cearadevalores.com.br`;
-
-        if (!usernameLimpo || !userData.value.senha || !userData.value.municipio) {
-            alert("Por favor, preencha todos os campos corretamente.");
+        const municipiovalido = validaMunicipio(userData.value.municipio);
+        if (!usernameLimpo || !userData.value.senha || !municipiovalido) {
+            alert("Por favor, preencha todos os campos corretamente."+ (!municipiovalido)? " Por favor, selecione um município válido.": "");
             return;
         }
 
@@ -523,8 +534,13 @@ const salvarAlteracoes = async () => {
     // Formatação final antes de enviar para o banco
     const nomeFinal = formatarNomeProprio(novoNome.value.trim());
     const resultado = validarNomeCompleto(nomeFinal);
+    const municipiovalido = validaMunicipio(novoMunicipio.value);
     if (!resultado.valido) {
         alert(resultado.msg);
+        return;
+    }
+    if (!municipiovalido) {
+        alert("Por favor, selecione um município válido.");
         return;
     }
     const { data, error } = await useFetch('/api/update-user-admin', {
