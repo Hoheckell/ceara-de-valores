@@ -7,7 +7,7 @@ export default defineEventHandler(async (event) => {
   // Criamos um cliente Supabase com privilégios de Admin
   const supabaseAdmin = createClient(
     process.env.SUPABASE_URL as string,
-    process.env.SUPABASE_SERVICE_KEY as string,
+    process.env.SUPABASE_SECRET_KEY as string,
   );
 
   const { userId, novoUsername, novoNome, novoMunicipio } = body;
