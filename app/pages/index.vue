@@ -659,7 +659,7 @@ watch(() => userData.value.user_id, (id) => {
                     </div>
                 </div>
                 <div v-else class="max-w-4xl mx-auto flex justify-between items-center">
-                    <button class="text-md bg-blue-800 px-3 py-1 rounded-lg" @click="scrollToElement('login')">
+                    <button v-if="step =='trilha-selection'" class="text-md bg-blue-800 px-3 py-1 rounded-lg" @click="scrollToElement('login')">
                         👤 Login
                     </button>
                 </div>
