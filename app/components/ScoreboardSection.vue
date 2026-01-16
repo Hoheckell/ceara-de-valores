@@ -113,7 +113,7 @@ v-if="carregandoRanking"
                             <span>{{ item.nome }}</span>
                         </div>
                         <div class="font-black text-blue-900">
-                            {{ item.total }} <span class="text-[10px] text-slate-400 font-normal lowercase">part.</span>
+                            {{ item.total }} <span class="text-[10px] text-slate-400 font-normal lowercase">pts.</span>
                         </div>
                     </div>
 
