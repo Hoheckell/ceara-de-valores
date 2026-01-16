@@ -91,7 +91,7 @@ watch(() => userData.value.user_id, (newId) => {
 <template>
   <div class="bg-white rounded-[3rem] p-8 shadow-xl border-2 border-slate-50">
 
-    <div v-if="!estaLogado" class="text-center py-10">
+    <div v-if="!estaLogado" id="login" class="text-center py-10">
       <div class="w-20 h-20 bg-blue-100 rounded-3xl flex items-center justify-center text-3xl mx-auto mb-6">🔒</div>
       <h2 class="text-2xl font-black text-blue-900 uppercase italic mb-2">Teu Diário de Missões</h2>
       <p class="text-slate-500 text-sm mb-8 px-6">Identifica-te para recuperares todas as tuas ideias e projetos salvos.

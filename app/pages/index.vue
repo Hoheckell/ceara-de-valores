@@ -59,6 +59,19 @@ const validaMunicipio = (municipio) => {
     ).slice(0, 5);
     return resultado.length > 0;
 }
+const scrollToElement = (elementId) => {
+    const element = document.getElementById(elementId);
+
+    if (!element) {
+        console.warn(`Elemento com id "${elementId}" não encontrado.`);
+        return;
+    }
+
+    element.scrollIntoView({
+        behavior: 'smooth',
+        block: 'start'
+    });
+}
 
 const abrirQuizProjetos = () => {
     selectedTrilha.value = null;
@@ -170,7 +183,7 @@ const startQuiz = async () => {
         const emailSintetico = `${usernameLimpo}@aluno.cearadevalores.com.br`;
         const municipiovalido = validaMunicipio(userData.value.municipio);
         if (!usernameLimpo || !userData.value.senha || !municipiovalido) {
-            alert("Por favor, preencha todos os campos corretamente."+ (!municipiovalido)? " Por favor, selecione um município válido.": "");
+            alert("Por favor, preencha todos os campos corretamente." + (!municipiovalido) ? " Por favor, selecione um município válido." : "");
             return;
         }
 
@@ -644,6 +657,11 @@ watch(() => userData.value.user_id, (id) => {
                         <span class="text-[10px] font-black text-white uppercase block leading-none">Município</span>
                         <span class="text-[10px] font-black text-blue uppercase italic">{{ userData.municipio }}</span>
                     </div>
+                </div>
+                <div v-else class="max-w-4xl mx-auto flex justify-between items-center">
+                    <button class="text-md bg-blue-800 px-3 py-1 rounded-lg" @click="scrollToElement('login')">
+                        👤 Login
+                    </button>
                 </div>
                 <button v-if="step !== 'trilha-selection'" class="text-md bg-blue-800 px-3 py-1 rounded-lg"
                     @click="goBack">
