@@ -38,8 +38,5 @@ export default defineNuxtConfig({
     key: process.env.SUPABASE_KEY,
     redirect: false,
     types: undefined, // Geralmente útil colocar false para não barrar usuários antes do login
-  },
-  nitro: {
-    preset: 'node-server'
   }
 })
