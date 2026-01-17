@@ -335,7 +335,7 @@ const finishAndSave = async () => {
         }
 
         step.value = 'results';
-    } catch (err) {
+        carregarSessao();    } catch (err) {
         console.error(err.message);
         step.value = 'results';
     }
@@ -456,7 +456,23 @@ const verificarRespostaExistente = async () => {
         carregandoVerificacao.value = false;
     }
 };
+watch(() => userData.value.username, (novoValor) => {
+    if (!novoValor) return;
 
+    // 1. Remove todos os espaços em branco
+    // 2. Transforma tudo em minúsculo
+    // 3. Remove acentos e caracteres especiais (opcional, mas recomendado)
+    const valorLimpo = novoValor
+        .replace(/\s/g, '') // Remove espaços
+        .toLowerCase()     // Tudo minúsculo
+        .normalize("NFD")  // Decompõe acentos
+        .replace(/[\u0300-\u036f]/g, ""); // Remove os acentos
+
+    // 4. Se o valor mudou após a limpeza, atualiza o campo
+    if (novoValor !== valorLimpo) {
+        userData.value.username = valorLimpo;
+    }
+});
 // Dispara a verificação quando o CPF termina de ser digitado
 watch(() => userData.value.user_id, (val) => {
     if (val.length === 14) verificarRespostaExistente();
@@ -472,8 +488,8 @@ watch(() => userData.value.user_id, (id) => {
 watch(novoNome, (valorOriginal) => {
     // 1. LIMPEZA: Remove números e caracteres especiais (exceto letras e espaços)
     // Isso impede que o aluno digite "Jo4o" ou "Maria_Silva"
+    if (!valorNovo || typeof valorNovo !== 'string') return;
     let valorProcessado = valorOriginal.replace(/[0-9!@#$%¨&*()_+=[\]{}|\\;:'",.<>?/]/g, '');
-
     // 2. FORMATAÇÃO (Capitalização Automática)
     // Só aplicamos o "Title Case" quando o usuário digita um espaço, 
     // para não "forçar" a letra maiúscula enquanto ele ainda está escrevendo a palavra.
@@ -659,7 +675,8 @@ watch(() => userData.value.user_id, (id) => {
                     </div>
                 </div>
                 <div v-else class="max-w-4xl mx-auto flex justify-between items-center">
-                    <button v-if="step =='trilha-selection'" class="text-md bg-blue-800 px-3 py-1 rounded-lg" @click="scrollToElement('login')">
+                    <button v-if="step == 'trilha-selection'" class="text-md bg-blue-800 px-3 py-1 rounded-lg"
+                        @click="scrollToElement('login')">
                         👤 Login
                     </button>
                 </div>
@@ -819,6 +836,9 @@ watch(() => userData.value.user_id, (id) => {
                             <label class="text-[10px] font-black text-slate-400 uppercase ml-2">Username Único</label>
                             <input v-model="userData.username" type="text" placeholder="joao_maker"
                                 class="w-full p-4 bg-slate-50 border-2 border-slate-100 rounded-2xl focus:border-blue-500 outline-none font-bold text-blue-900">
+                            <p class="text-[9px] text-slate-400 ml-2 italic">
+                                * Letras, números e sublinhados apenas. Espaços serão removidos.
+                            </p>
                         </div>
                         <div class="space-y-1">
                             <label class="text-[10px] font-black text-slate-400 uppercase ml-2">Senha</label>
