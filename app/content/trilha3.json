@@ -779,6 +779,706 @@
           "hint": "O excesso de confiança pode impedir o aprendizado."
         }
       ]
+    },
+    {
+      "id": 5,
+      "titulo": "Empreendedorismo do Jovem Cearense",
+      "questions": [
+        {
+          "text": "Baseado no conteúdo da aula 5, qual é o 'trio mágico' fundamental para que um projeto ou negócio saia do papel e aconteça de fato?",
+          "options": [
+            {
+              "text": "Capital inicial, sorte e uma boa localização física.",
+              "isCorrect": false,
+              "rationale": "Embora importantes, o professor destaca que a base é composta por atitude e organização."
+            },
+            {
+              "text": "Ideia/Projeto, Planejamento e Execução.",
+              "isCorrect": true,
+              "rationale": "O professor afirma explicitamente que essas três palavras juntas fazem a 'mágica' do negócio acontecer."
+            },
+            {
+              "text": "Contatos influentes, publicidade e tecnologia de ponta.",
+              "isCorrect": false,
+              "rationale": "Estes são complementos, mas não o tripé central citado na aula."
+            },
+            {
+              "text": "Talento nato, ausência de erros e apoio governamental.",
+              "isCorrect": false,
+              "rationale": "O professor reforça que erros acontecem e que o talento precisa de execução e planejamento."
+            }
+          ],
+          "hint": "São três conceitos que envolvem o pensamento, o desenho e a ação."
+        },
+        {
+          "text": "Baseado no conteúdo da aula 5, ao usar o exemplo do 'bolo no pote', qual lição o professor pretende passar sobre concorrência e inovação?",
+          "options": [
+            {
+              "text": "Que não vale a pena entrar em mercados onde já existem muitas pessoas vendendo o mesmo produto.",
+              "isCorrect": false,
+              "rationale": "O empreendedorismo incentiva a entrada em mercados, desde que haja um diferencial."
+            },
+            {
+              "text": "Que o segredo é sempre vender pelo preço mais baixo, mesmo perdendo qualidade.",
+              "isCorrect": false,
+              "rationale": "O foco deve ser no valor agregado e na qualidade, não apenas no preço."
+            },
+            {
+              "text": "Que é necessário identificar um diferencial e agregar valor para se destacar, mesmo em um produto comum.",
+              "isCorrect": true,
+              "rationale": "O exemplo do bolo ilustra que a forma como você apresenta e entrega o produto é o que atrai o cliente no meio da multidão."
+            },
+            {
+              "text": "Que o marketing digital é a única forma de vender produtos caseiros hoje em dia.",
+              "isCorrect": false,
+              "rationale": "A aula foca na essência da entrega e no valor do produto antes das ferramentas de divulgação."
+            }
+          ],
+          "hint": "Pense no que faz alguém escolher o SEU bolo em vez de qualquer outro."
+        },
+        {
+          "text": "Baseado no conteúdo da aula 5, como Ricardo Sampaio descreve a relação entre o erro e a trajetória de um empreendedor de sucesso?",
+          "options": [
+            {
+              "text": "O erro é um sinal de que o jovem não tem talento para os negócios.",
+              "isCorrect": false,
+              "rationale": "Pelo contrário, o erro é visto como parte natural do crescimento."
+            },
+            {
+              "text": "Erros e quedas são frequentes na jornada, mas servem como aprendizado para o acerto final.",
+              "isCorrect": true,
+              "rationale": "O professor menciona que existem muitas quedas e erros até que se ache o caminho e se acerte."
+            },
+            {
+              "text": "Empreendedores de sucesso raramente erram porque planejam tudo perfeitamente.",
+              "isCorrect": false,
+              "rationale": "O planejamento ajuda, mas não elimina a possibilidade de erros na prática."
+            },
+            {
+              "text": "Errar uma vez significa que o projeto deve ser abandonado imediatamente para evitar perdas.",
+              "isCorrect": false,
+              "rationale": "A persistência é uma característica chave ressaltada na aula."
+            }
+          ],
+          "hint": "Reflita sobre a ideia de que a caminhada não é uma linha reta."
+        },
+        {
+          "text": "Baseado no conteúdo da aula 5, qual a importância da educação e do estudo formal, considerando a trajetória pessoal do professor?",
+          "options": [
+            {
+              "text": "O estudo formal é desnecessário se você já tem experiência prática desde cedo.",
+              "isCorrect": false,
+              "rationale": "O professor voltou a estudar aos 33 anos justamente por entender o valor da especialização."
+            },
+            {
+              "text": "Deve-se primeiro ganhar dinheiro para só depois, se sobrar tempo, voltar a estudar.",
+              "isCorrect": false,
+              "rationale": "O estudo deve acompanhar o desenvolvimento da carreira."
+            },
+            {
+              "text": "O aprendizado deve ser contínuo e a busca por conhecimento técnico ajuda a conquistar o sucesso com mais solidez.",
+              "isCorrect": true,
+              "rationale": "Ele incentiva os jovens a investirem em suas carreiras, estudarem e buscarem aprendizado constante."
+            },
+            {
+              "text": "A faculdade garante o sucesso imediato, independentemente da prática.",
+              "isCorrect": false,
+              "rationale": "Sucesso exige a combinação de conhecimento teórico e ação (execução)."
+            }
+          ],
+          "hint": "Pense no exemplo do professor que voltou à academia após anos de mercado."
+        },
+        {
+          "text": "Baseado no conteúdo da aula 5, sobre a escala do empreendedorismo, onde a mudança realmente começa de acordo com a visão apresentada?",
+          "options": [
+            {
+              "text": "A mudança é algo distante que só acontece quando o governo investe grandes quantias.",
+              "isCorrect": false,
+              "rationale": "O protagonismo é do jovem e da ação individual e coletiva imediata."
+            },
+            {
+              "text": "A mudança começa agora, através das ações do jovem na sua família, no seu bairro e na sua realidade imediata.",
+              "isCorrect": true,
+              "rationale": "O professor enfatiza que a mudança não está no futuro, mas no agora, através do potencial transformador do jovem."
+            },
+            {
+              "text": "O empreendedorismo só é válido se o objetivo for criar uma empresa multinacional.",
+              "isCorrect": false,
+              "rationale": "Empreender pode ser transformar a realidade local, o bairro ou a família."
+            },
+            {
+              "text": "Mudar a sociedade é impossível para quem está começando com poucos recursos.",
+              "isCorrect": false,
+              "rationale": "A aula foca justamente na capacidade de transformação a partir da coragem e iniciativa."
+            }
+          ],
+          "hint": "Lembre-se da frase: 'A mudança não tá no futuro'."
+        },
+        {
+          "text": "Baseado no conteúdo da aula 5, analise a seguinte afirmação: 'Empreender nada mais é do que um ato de coragem'. Por que essa característica é tão enfatizada para o jovem cearense?",
+          "options": [
+            {
+              "text": "Porque a coragem é a única coisa necessária, dispensando o planejamento.",
+              "isCorrect": false,
+              "rationale": "A coragem impulsiona, mas o planejamento organiza o caminho."
+            },
+            {
+              "text": "Porque o mercado de trabalho no Ceará é violento e exige agressividade.",
+              "isCorrect": false,
+              "rationale": "A coragem citada é para inovar, arriscar e buscar a própria independência."
+            },
+            {
+              "text": "Porque enfrentar o medo de falhar e decidir investir na própria carreira exige uma postura firme e proativa diante das incertezas.",
+              "isCorrect": true,
+              "rationale": "Coragem é o motor que faz o jovem cearense vencer as dificuldades históricas e sociais para transformar sua realidade."
+            },
+            {
+              "text": "Porque apenas os jovens que não têm medo de nada conseguem abrir empresas.",
+              "isCorrect": false,
+              "rationale": "Sentir medo é natural; a coragem é agir apesar dele."
+            }
+          ],
+          "hint": "Pense na coragem como a força para dar o primeiro passo e persistir."
+        }
+      ]
+    },
+    {
+      "id": 6,
+      "titulo": "Novas Economias e Protagonismo Juvenil",
+      "questions": [
+        {
+          "text": "Baseado no conteúdo da aula 6, qual é a principal diferença entre as 'Novas Economias' e o modelo econômico tradicional?",
+          "options": [
+            {
+              "text": "O foco exclusivo no lucro financeiro acima de qualquer outra variável.",
+              "isCorrect": false,
+              "rationale": "As novas economias buscam equilibrar o financeiro com o social e o ambiental."
+            },
+            {
+              "text": "A busca por um desenvolvimento que integra as dimensões social, ambiental, humana e econômica.",
+              "isCorrect": true,
+              "rationale": "A professora Maira enfatiza que o objetivo não é apenas o crescimento econômico, mas o bem-estar coletivo."
+            },
+            {
+              "text": "A substituição total de máquinas por trabalho manual em todas as áreas.",
+              "isCorrect": false,
+              "rationale": "As novas economias usam tecnologia, mas de forma inclusiva e sustentável."
+            },
+            {
+              "text": "O isolamento das comunidades locais em relação ao mercado global.",
+              "isCorrect": false,
+              "rationale": "O foco é no território, mas conectado com as tendências globais de sustentabilidade."
+            }
+          ],
+          "hint": "Pense no tripé da sustentabilidade mencionado pela professora."
+        },
+        {
+          "text": "Baseado no conteúdo da aula 6, como a Economia Verde atua para reduzir as desigualdades sociais?",
+          "options": [
+            {
+              "text": "Através da promoção da eficiência de recursos e da inclusão social em processos de baixo carbono.",
+              "isCorrect": true,
+              "rationale": "A economia verde foca em ser sustentável ambientalmente e justa socialmente."
+            },
+            {
+              "text": "Proibindo o uso de qualquer tipo de energia elétrica nas fábricas.",
+              "isCorrect": false,
+              "rationale": "O objetivo é a transição energética e eficiência, não a proibição."
+            },
+            {
+              "text": "Focando apenas na preservação de florestas, sem interferir na vida urbana.",
+              "isCorrect": false,
+              "rationale": "A economia verde abrange tanto áreas rurais quanto urbanas e sociais."
+            },
+            {
+              "text": "Aumentando os impostos para quem vive em áreas de preservação.",
+              "isCorrect": false,
+              "rationale": "O foco é gerar novas oportunidades de renda sustentáveis."
+            }
+          ],
+          "hint": "Lembre-se da relação entre baixo carbono e inclusão."
+        },
+        {
+          "text": "Baseado no conteúdo da aula 6, qual é o ciclo fundamental proposto pela Economia Circular em oposição ao modelo linear de 'extrair, produzir e descartar'?",
+          "options": [
+            {
+              "text": "Extração acelerada de minérios para venda rápida.",
+              "isCorrect": false,
+              "rationale": "Isso faz parte do modelo linear tradicional."
+            },
+            {
+              "text": "Produção em massa sem preocupação com o fim da vida útil do produto.",
+              "isCorrect": false,
+              "rationale": "Isso gera resíduos, o oposto do que a economia circular propõe."
+            },
+            {
+              "text": "Redução, reutilização, recuperação e reciclagem de materiais para eliminar o desperdício.",
+              "isCorrect": true,
+              "rationale": "A economia circular mantém o valor dos produtos e materiais circulando pelo maior tempo possível."
+            },
+            {
+              "text": "Exportação de resíduos para outros países como forma de limpeza.",
+              "isCorrect": false,
+              "rationale": "A solução deve ser interna e sistêmica no ciclo produtivo."
+            }
+          ],
+          "hint": "Pense no desenho de um círculo onde nada se perde."
+        },
+        {
+          "text": " Baseado no conteúdo da aula 6, por que a Economia Criativa é tão estratégica para o desenvolvimento do Ceará?",
+          "options": [
+            {
+              "text": "Porque o Ceará não possui outros recursos além do turismo de praia.",
+              "isCorrect": false,
+              "rationale": "O Ceará é rico em diversos setores, mas a criatividade potencializa todos eles."
+            },
+            {
+              "text": "Porque ela utiliza a criatividade, o talento e a cultura local como principais ativos para gerar emprego e renda.",
+              "isCorrect": true,
+              "rationale": "A professora destaca a potência da criatividade ligada ao território cearense como motor econômico."
+            },
+            {
+              "text": "Porque ela substitui a necessidade de estudo técnico e universitário.",
+              "isCorrect": false,
+              "rationale": "A economia criativa exige muito estudo, técnica e soberania tecnológica."
+            },
+            {
+              "text": "Porque ela foca apenas na importação de cultura estrangeira para o estado.",
+              "isCorrect": false,
+              "rationale": "O foco é na valorização da resistência e cultura do sertão, litoral e serras."
+            }
+          ],
+          "hint": "Relacione o talento do nosso povo com a geração de valor."
+        },
+        {
+          "text": "Baseado no conteúdo da aula 6, qual a importância da 'Economia do Cuidado' na manutenção da sociedade?",
+          "options": [
+            {
+              "text": "Ela se refere apenas ao trabalho médico em hospitais particulares.",
+              "isCorrect": false,
+              "rationale": "O cuidado vai além do ambiente hospitalar e do setor privado."
+            },
+            {
+              "text": "É uma economia secundária que não gera impacto no PIB.",
+              "isCorrect": false,
+              "rationale": "Embora invisibilizada, ela é a base que sustenta todas as outras atividades econômicas."
+            },
+            {
+              "text": "Ela abrange o trabalho essencial de cuidar de pessoas e manter a vida, sendo a base para o funcionamento de todas as outras economias.",
+              "isCorrect": true,
+              "rationale": "Sem o cuidado com crianças, idosos e o ambiente doméstico, a força de trabalho não se sustenta."
+            },
+            {
+              "text": "É uma economia voltada exclusivamente para a fabricação de produtos de limpeza.",
+              "isCorrect": false,
+              "rationale": "Cuidado refere-se à atividade humana e social de suporte à vida."
+            }
+          ],
+          "hint": "Pense nas tarefas essenciais que muitas vezes não são pagas, mas são vitais."
+        },
+        {
+          "text": "Baseado no conteúdo da aula 6, o que diferencia a Economia Solidária de uma empresa de mercado convencional?",
+          "options": [
+            {
+              "text": "A proibição de obter qualquer tipo de receita financeira.",
+              "isCorrect": false,
+              "rationale": "Cooperativas e grupos solidários geram renda, mas a distribuem de forma justa."
+            },
+            {
+              "text": "A gestão baseada na cooperação, autogestão e no comércio justo entre os participantes.",
+              "isCorrect": true,
+              "rationale": "A solidariedade e a colaboração estão acima da competição individualista."
+            },
+            {
+              "text": "A existência de um único dono que toma todas as decisões sozinho.",
+              "isCorrect": false,
+              "rationale": "Isso descreve um modelo tradicional vertical, não a economia solidária."
+            },
+            {
+              "text": "O foco exclusivo em vender produtos para o exterior.",
+              "isCorrect": false,
+              "rationale": "O foco principal costuma ser o desenvolvimento da comunidade local."
+            }
+          ],
+          "hint": "Lembre-se da palavra 'cooperação'."
+        },
+        {
+          "text": "Baseado no conteúdo da aula 6, quais são os três requisitos fundamentais que a professora Maira sugere para os projetos dos jovens no Ceará de Valores?",
+          "options": [
+            {
+              "text": "Ser grande, ser caro e ser tecnológico.",
+              "isCorrect": false,
+              "rationale": "O projeto não precisa ser grande, mas sim impactante e real."
+            },
+            {
+              "text": "Ser real, ser viável e estar conectado ao território.",
+              "isCorrect": true,
+              "rationale": "A professora reforça que o projeto deve resolver problemas reais da comunidade local de forma praticável."
+            },
+            {
+              "text": "Ser individual, ser secreto e ser lucrativo.",
+              "isCorrect": false,
+              "rationale": "Os projetos devem ser coletivos, compartilhados e focados no impacto social."
+            },
+            {
+              "text": "Ser cópia de um projeto de sucesso de outro país.",
+              "isCorrect": false,
+              "rationale": "O projeto deve ter identidade e soberania ligada ao Ceará."
+            }
+          ],
+          "hint": "Pense no que torna um projeto possível de ser executado no seu bairro."
+        }
+      ]
+    },
+    {
+      "id": 7,
+      "titulo": "O Perfil do Empreendedor e o Cenário Cearense",
+      "questions": [
+        {
+          "text": "Baseado no conteúdo da aula 7, qual a definição de empreendedor que vai além da simples abertura de um negócio próprio?",
+          "options": [
+            {
+              "text": "Alguém que foca apenas no lucro individual e na competição de mercado.",
+              "isCorrect": false,
+              "rationale": "O foco do empreendedorismo abordado é na solução de problemas e benefício social."
+            },
+            {
+              "text": "Uma pessoa inovadora e corajosa que propõe soluções originais que beneficiam a sociedade.",
+              "isCorrect": true,
+              "rationale": "A professora destaca que o verdadeiro empreendedor acredita no potencial de trazer benefícios para o coletivo."
+            },
+            {
+              "text": "Alguém que segue modelos de negócios já existentes sem propor mudanças.",
+              "isCorrect": false,
+              "rationale": "A inovação e a originalidade são pilares fundamentais citados na aula."
+            },
+            {
+              "text": "Uma pessoa que trabalha apenas de forma isolada para evitar desafios em grupo.",
+              "isCorrect": false,
+              "rationale": "A aula reforça a importância de habilidades de liderança e colaboração em grupo."
+            }
+          ],
+          "hint": "Pense nas características de inovação e impacto social."
+        },
+        {
+          "text": "Baseado no conteúdo da aula 7, o que significa a expressão 'ser líder da sua própria vida' no contexto do desenvolvimento pessoal?",
+          "options": [
+            {
+              "text": "Assumir o protagonismo das suas escolhas, organizando-se para criar soluções e pesquisar novos caminhos.",
+              "isCorrect": true,
+              "rationale": "A professora menciona que a liderança pessoal envolve organização, pesquisa e a coragem de propor soluções."
+            },
+            {
+              "text": "Esperar que as oportunidades apareçam sozinhas sem necessidade de esforço.",
+              "isCorrect": false,
+              "rationale": "O empreendedorismo exige proatividade e busca ativa por conhecimento."
+            },
+            {
+              "text": "Delegar todas as decisões importantes para outras pessoas da comunidade.",
+              "isCorrect": false,
+              "rationale": "Ser líder de si envolve responsabilidade individual sobre a própria trajetória."
+            },
+            {
+              "text": "Focar exclusivamente em atividades individuais, ignorando o trabalho em equipe.",
+              "isCorrect": false,
+              "rationale": "A liderança também se manifesta na capacidade de criar coisas juntas em grupo."
+            }
+          ],
+          "hint": "Reflita sobre autonomia e iniciativa."
+        },
+        {
+          "text": "Baseado no conteúdo da aula 7, por que o estado do Ceará é considerado um ambiente rico e promissor para novos empreendimentos?",
+          "options": [
+            {
+              "text": "Devido à falta de concorrência em todos os setores da economia.",
+              "isCorrect": false,
+              "rationale": "A atratividade não vem da falta de concorrência, mas do potencial de crescimento e recursos."
+            },
+            {
+              "text": "Pela sua diversidade cultural, recursos naturais e uma economia em expansão que favorece a inovação.",
+              "isCorrect": true,
+              "rationale": "A professora enfatiza que a diversidade e o crescimento econômico do estado criam o cenário ideal para novos negócios."
+            },
+            {
+              "text": "Porque no Ceará não existem desafios ou dificuldades para quem deseja empreender.",
+              "isCorrect": false,
+              "rationale": "A aula reconhece que existem muitos desafios, mas que o ambiente é rico em oportunidades."
+            },
+            {
+              "text": "Apenas por causa do clima tropical, que favorece exclusivamente o setor de turismo.",
+              "isCorrect": false,
+              "rationale": "A riqueza do Ceará vai além do turismo, abrangendo cultura e diversos recursos econômicos."
+            }
+          ],
+          "hint": "Considere os fatores econômicos e culturais citados pela professora."
+        },
+        {
+          "text": "Baseado no conteúdo da aula 7, como a trajetória da professora na área de inclusão e acessibilidade serve de exemplo para o conceito de empreendedorismo?",
+          "options": [
+            {
+              "text": "Mostra que empreender é fácil quando se escolhe uma área sem desafios técnicos.",
+              "isCorrect": false,
+              "rationale": "Ela menciona que áreas inovadoras possuem muitos desafios específicos."
+            },
+            {
+              "text": "Demonstra que é impossível conciliar jornalismo com o ensino na rede pública.",
+              "isCorrect": false,
+              "rationale": "Sua trajetória mostra justamente a integração de diferentes experiências em sua vida profissional."
+            },
+            {
+              "text": "Ilustra como identificar uma necessidade social e usar a inovação para criar impacto positivo na vida de pessoas com deficiência.",
+              "isCorrect": true,
+              "rationale": "O exemplo de acessibilidade foca na transformação de ideias em soluções que beneficiam um grupo específico e a sociedade."
+            },
+            {
+              "text": "Prova que o empreendedorismo deve focar apenas em tecnologias digitais complexas.",
+              "isCorrect": false,
+              "rationale": "O foco é na solução de problemas humanos e sociais, independentemente da complexidade tecnológica."
+            }
+          ],
+          "hint": "Pense no propósito do trabalho dela com a acessibilidade."
+        },
+        {
+          "text": "Baseado no conteúdo da aula 7, qual o papel de programas como o 'Ceará de Valor' na jornada de um jovem que deseja empreender?",
+          "options": [
+            {
+              "text": "Substituir a necessidade de o aluno pesquisar e criar suas próprias ideias.",
+              "isCorrect": false,
+              "rationale": "O programa incentiva a autonomia, não a substitui."
+            },
+            {
+              "text": "Oferecer apoio, capacitação e tornar o caminho do empreendedorismo mais acessível e promissor.",
+              "isCorrect": true,
+              "rationale": "Programas governamentais e de capacitação são citados como estruturas que facilitam a trajetória do novo empreendedor."
+            },
+            {
+              "text": "Garantir o sucesso financeiro imediato sem que o jovem precise praticar o que aprendeu.",
+              "isCorrect": false,
+              "rationale": "O sucesso depende da aplicação das habilidades e da proatividade do aluno."
+            },
+            {
+              "text": "Focar apenas na teoria, sem preocupação com a realidade da comunidade do aluno.",
+              "isCorrect": false,
+              "rationale": "O objetivo é justamente conscientizar sobre o potencial de transformar a comunidade local."
+            }
+          ],
+          "hint": "Considere o suporte e a estrutura oferecidos ao jovem."
+        },
+        {
+          "text": "Baseado no conteúdo da aula 7, o que é fundamental para que um jovem consiga perceber oportunidades de negócio ao seu redor?",
+          "options": [
+            {
+              "text": "Ter uma grande quantidade de dinheiro guardado antes de começar a observar.",
+              "isCorrect": false,
+              "rationale": "A percepção de oportunidades vem da conscientização e da observação do cenário."
+            },
+            {
+              "text": "Ignorar os problemas da sua comunidade para focar apenas em tendências mundiais.",
+              "isCorrect": false,
+              "rationale": "As oportunidades surgem justamente da resolução de problemas locais."
+            },
+            {
+              "text": "A conscientização do próprio potencial e a capacidade de transformar ideias em soluções reais para a sociedade.",
+              "isCorrect": true,
+              "rationale": "A professora finaliza reforçando que o jovem deve acreditar em sua capacidade de contribuir positivamente."
+            },
+            {
+              "text": "Mudar-se para outro estado para encontrar ambientes mais desenvolvidos.",
+              "isCorrect": false,
+              "rationale": "A aula destaca as riquezas e expansão da economia do próprio Ceará."
+            }
+          ],
+          "hint": "Foque na motivação interna e na visão de solução."
+        }
+      ]
+    },
+    {
+      "id": 8,
+      "titulo": "Desenvolvimento do Projeto Final",
+      "questions": [
+        {
+          "text": "Baseado no conteúdo da aula 8, qual é a primeira etapa fundamental para identificar um tema relevante para o projeto final?",
+          "options": [
+            {
+              "text": "Pesquisar temas prontos na internet para adaptar à sua realidade.",
+              "isCorrect": false,
+              "rationale": "A aula enfatiza a observação direta da própria realidade em vez de buscar modelos externos prontos."
+            },
+            {
+              "text": "Observar com atenção o mundo ao redor, como o bairro, a escola e os lugares de lazer que frequenta.",
+              "isCorrect": true,
+              "rationale": "Taiana Santana destaca que a capacidade de observar a realidade à nossa volta é o que revela as possibilidades de temas."
+            },
+            {
+              "text": "Escolher o tema que parece ser o mais difícil para impressionar os avaliadores.",
+              "isCorrect": false,
+              "rationale": "A clareza e a conexão com o real são mais importantes do que a complexidade do vocabulário."
+            },
+            {
+              "text": "Aguardar que o programa Ceará de Valores forneça uma lista de temas obrigatórios.",
+              "isCorrect": false,
+              "rationale": "O protagonismo juvenil exige que o aluno identifique o problema a ser resolvido."
+            }
+          ],
+          "hint": "Pense no exercício de olhar para o seu próprio território."
+        },
+        {
+          "text": "Baseado no conteúdo da aula 8, qual a principal diferença entre a 'Justificativa' e os 'Objetivos' de um projeto?",
+          "options": [
+            {
+              "text": "A justificativa explica o 'porquê' da importância do projeto, enquanto os objetivos explicam 'o que' se quer alcançar.",
+              "isCorrect": true,
+              "rationale": "A justificativa foca na relevância e no problema, já os objetivos focam nos resultados pretendidos."
+            },
+            {
+              "text": "A justificativa lista as ações práticas, enquanto os objetivos listam os recursos financeiros.",
+              "isCorrect": false,
+              "rationale": "Ações práticas pertencem ao Plano de Ação; recursos pertencem à seção de Recursos."
+            },
+            {
+              "text": "Os objetivos são opcionais, enquanto a justificativa é a única parte obrigatória do projeto.",
+              "isCorrect": false,
+              "rationale": "Ambos são componentes essenciais da estrutura apresentada na aula."
+            },
+            {
+              "text": "A justificativa é voltada para o público-alvo, enquanto os objetivos são voltados para os avaliadores.",
+              "isCorrect": false,
+              "rationale": "Ambos compõem o corpo técnico do projeto e devem ser coerentes entre si."
+            }
+          ],
+          "hint": "Pense na pergunta que cada seção responde: Por que fazer? O que atingir?"
+        },
+        {
+          "text": "Baseado no conteúdo da aula 8, como devem ser definidos os Objetivos Específicos em relação ao Objetivo Geral?",
+          "options": [
+            {
+              "text": "Devem ser metas maiores e mais abrangentes que o objetivo geral.",
+              "isCorrect": false,
+              "rationale": "Os objetivos específicos são detalhamentos menores que ajudam a concretizar o geral."
+            },
+            {
+              "text": "Devem ser etapas concretas e detalhadas que, juntas, ajudam a alcançar o objetivo maior do projeto.",
+              "isCorrect": true,
+              "rationale": "A aula explica que os objetivos específicos trazem o detalhamento necessário para atingir o propósito principal."
+            },
+            {
+              "text": "Devem ser escritos em uma linguagem mais rebuscada para parecerem mais técnicos.",
+              "isCorrect": false,
+              "rationale": "A clareza é um critério de avaliação, não o uso de palavras difíceis."
+            },
+            {
+              "text": "Não precisam ter relação direta com o objetivo geral, desde que sejam criativos.",
+              "isCorrect": false,
+              "rationale": "Deve haver coerência total entre todas as partes do projeto."
+            }
+          ],
+          "hint": "Pense nos objetivos específicos como os 'degraus' para chegar ao topo."
+        },
+        {
+          "text": "Baseado no conteúdo da aula 8, o que caracteriza um bom 'Plano de Ação' dentro da proposta do projeto?",
+          "options": [
+            {
+              "text": "Uma descrição genérica dizendo que todos os problemas serão resolvidos rapidamente.",
+              "isCorrect": false,
+              "rationale": "O plano de ação deve ser específico, com prazos e atividades claras."
+            },
+            {
+              "text": "A lista de todas as pessoas famosas que poderiam apoiar o projeto no futuro.",
+              "isCorrect": false,
+              "rationale": "O plano de ação foca no 'como fazer' e 'quando fazer', não apenas em apoios teóricos."
+            },
+            {
+              "text": "A organização clara de atividades, prazos e responsabilidades, funcionando como um mapa para a execução.",
+              "isCorrect": true,
+              "rationale": "A aula define o plano de ação como o passo a passo para transformar a ideia em realidade."
+            },
+            {
+              "text": "Um pedido de financiamento detalhando apenas o valor total necessário.",
+              "isCorrect": false,
+              "rationale": "Recursos são uma seção, o Plano de Ação é a estratégia de execução."
+            }
+          ],
+          "hint": "Imagine um cronograma de atividades."
+        },
+        {
+          "text": "Baseado no conteúdo da aula 8, por que a 'Viabilidade' é um dos critérios de avaliação mais importantes para o Ceará de Valores?",
+          "options": [
+            {
+              "text": "Porque o programa só aceita projetos que já tenham patrocínio de grandes empresas.",
+              "isCorrect": false,
+              "rationale": "A viabilidade refere-se à possibilidade real de execução, não apenas a patrocínios."
+            },
+            {
+              "text": "Porque projetos que prometem 'mudar o mundo sozinhos' são mais valorizados.",
+              "isCorrect": false,
+              "rationale": "A aula alerta que projetos que prometem demais costumam não funcionar."
+            },
+            {
+              "text": "Porque o projeto precisa ser possível de ser executado, com os pés no chão e foco na realidade local.",
+              "isCorrect": true,
+              "rationale": "Viabilidade é pensar se a proposta realmente cabe nos recursos e no tempo planejados."
+            },
+            {
+              "text": "Porque o programa prefere projetos que não precisem de nenhum recurso financeiro.",
+              "isCorrect": false,
+              "rationale": "Recursos são necessários; o importante é que o uso deles seja coerente e possível."
+            }
+          ],
+          "hint": "Pense na expressão 'pés no chão'."
+        },
+        {
+          "text": "Baseado no conteúdo da aula 8, qual a importância de 'saber ouvir' no processo de criação de um projeto social ou empreendedor?",
+          "options": [
+            {
+              "text": "Ouvir as pessoas ajuda a garantir que o projeto resolva um problema que elas realmente vivem.",
+              "isCorrect": true,
+              "rationale": "A aula ressalta que projetos que não escutam as pessoas afetadas tendem a não funcionar."
+            },
+            {
+              "text": "É importante apenas para convencer as pessoas a aceitarem a sua ideia sem questionar.",
+              "isCorrect": false,
+              "rationale": "Ouvir serve para construir a solução coletivamente, não para imposição."
+            },
+            {
+              "text": "Saber ouvir é irrelevante, pois o jovem líder já deve saber todas as respostas sozinho.",
+              "isCorrect": false,
+              "rationale": "O protagonismo juvenil também envolve empatia e diálogo com a comunidade."
+            },
+            {
+              "text": "Ouvir serve apenas para coletar elogios para colocar na justificativa do projeto.",
+              "isCorrect": false,
+              "rationale": "Ouvir serve para identificar a dor real e a viabilidade da solução proposta."
+            }
+          ],
+          "hint": "Relacione o projeto com a escuta da comunidade."
+        },
+        {
+          "text": "Baseado no conteúdo da aula 8, o que significa dizer que um projeto tem 'Conexão com o Território'?",
+          "options": [
+            {
+              "text": "Significa que o projeto pode ser aplicado em qualquer lugar do mundo da mesma forma.",
+              "isCorrect": false,
+              "rationale": "Isso seria um projeto genérico. A conexão exige especificidade local."
+            },
+            {
+              "text": "Significa que a proposta nasce e respeita as vivências, histórias e necessidades específicas do lugar onde o jovem vive.",
+              "isCorrect": true,
+              "rationale": "Taiana Santana afirma que a história e a vivência do jovem no seu lugar importam para o projeto."
+            },
+            {
+              "text": "Significa que o projeto deve ser focado apenas na compra de terrenos ou áreas rurais.",
+              "isCorrect": false,
+              "rationale": "Território aqui refere-se à comunidade, cultura e espaço social vivido."
+            },
+            {
+              "text": "Significa que o título do projeto deve conter o nome do estado do Ceará obrigatoriamente.",
+              "isCorrect": false,
+              "rationale": "A conexão é profunda, baseada na solução de problemas reais locais, não apenas no nome."
+            }
+          ],
+          "hint": "Pense no sentimento de pertencimento ao seu bairro ou cidade."
+        }
+      ]
     }
   ]
 }
