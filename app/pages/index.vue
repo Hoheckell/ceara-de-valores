@@ -718,7 +718,7 @@ class="h-full bg-blue-600 rounded-full transition-all duration-1000"
                     </div>
                 </div>
 
-                <div v-else class="flex gap-2">
+                <div v-else class="flex gap-2 ml-2">
                     <button
 v-if="step == 'trilha-selection'" class="text-md bg-blue-800 px-3 py-1 rounded-lg"
                         @click="scrollToElement('login')">
@@ -727,7 +727,7 @@ v-if="step == 'trilha-selection'" class="text-md bg-blue-800 px-3 py-1 rounded-l
                 </div>
 
                 <button
-v-if="(step !== 'trilha-selection') && !userData.user_id"
+v-if="(step !== 'trilha-selection')"
                     class="text-md bg-blue-800 px-3 py-1 rounded-lg ml-2" @click="goBack">
                     ← Voltar
                 </button>
