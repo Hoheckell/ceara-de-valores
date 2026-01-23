@@ -9,6 +9,7 @@ import ScoreboardSection from '../components/ScoreboardSection.vue';
 import ScoreBoard from '../components/ScoreBoard.vue';
 import ODSSimulator from '../components/ODSSimulator.vue';
 import MissionHistory from '../components/MissionHistory.vue';
+import AgendaModal from '../components/AgendaModal.vue'; // Ajuste o caminho
 
 const supabase = useSupabaseClient();
 const mostrarSugestoes = ref(false);
@@ -19,7 +20,8 @@ const novoNome = ref('');
 const novoUsername = ref('');
 const novoMunicipio = ref('');
 const progressoTotal = ref(0); // Ex: percentagem de quizzes concluídos
-
+const showCalendar = ref(false);
+const novosEventos = ref(false);
 // 4. Estados Reativos de Navegação e Dados
 const step = ref('trilha-selection');
 const selectedTrilha = ref(null);
@@ -30,6 +32,7 @@ const score = ref(0);
 const selectedOption = ref(null);
 const isAnswered = ref(false);
 const estaLogado = ref(false);
+const loading = ref(false);
 
 const jaRespondeu = ref(false);
 const carregandoVerificacao = ref(false);
@@ -38,6 +41,9 @@ const linkPDFProjetos = "/arquivos/orientacoes-projetos.pdf";
 const quizzesRealizados = ref([]);
 const carregandoQuizzes = ref(true);// Substitua pelo link real
 
+onMounted(async () => {
+    fetchEventos();
+});
 // Filtra a lista baseada no que o utilizador escreve
 const sugestoesFiltradas = computed(() => {
     const busca = userData.value.municipio.toLowerCase().trim();
@@ -48,6 +54,26 @@ const sugestoesFiltradas = computed(() => {
         )
     ).slice(0, 5); // Mostra apenas as 5 primeiras para não tapar o ecrã
 });
+
+const fetchEventos = async () => {
+    loading.value = true;
+    try {
+        const hoje = new Date();
+        const ontem = new Date(hoje.setDate(hoje.getDate() - 1));
+        const { data, error } = await supabase
+            .from('eventos_ceara_valores')
+            .select('*')
+            .gte('data_evento', ontem.toISOString()) // Apenas eventos futuros ou de hoje
+            .order('data_evento', { ascending: true }); // Mais próximos primeiro
+
+        if (error) throw error;
+        novosEventos.value = data.length > 0;
+    } catch (error) {
+        console.error('Erro ao buscar eventos:', error);
+    } finally {
+        loading.value = false;
+    }
+};
 
 const validaMunicipio = (municipio) => {
     const busca = municipio.toLowerCase().trim();
@@ -335,7 +361,8 @@ const finishAndSave = async () => {
         }
 
         step.value = 'results';
-        carregarSessao();    } catch (err) {
+        carregarSessao();
+    } catch (err) {
         console.error(err.message);
         step.value = 'results';
     }
@@ -488,7 +515,7 @@ watch(() => userData.value.user_id, (id) => {
 watch(novoNome, (valorOriginal) => {
     // 1. LIMPEZA: Remove números e caracteres especiais (exceto letras e espaços)
     // Isso impede que o aluno digite "Jo4o" ou "Maria_Silva"
-    if (!valorNovo || typeof valorNovo !== 'string') return;
+    if (!novoNome.value || typeof novoNome.value !== 'string') return;
     let valorProcessado = valorOriginal.replace(/[0-9!@#$%¨&*()_+=[\]{}|\\;:'",.<>?/]/g, '');
     // 2. FORMATAÇÃO (Capitalização Automática)
     // Só aplicamos o "Title Case" quando o usuário digita um espaço, 
@@ -546,16 +573,8 @@ onMounted(async () => {
     }
 });
 
-const confirmarLogout = async () => {
-    if (confirm("Desejas sair da tua conta?")) {
-        await supabase.auth.signOut();
-        userData.value = { nome: '', municipio: '', username: '', senha: '', user_id: '' };
-        step.value = 'register';
-        window.location.reload();
-    }
-};
 const editPerfil = () => {
-    step.value = 'perfil';
+    step.value = step.value != 'perfil' ? 'perfil' : 'trilha-selection';
     buscarHistoricoQuizzes();
 };
 // Dentro do componente de Edição de Perfil
@@ -631,40 +650,64 @@ watch(() => userData.value.user_id, (id) => {
 <template>
 
     <div v-if="config.public.maintenanceMode == 'false'" class="min-h-screen bg-slate-50 font-sans">
+        <AgendaModal :is-open="showCalendar" @close="showCalendar = false" />
         <header class="bg-blue-700 text-white p-4 sticky top-0 z-50 shadow-md">
             <div class="max-w-2xl mx-auto flex justify-between items-center">
                 <div class="flex items-center gap-2">
-                    <img src="https://cearadevalores.com.br/wp-content/uploads/2025/09/cropped-estrela-e1756834379223-32x32.png"
+                    <img
+src="https://cearadevalores.com.br/wp-content/uploads/2025/09/cropped-estrela-e1756834379223-32x32.png"
                         class="w-6 h-6">
-                    <h1 class="font-bold">Ceará de Valores</h1>
+                    <h1 class="font-bold xs:block">Ceará de Valores</h1>
                 </div>
-                <div v-if="userData.user_id" class="max-w-4xl mx-auto flex justify-between items-center">
 
-                    <div class="flex items-center gap-3">
+                <div v-if="userData.user_id" class="flex-1 flex justify-end items-center gap-2 sm:gap-4">
+
+                    <div class="flex items-center gap-2 sm:gap-3">
                         <div
-                            class="w-10 h-10 bg-orange-500 rounded-2xl flex items-center justify-center text-white shadow-lg shadow-orange-100 border-2 border-white">
+                            class="w-10 h-10 bg-orange-500 rounded-2xl flex items-center justify-center text-white shadow-lg shadow-orange-100 border-2 border-white shrink-0">
                             👤
                         </div>
-                        <div class="mr-3">
-                            <p class="text-[9px] font-black text-white uppercase tracking-tighter leading-none">
-                                Explorador(a)</p>
-                            <h2 class="text-xs font-black text-white uppercase italic">@{{ userData.username }}</h2>
 
-                            <button
-                                class="w-full bg-blue-600 mt-1 hover:bg-blue-700 text-white font-black py-1 px-3 rounded-[2rem] shadow-lg shadow-blue-200 transition-all active:scale-95"
-                                @click="editPerfil">
-                                Meu perfil
-                            </button>
+                        <div class="mr-1">
+                            <p class="text-[9px] font-black text-white uppercase tracking-tighter leading-none">
+                                Explorador(a)
+                            </p>
+                            <h2
+                                class="text-xs font-black text-white uppercase italic truncate max-w-[80px] sm:max-w-none">
+                                @{{ userData.username }}
+                            </h2>
+
+                            <div class="flex items-center gap-2 mt-1">
+                                <button
+                                    class=" hover:bg-blue-700  text-[10px] sm:text-xs font-black py-1 px-3 rounded-[2rem] shadow-lg shadow-blue-200 transition-all active:scale-95"
+                                    :class="[(step == 'perfil') ? 'bg-blue-300 text-gray' : 'bg-blue-600 text-white']"
+                                    @click="editPerfil">
+                                    Meu perfil
+                                </button>
+
+                                <button
+                                    class="relative bg-white/10 hover:bg-white/20 text-white w-7 h-7 flex items-center justify-center rounded-full transition-all active:scale-95 border border-white/20"
+                                    title="Ver Agenda" @click="showCalendar = true">
+                                    📅
+                                    <span v-if="novosEventos" class="absolute -top-1 -right-1 flex h-2.5 w-2.5">
+                                        <span
+                                            class="animate-ping absolute inline-flex h-full w-full rounded-full bg-red-400 opacity-75" />
+                                        <span class="relative inline-flex rounded-full h-2.5 w-2.5 bg-red-500" />
+                                    </span>
+                                </button>
+                            </div>
                         </div>
                     </div>
 
-                    <div class="flex flex-col items-center gap-1">
-                        <div class="mr-3 flex justify-between w-24 text-[8px] font-black text-white uppercase">
+                    <div class="flex flex-col items-center gap-1 shrink-0">
+                        <div class="flex justify-between w-16 sm:w-24 text-[8px] font-black text-white uppercase">
                             <span>Progresso</span>
-                            <span>&nbsp;{{ progressoTotal }}%</span>
+                            <span>{{ progressoTotal }}%</span>
                         </div>
-                        <div class="w-24 h-1.5 bg-slate-100 rounded-full overflow-hidden border border-slate-200">
-                            <div class="h-full bg-blue-600 rounded-full transition-all duration-1000"
+                        <div
+                            class="w-16 sm:w-24 h-1.5 bg-slate-100 rounded-full overflow-hidden border border-slate-200">
+                            <div
+class="h-full bg-blue-600 rounded-full transition-all duration-1000"
                                 :style="{ width: `${progressoTotal}%` }" />
                         </div>
                     </div>
@@ -674,14 +717,18 @@ watch(() => userData.value.user_id, (id) => {
                         <span class="text-[10px] font-black text-blue uppercase italic">{{ userData.municipio }}</span>
                     </div>
                 </div>
-                <div v-else class="max-w-4xl mx-auto flex justify-between items-center">
-                    <button v-if="step == 'trilha-selection'" class="text-md bg-blue-800 px-3 py-1 rounded-lg"
+
+                <div v-else class="flex gap-2">
+                    <button
+v-if="step == 'trilha-selection'" class="text-md bg-blue-800 px-3 py-1 rounded-lg"
                         @click="scrollToElement('login')">
                         👤 Login
                     </button>
                 </div>
-                <button v-if="step !== 'trilha-selection'" class="text-md bg-blue-800 px-3 py-1 rounded-lg"
-                    @click="goBack">
+
+                <button
+v-if="(step !== 'trilha-selection') && !userData.user_id"
+                    class="text-md bg-blue-800 px-3 py-1 rounded-lg ml-2" @click="goBack">
                     ← Voltar
                 </button>
             </div>
@@ -690,19 +737,23 @@ watch(() => userData.value.user_id, (id) => {
         <main class="max-w-2xl mx-auto p-4">
             <div v-if="step === 'trilha-selection'" class="space-y-6">
                 <div class="relative w-full h-48 md:h-64 rounded-3xl overflow-hidden shadow-lg mb-8">
-                    <img src="/imagens/banner_home.png" class="w-full h-full object-cover object-[center_8%]"
+                    <img
+src="/imagens/banner_home.png" class="w-full h-full object-cover object-[center_8%]"
                         alt="Ceará de Valores">
                     <div class="absolute inset-0 bg-gradient-to-t from-blue-900/40 to-transparent" />
                 </div>
 
-                <a href="https://academy.centec.org.br" target="_blank"
+                <a
+href="https://academy.centec.org.br" target="_blank"
                     class="flex items-center justify-center gap-2 w-full py-3 bg-white border-2 border-dashed border-slate-200 rounded-xl text-blue-700 text-md font-bold hover:bg-blue-50 hover:border-blue-200 transition-all">
                     <span>📖</span>
                     <span>Acessar a plataforma</span>
                 </a>
-                <a href="https://wa.me/5585997653319?text=Olá" target="_blank"
+                <a
+href="https://wa.me/5585997653319?text=Olá" target="_blank"
                     class="flex items-center justify-center gap-2 w-full py-3 bg-white border-2 border-dashed border-slate-200 rounded-xl text-blue-700 text-md font-bold hover:bg-blue-50 hover:border-blue-200 transition-all">
-                    <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="currentColor"
+                    <svg
+xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="currentColor"
                         viewBox="0 0 16 16">
                         <path
                             d="M13.601 2.326A7.85 7.85 0 0 0 7.994 0C3.627 0 .068 3.558.064 7.926c0 1.399.366 2.76 1.057 3.965L0 16l4.204-1.102a7.9 7.9 0 0 0 3.79.965h.004c4.368 0 7.926-3.558 7.93-7.93A7.9 7.9 0 0 0 13.6 2.326zM7.994 14.521a6.6 6.6 0 0 1-3.356-.92l-.24-.144-2.494.654.666-2.433-.156-.251a6.56 6.56 0 0 1-1.007-3.505c0-3.626 2.957-6.584 6.591-6.584a6.56 6.56 0 0 1 4.66 1.931 6.56 6.56 0 0 1 1.928 4.66c-.004 3.639-2.961 6.592-6.592 6.592m3.615-4.934c-.197-.099-1.17-.578-1.353-.646-.182-.065-.315-.099-.445.099-.133.197-.513.646-.627.775-.114.133-.232.148-.43.05-.197-.1-.836-.308-1.592-.985-.59-.525-.985-1.175-1.103-1.372-.114-.198-.011-.304.088-.403.087-.088.197-.232.296-.346.1-.114.133-.198.198-.33.065-.134.034-.248-.015-.347-.05-.099-.445-1.076-.612-1.47-.16-.389-.323-.335-.445-.34-.114-.007-.247-.007-.38-.007a.73.73 0 0 0-.529.247c-.182.198-.691.677-.691 1.654s.71 1.916.81 2.049c.098.133 1.394 2.132 3.383 2.992.47.205.84.326 1.129.418.475.152.904.129 1.246.08.38-.058 1.171-.48 1.338-.943.164-.464.164-.86.114-.943-.049-.084-.182-.133-.38-.232" />
@@ -714,7 +765,8 @@ watch(() => userData.value.user_id, (id) => {
                     <p class="text-slate-500">Selecione uma trilha para começar</p>
                 </div>
                 <div class="grid gap-4">
-                    <button v-for="trilha in todasAsTrilhas" :key="trilha.id"
+                    <button
+v-for="trilha in todasAsTrilhas" :key="trilha.id"
                         class="p-6 bg-white rounded-2xl shadow-sm border-2 text-left flex items-center gap-4 transition-all"
                         :class="trilha.aulas.length > 0 ? 'border-transparent hover:border-blue-500' : 'opacity-50 cursor-not-allowed'"
                         @click="escolherTrilha(trilha)">
@@ -750,7 +802,8 @@ watch(() => userData.value.user_id, (id) => {
                             DICAS DE OURO
                         </div>
                     </button>
-                    <a href="/arquivos/orientacoes-projetos.pdf" target="_blank"
+                    <a
+href="/arquivos/orientacoes-projetos.pdf" target="_blank"
                         class="flex items-center justify-center gap-2 w-full py-3 bg-white border-2 border-dashed border-slate-200 rounded-xl text-blue-700 text-md font-bold hover:bg-blue-50 hover:border-blue-200 transition-all">
                         <span>📖</span>
                         <span>Ler PDF de Orientações sobre projetos antes de começar</span>
@@ -778,7 +831,8 @@ watch(() => userData.value.user_id, (id) => {
                     </span>
                 </h2>
                 <div class="grid gap-3">
-                    <button v-for="aula in selectedTrilha.aulas" :key="aula.id"
+                    <button
+v-for="aula in selectedTrilha.aulas" :key="aula.id"
                         class="p-4 bg-white rounded-xl shadow-sm border border-slate-200 flex justify-between items-center group"
                         @click="selectAula(aula)">
                         <span class="font-bold text-slate-700">Aula {{ aula.id }}: {{ aula.titulo }}</span>
@@ -807,7 +861,8 @@ watch(() => userData.value.user_id, (id) => {
                     </p>
                     <div class="space-y-1">
                         <label class="text-[10px] font-black text-slate-400 uppercase ml-2">Teu Nome</label>
-                        <input v-model="userData.nome" type="text" placeholder="Como queres ser chamado?"
+                        <input
+v-model="userData.nome" type="text" placeholder="Como queres ser chamado?"
                             class="w-full p-4 bg-slate-50 border-2 border-slate-100 rounded-2xl focus:border-blue-500 outline-none font-bold text-blue-900"
                             :class="erroNome ? 'border-red-300 focus:border-red-500' : 'border-slate-100 focus:border-blue-500'"
                             @blur="tratarInputNome">
@@ -818,12 +873,15 @@ watch(() => userData.value.user_id, (id) => {
 
                     <div class="space-y-1 relative">
                         <label class="text-[10px] font-black text-slate-400 uppercase ml-2">Teu Município</label>
-                        <input v-model="userData.municipio" type="text" placeholder="Ex: Iguatu"
+                        <input
+v-model="userData.municipio" type="text" placeholder="Ex: Iguatu"
                             class="w-full p-4 bg-slate-50 border-2 border-slate-100 rounded-2xl focus:border-blue-500 outline-none font-bold text-blue-900"
                             @focus="mostrarSugestoes = true">
-                        <ul v-if="mostrarSugestoes && sugestoesFiltradas.length > 0"
+                        <ul
+v-if="mostrarSugestoes && sugestoesFiltradas.length > 0"
                             class="absolute z-10 w-full bg-white border-2 border-slate-100 rounded-2xl mt-1 shadow-xl max-h-40 overflow-y-auto">
-                            <li v-for="m in sugestoesFiltradas" :key="m"
+                            <li
+v-for="m in sugestoesFiltradas" :key="m"
                                 class="p-3 hover:bg-blue-50 cursor-pointer font-bold text-slate-600 text-sm border-b last:border-0"
                                 @click="selecionarMunicipio(m)">
                                 {{ m }}
@@ -834,7 +892,8 @@ watch(() => userData.value.user_id, (id) => {
                     <div class="grid grid-cols-2 gap-3">
                         <div class="space-y-1">
                             <label class="text-[10px] font-black text-slate-400 uppercase ml-2">Username Único</label>
-                            <input v-model="userData.username" type="text" placeholder="joao_maker"
+                            <input
+v-model="userData.username" type="text" placeholder="joao_maker"
                                 class="w-full p-4 bg-slate-50 border-2 border-slate-100 rounded-2xl focus:border-blue-500 outline-none font-bold text-blue-900">
                             <p class="text-[9px] text-slate-400 ml-2 italic">
                                 * Letras, números e sublinhados apenas. Espaços serão removidos.
@@ -842,7 +901,8 @@ watch(() => userData.value.user_id, (id) => {
                         </div>
                         <div class="space-y-1">
                             <label class="text-[10px] font-black text-slate-400 uppercase ml-2">Senha</label>
-                            <input v-model="userData.senha" type="password" placeholder="****"
+                            <input
+v-model="userData.senha" type="password" placeholder="****"
                                 class="w-full p-4 bg-slate-50 border-2 border-slate-100 rounded-2xl focus:border-blue-500 outline-none font-bold text-blue-900">
                         </div>
                     </div>
@@ -863,7 +923,8 @@ watch(() => userData.value.user_id, (id) => {
                         </span>
                     </div>
                     <div class="w-full bg-slate-100 h-2 rounded-full overflow-hidden">
-                        <div class="bg-blue-600 h-full transition-all duration-500 ease-out"
+                        <div
+class="bg-blue-600 h-full transition-all duration-500 ease-out"
                             :style="{ width: ((currentIndex + 1) / currentQuiz.questions.length) * 100 + '%' }" />
                     </div>
                 </div>
@@ -874,7 +935,8 @@ watch(() => userData.value.user_id, (id) => {
                     </h3>
 
                     <div class="space-y-3">
-                        <button v-for="(opt, idx) in currentQuiz.questions[currentIndex].options" :key="idx"
+                        <button
+v-for="(opt, idx) in currentQuiz.questions[currentIndex].options" :key="idx"
                             :disabled="isAnswered"
                             class="w-full p-4 rounded-2xl text-left border-2 transition-all duration-200 flex justify-between items-center group"
                             :class="{
@@ -900,13 +962,15 @@ watch(() => userData.value.user_id, (id) => {
 
                             <div v-if="isAnswered">
                                 <span v-if="opt.isCorrect" class="text-green-600 text-xl font-bold">✔</span>
-                                <span v-else-if="selectedOption === opt && !opt.isCorrect"
+                                <span
+v-else-if="selectedOption === opt && !opt.isCorrect"
                                     class="text-red-600 text-xl font-bold">✖</span>
                             </div>
                         </button>
                     </div>
 
-                    <div v-if="isAnswered"
+                    <div
+v-if="isAnswered"
                         class="mt-8 p-5 bg-blue-50 rounded-2xl border-l-4 border-blue-500 animate-in fade-in slide-in-from-bottom-2">
                         <p class="text-[10px] font-black text-blue-600 uppercase mb-1 tracking-widest">💡 Por que esta
                             resposta?</p>
@@ -951,7 +1015,8 @@ watch(() => userData.value.user_id, (id) => {
                         </p>
 
                         <div v-if="resultadoFinal.showPDF" class="mb-8">
-                            <a :href="linkPDFProjetos" target="_blank"
+                            <a
+:href="linkPDFProjetos" target="_blank"
                                 class="inline-flex items-center gap-3 bg-red-50 text-red-700 border-2 border-red-100 px-6 py-4 rounded-2xl font-black hover:bg-red-100 transition-all w-full justify-center">
                                 <span class="text-2xl">📕</span>
                                 <div class="text-left">
@@ -984,17 +1049,27 @@ watch(() => userData.value.user_id, (id) => {
                 </div>
             </div>
             <div v-else-if="step === 'perfil'" class="space-y-4">
+
+                <div class="text-right mb-6">
+                    <button
+v-if="(step == 'perfil') && userData.user_id"
+                        class="text-sm bg-blue-800 text-white px-2 py-1 rounded-lg ml-2" @click="goBack">
+                        ← Voltar
+                    </button>
+                </div>
                 <div class="text-center mb-6">
                     <span class="bg-orange-100 text-orange-600 px-4 py-1 rounded-full text-xs font-black uppercase">Aqui
                         vocẽ altera ou consulta seus dados de acesso</span>
                     <h2 class="text-2xl font-black text-slate-800 mt-2">Meu Perfil</h2>
+
                 </div>
 
                 <div class="space-y-4">
                     <h2 class="text-xl font-black text-blue-900 uppercase italic">Identificação</h2>
                     <div class="space-y-1">
                         <label class="text-[10px] font-black text-slate-400 uppercase ml-2">Teu Nome</label>
-                        <input v-model="novoNome" type="text" placeholder="Como queres ser chamado?"
+                        <input
+v-model="novoNome" type="text" placeholder="Como queres ser chamado?"
                             class="w-full p-4 bg-slate-50 border-2 border-slate-100 rounded-2xl focus:border-blue-500 outline-none font-bold text-blue-900"
                             :class="erroNome ? 'border-red-300 focus:border-red-500' : 'border-slate-100 focus:border-blue-500'"
                             @blur="tratarInputNome">
@@ -1005,28 +1080,34 @@ watch(() => userData.value.user_id, (id) => {
 
                     <div class="space-y-1 relative">
                         <label class="text-[10px] font-black text-slate-400 uppercase ml-2">Teu Município</label>
-                        <input v-model="novoMunicipio" type="text" placeholder="Ex: Iguatu"
+                        <input
+v-model="novoMunicipio" type="text" placeholder="Ex: Iguatu"
                             class="w-full p-4 bg-slate-50 border-2 border-slate-100 rounded-2xl focus:border-blue-500 outline-none font-bold text-blue-900"
                             @focus="mostrarSugestoes = true">
-                        <ul v-if="mostrarSugestoes && sugestoesFiltradas.length > 0"
+                        <ul
+v-if="mostrarSugestoes && sugestoesFiltradas.length > 0"
                             class="absolute z-10 w-full bg-white border-2 border-slate-100 rounded-2xl mt-1 shadow-xl max-h-40 overflow-y-auto">
-                            <li v-for="m in sugestoesFiltradas" :key="m"
+                            <li
+v-for="m in sugestoesFiltradas" :key="m"
                                 class="p-3 hover:bg-blue-50 cursor-pointer font-bold text-slate-600 text-sm border-b last:border-0"
                                 @click="selecionarMunicipio(m)">
                                 {{ m }}
                             </li>
                         </ul>
+
                     </div>
 
                     <div class="grid grid-cols-2 gap-3">
                         <div class="space-y-1">
                             <label class="text-[10px] font-black text-slate-400 uppercase ml-2">Username Único</label>
-                            <input v-model="novoUsername" type="text" placeholder="joao_maker"
+                            <input
+v-model="novoUsername" type="text" placeholder="joao_maker"
                                 class="w-full p-4 bg-slate-50 border-2 border-slate-100 rounded-2xl focus:border-blue-500 outline-none font-bold text-blue-900">
                         </div>
                         <div class="space-y-1">
                             <label class="text-[10px] font-black text-slate-400 uppercase ml-2">Senha</label>
-                            <input v-model="userData.senha" disbled type="password" placeholder="****"
+                            <input
+v-model="userData.senha" disbled type="password" placeholder="****"
                                 class="w-full p-4 bg-slate-50 border-2 border-slate-100 rounded-2xl focus:border-blue-500 outline-none font-bold text-blue-900">
                         </div>
                     </div>
@@ -1041,12 +1122,14 @@ watch(() => userData.value.user_id, (id) => {
                         <span class="text-2xl">📝</span> Meus Quizzes Concluídos
                     </h3>
 
-                    <div v-if="carregandoQuizzes"
+                    <div
+v-if="carregandoQuizzes"
                         class="text-center py-10 text-slate-400 font-bold animate-pulse uppercase text-[10px]">
                         Consultando teus registros...
                     </div>
 
-                    <div v-else-if="quizzesRealizados.length === 0"
+                    <div
+v-else-if="quizzesRealizados.length === 0"
                         class="bg-slate-50 border-2 border-dashed border-slate-200 p-8 rounded-[2rem] text-center">
                         <p class="text-slate-500 font-bold text-sm">Vocẽ ainda não respondeu nenhum questionário. <br>
                             Que tal
@@ -1054,7 +1137,8 @@ watch(() => userData.value.user_id, (id) => {
                     </div>
 
                     <div v-else class="grid gap-4">
-                        <div v-for="quiz in quizzesRealizados" :key="quiz.id"
+                        <div
+v-for="quiz in quizzesRealizados" :key="quiz.id"
                             class="bg-white border-2 border-slate-100 p-5 rounded-3xl flex justify-between items-center hover:border-blue-200 transition-colors shadow-sm">
 
                             <div class="flex items-center gap-4">
