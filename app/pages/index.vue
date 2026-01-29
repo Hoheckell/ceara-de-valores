@@ -301,7 +301,7 @@ const goBack = () => {
             step.value = 'home';
         }
     } else if (step.value === 'quiz') {
-        if (confirm("Deseja mesmo sair?")) step.value = 'home';
+        if (confirm("Deseja mesmo sair?")) step.value = 'trilha-selection';
     } else if (step.value === 'results') {
         step.value = 'trilha-selection';
     } else if (step.value === 'perfil') {
