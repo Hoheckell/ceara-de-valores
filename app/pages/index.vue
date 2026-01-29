@@ -233,7 +233,7 @@ const startQuiz = async () => {
                     alert(resultado.msg);
                     return;
                 }
-                const nomeFinal = formatarNomeProprio(userData.value.trim());
+                const nomeFinal = formatarNomeProprio(userData.value.nome.trim());
                 // Se logou mas não tem perfil (erro de cadastro anterior), cria agora
                 if (!perfil) {
                     await supabase.from('perfis').insert({
@@ -1041,7 +1041,7 @@ v-if="isAnswered"
 
                             <button
                                 class="w-full bg-slate-100 text-slate-600 font-bold py-4 rounded-2xl hover:bg-slate-200 transition-all"
-                                @click="step = 'home'">
+                                @click="goBack()">
                                 Revisar outras aulas
                             </button>
                         </div>
