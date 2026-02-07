@@ -34,12 +34,16 @@ const isAnswered = ref(false);
 const estaLogado = ref(false);
 const loading = ref(false);
 
+const modalRecuperaOpen = ref(false);
+
 const jaRespondeu = ref(false);
 const carregandoVerificacao = ref(false);
 const erroNome = ref('');
 const linkPDFProjetos = "/arquivos/orientacoes-projetos.pdf";
 const quizzesRealizados = ref([]);
 const carregandoQuizzes = ref(true);// Substitua pelo link real
+const alunoNomeRecuperacao = ref('');
+const seuTelefone = ref(process.env.WHATSAPP_NUMBER); // Substitua pelo seu número
 
 onMounted(async () => {
     fetchEventos();
@@ -54,6 +58,10 @@ const sugestoesFiltradas = computed(() => {
         )
     ).slice(0, 5); // Mostra apenas as 5 primeiras para não tapar o ecrã
 });
+
+const showModalRecupera = () => {
+    modalRecuperaOpen.value = true;
+};
 
 const fetchEventos = async () => {
     loading.value = true;
@@ -210,6 +218,11 @@ const startQuiz = async () => {
         const municipiovalido = validaMunicipio(userData.value.municipio);
         if (!usernameLimpo || !userData.value.senha || !municipiovalido) {
             alert("Por favor, preencha todos os campos corretamente." + (!municipiovalido) ? " Por favor, selecione um município válido." : "");
+            return;
+        }
+
+        if(erroNome.value !== '') {
+            alert(erroNome.value);
             return;
         }
 
@@ -397,12 +410,26 @@ const validarNomeCompleto = (nome) => {
     return { valido: true, msg: "" };
 };
 
-const tratarInputNome = () => {
+const tratarInputNome = async () => {
     const resultado = validarNomeCompleto(novoNome.value.nome);
     if (!resultado.valido) {
         erroNome.value = resultado.msg;
     } else {
-        erroNome.value = '';
+        if (!estaLogado.value) {
+            const { data: nomeExistente } = await supabase
+                    .from('respostas_quizzes')
+                    .select('nome')
+                    .eq('nome', novoNome.value.nome)
+                    .single();
+
+            if (nomeExistente) {
+                erroNome.value = 'Este nome já foi usado.';
+            } else {
+                erroNome.value = '';
+            }
+        } else {
+            erroNome.value = '';
+        }
     }
 };
 
@@ -610,6 +637,17 @@ const salvarAlteracoes = async () => {
     alert("Perfil atualizado com sucesso!");
     carregarSessao();
 };
+
+const gerarLinkWhatsapp = computed(() => {
+    if(alunoNomeRecuperacao.value != '') {
+        const mensagem = `Olá Prof, sou o aluno(a) *${alunoNomeRecuperacao.value}* e esqueci minha senha de acesso ao Portal Quizz Ceará de Valores. Pode alterar para mim?`;
+        const mensagemCodificada = encodeURIComponent(mensagem);
+        console.log(`https://wa.me/${seuTelefone.value}?text=${mensagemCodificada}`);
+        return `https://wa.me/${seuTelefone.value}?text=${mensagemCodificada}`;
+    }
+    return '';
+})
+
 const formatarNomeProprio = (nome) => {
     const conectores = ['de', 'da', 'do', 'dos', 'das', 'e'];
 
@@ -648,6 +686,41 @@ watch(() => userData.value.user_id, (id) => {
 </script>
 
 <template>
+    <Transition name="fade">
+        <div
+v-if="modalRecuperaOpen"
+            class="fixed inset-0 z-[60] flex items-center justify-center p-4 bg-blue-900/40 backdrop-blur-sm"
+            @click.self="modalRecuperaOpen = false">
+            <div class="bg-white w-full max-w-md rounded-[2.5rem] p-8 shadow-2xl border-4 border-blue-50 relative">
+                <h3 class="text-sm font-bold text-blue-800 mb-2 flex items-center gap-2">
+            🔑 Esqueceu sua senha?
+            </h3>
+            <p class="text-[11px] text-blue-600 mb-3 leading-tight">
+                A recuperação é feita manualmente pelo seu Tutor.
+            </p>
+
+            <div class="space-y-2">
+                <input 
+                    v-model="alunoNomeRecuperacao" 
+                    type="text" 
+                    placeholder="Digite seu nome completo"
+                    class="w-full p-2 text-xs rounded-lg border border-blue-200 focus:outline-none focus:ring-2 focus:ring-blue-500 text-slate-700"
+                >
+                <p v-if="alunoNomeRecuperacao == ''" class="text-[10px] text-red-500 font-bold mt-2 animate-bounce">
+                            ⚠️ Preencha com o nome completo
+                        </p>
+                
+                <a 
+                    :href="gerarLinkWhatsapp" 
+                    target="_blank"
+                    class="w-full flex items-center justify-center gap-2 bg-green-500 hover:bg-green-600 text-white font-black py-2 px-4 rounded-xl shadow-md transition-all active:scale-95 text-xs"
+                >
+                    <span>💬 Solicitar nova senha</span>
+                </a>
+            </div>
+            </div>
+        </div>
+    </Transition>
 
     <div v-if="config.public.maintenanceMode == 'false'" class="min-h-screen bg-slate-50 font-sans">
         <AgendaModal :is-open="showCalendar" @close="showCalendar = false" />
@@ -723,6 +796,13 @@ class="h-full bg-blue-600 rounded-full transition-all duration-1000"
 v-if="step == 'trilha-selection'" class="text-md bg-blue-800 px-3 py-1 rounded-lg"
                         @click="scrollToElement('login')">
                         👤 Login
+                    </button>
+                </div>
+                <div v-if="!estaLogado && seuTelefone != ''" class="flex gap-2 ml-2">
+                    <button
+v-if="step == 'trilha-selection'" class="text-md bg-blue-800 px-3 py-1 rounded-lg"
+                        @click="showModalRecupera()">
+                        ✨ Recuperar senha
                     </button>
                 </div>
 
